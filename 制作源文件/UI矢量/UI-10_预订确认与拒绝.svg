@@ -24,8 +24,8 @@
 <text x="254" y="151" font-size="15" fill="#667C89" font-weight="400">按本酒店、当前状态与版本处理；其他酒店订单不可访问。</text>
 <text x="254" y="967" font-size="12" fill="#667C89" font-weight="400">UI-10  |  REQ-009 / 010 / 016   ·   业务校验以服务端为准</text>
 <rect x="254" y="202" width="1152" height="75" rx="9" fill="#FFF4E6" stroke="none"/>
-<text x="274" y="215" font-size="15" fill="#B47835" font-weight="700">待确认订单 1 笔</text>
-<text x="274" y="245" font-size="13" fill="#B47835" font-weight="400">30分钟到期但超时任务尚未提交的竞争规则待确认；本设计不擅自定为已确认策略。</text>
+<text x="274" y="215" font-size="15" fill="#B47835" font-weight="700">待确认订单 1 笔 · 截止时间 14:30</text>
+<text x="274" y="245" font-size="13" fill="#B47835" font-weight="400">以服务器持锁核验时刻为准；14:30整及以后不能确认，即使后台超时任务还未执行。</text>
 <rect x="254" y="305" width="1152" height="547" rx="12" fill="#FFFFFF" stroke="#DCE5E9"/>
 <text x="278" y="329" font-size="19" fill="#172B3A" font-weight="700">订单 HB261106001</text>
 <rect x="278" y="381" width="1102" height="42" rx="3" fill="#EFF4F5" stroke="none"/>
@@ -50,4 +50,7 @@
 <text x="585.5" y="719" font-size="15" fill="#B64D46" font-weight="400">拒绝并释放预留</text>
 <rect x="774" y="708" width="224" height="42" rx="7" fill="#FFFFFF" stroke="#DCE5E9"/>
 <text x="841.0" y="719" font-size="15" fill="#087F82" font-weight="400">刷新当前状态</text>
+<rect x="278" y="775" width="224" height="42" rx="7" fill="#FFFFFF" stroke="#DCE5E9"/>
+<text x="330.0" y="786" font-size="15" fill="#087F82" font-weight="400">演示时钟到达截止</text>
+<text x="526" y="786" font-size="14" fill="#667C89" font-weight="400">到期后再次确认：转为已超时，库存只释放一次。</text>
 </svg>

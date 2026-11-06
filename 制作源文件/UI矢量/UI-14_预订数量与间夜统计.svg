@@ -24,10 +24,10 @@
 <text x="254" y="151" font-size="15" fill="#667C89" font-weight="400">工作人员限本酒店，管理员可切换全平台；不统计收入或入住率。</text>
 <text x="254" y="967" font-size="12" fill="#667C89" font-weight="400">UI-14  |  REQ-018 / 001   ·   业务校验以服务端为准</text>
 <rect x="254" y="204" width="1152" height="151" rx="12" fill="#FFFFFF" stroke="#DCE5E9"/>
-<text x="278" y="226" font-size="13" fill="#667C89" font-weight="400">计划入住日从</text>
+<text x="278" y="226" font-size="13" fill="#667C89" font-weight="400">计划入住日从（含当日）</text>
 <rect x="278" y="253" width="252" height="45" rx="7" fill="#FFFFFF" stroke="#DCE5E9"/>
 <text x="291" y="267" font-size="15" fill="#172B3A" font-weight="400">2026-11-01</text>
-<text x="554" y="226" font-size="13" fill="#667C89" font-weight="400">至</text>
+<text x="554" y="226" font-size="13" fill="#667C89" font-weight="400">至（含当日）</text>
 <rect x="554" y="253" width="252" height="45" rx="7" fill="#FFFFFF" stroke="#DCE5E9"/>
 <text x="567" y="267" font-size="15" fill="#172B3A" font-weight="400">2026-11-30</text>
 <text x="830" y="226" font-size="13" fill="#667C89" font-weight="400">房型</text>
@@ -65,5 +65,5 @@
 <text x="792" y="811" font-size="14" fill="#172B3A" font-weight="400">1 × 2</text>
 <text x="1042" y="811" font-size="14" fill="#172B3A" font-weight="400">2</text>
 <rect x="278" y="838" width="1102" height="1" rx="0" fill="#DCE5E9" stroke="none"/>
-<text x="254" y="913" font-size="14" fill="#667C89" font-weight="400">按计划入住日归入区间，非逐夜分摊；日期端点仍待约定，界面应明确显示最终口径。</text>
+<text x="254" y="913" font-size="14" fill="#667C89" font-weight="400">按计划入住日归入区间，包含开始日和结束日，不按住宿夜分摊；只计已确认、已入住和已退房。</text>
 </svg>

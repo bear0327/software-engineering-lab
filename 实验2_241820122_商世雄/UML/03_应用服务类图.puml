@@ -28,6 +28,7 @@ class AuthorizationPolicy {
 }
 class TransitionPolicy {
   +check(status, action, now, hotelZone)
+  +checkPendingDeadline(now, expiresAt)
 }
 class InventoryService {
   +reserveAll(nights)
@@ -70,5 +71,7 @@ note bottom of BookingService
 应用服务负责事务编排；策略决定是否合法，
 领域对象维护状态，Repository 不作业务决定。
 所有库存键使用 (roomTypeId, date) 固定顺序锁定。
+到期订单先转超时，再拒绝确认/修改；
+停售日期只能保持或减少原有占用。
 end note
 @enduml
