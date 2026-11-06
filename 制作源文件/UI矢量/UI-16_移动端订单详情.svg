@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="390" height="844" viewBox="0 0 390 844">
+<style>text{font-family:"Microsoft YaHei",sans-serif;dominant-baseline:text-before-edge}</style>
+<rect x="0" y="0" width="390" height="844" rx="0" fill="#F3F6F7" stroke="none"/>
+<rect x="0" y="0" width="390" height="85" rx="0" fill="#172B3A" stroke="none"/>
+<text x="20" y="17" font-size="13" fill="#FFFFFF" font-weight="400">09:41</text>
+<text x="20" y="48" font-size="19" fill="#FFFFFF" font-weight="700">‹  我的订单</text>
+<text x="20" y="111" font-size="25" fill="#172B3A" font-weight="700">等待酒店确认</text>
+<text x="20" y="151" font-size="13" fill="#667C89" font-weight="400">订单号 HB261106001</text>
+<rect x="16" y="193" width="358" height="240" rx="12" fill="#FFFFFF" stroke="#DCE5E9"/>
+<text x="34" y="216" font-size="20" fill="#172B3A" font-weight="700">南京泊岸酒店</text>
+<text x="34" y="254" font-size="14" fill="#172B3A" font-weight="400">舒适大床房  /  1间  /  2人</text>
+<rect x="34" y="291" width="322" height="1" rx="0" fill="#DCE5E9" stroke="none"/>
+<text x="34" y="310" font-size="22" fill="#087F82" font-weight="700">11月10日</text>
+<text x="232" y="310" font-size="22" fill="#087F82" font-weight="700">11月12日</text>
+<text x="34" y="348" font-size="13" fill="#667C89" font-weight="400">入住</text>
+<text x="232" y="348" font-size="13" fill="#667C89" font-weight="400">离店 · 共2晚</text>
+<text x="34" y="389" font-size="14" fill="#172B3A" font-weight="400">联系人 商同学 / 138****8000</text>
+<rect x="16" y="450" width="358" height="203" rx="12" fill="#FFFFFF" stroke="#DCE5E9"/>
+<text x="34" y="472" font-size="17" fill="#172B3A" font-weight="700">逐夜成交明细</text>
+<text x="34" y="516" font-size="13" fill="#172B3A" font-weight="400">11月10日  ¥299    /    11月11日  ¥359</text>
+<rect x="34" y="550" width="322" height="1" rx="0" fill="#DCE5E9" stroke="none"/>
+<text x="34" y="578" font-size="15" fill="#172B3A" font-weight="400">总价</text>
+<text x="246" y="566" font-size="29" fill="#087F82" font-weight="700">¥ 658</text>
+<text x="20" y="678" font-size="13" fill="#667C89" font-weight="400">取消、修改均重新检查当前状态和版本。</text>
+<rect x="16" y="738" width="172" height="42" rx="7" fill="#FFFFFF" stroke="#DCE5E9"/>
+<text x="72.0" y="749" font-size="15" fill="#087F82" font-weight="400">修改预订</text>
+<rect x="202" y="738" width="172" height="42" rx="7" fill="#FFF3F0" stroke="none"/>
+<text x="258.0" y="749" font-size="15" fill="#B64D46" font-weight="400">取消订单</text>
+<text x="20" y="809" font-size="11" fill="#667C89" font-weight="400">手机原型 · 不是真实业务操作</text>
+</svg>

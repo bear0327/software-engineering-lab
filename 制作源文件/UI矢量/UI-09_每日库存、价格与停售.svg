@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1000" viewBox="0 0 1440 1000">
+<style>text{font-family:"Microsoft YaHei",sans-serif;dominant-baseline:text-before-edge}</style>
+<rect x="0" y="0" width="1440" height="1000" rx="0" fill="#F3F6F7" stroke="none"/>
+<rect x="0" y="0" width="220" height="1000" rx="0" fill="#172B3A" stroke="none"/>
+<text x="27" y="32" font-size="24" fill="#FFFFFF" font-weight="700">泊岸 / STAY</text>
+<text x="28" y="70" font-size="12" fill="#A9BEC9" font-weight="400">酒店预订系统 · 设计原型</text>
+<text x="28" y="135" font-size="14" fill="#7AD5D0" font-weight="700">酒店工作台</text>
+<text x="29" y="183" font-size="15" fill="#BACBD3" font-weight="400">房型资料</text>
+<rect x="16" y="230" width="188" height="43" rx="8" fill="#294450" stroke="none"/>
+<rect x="16" y="237" width="3" height="29" rx="0" fill="#6ED3C9" stroke="none"/>
+<text x="29" y="239" font-size="15" fill="#FFFFFF" font-weight="400">每日库存与价格</text>
+<text x="29" y="295" font-size="15" fill="#BACBD3" font-weight="400">预订确认与拒绝</text>
+<text x="29" y="351" font-size="15" fill="#BACBD3" font-weight="400">入住与退房</text>
+<text x="29" y="407" font-size="15" fill="#BACBD3" font-weight="400">业务统计</text>
+<text x="29" y="463" font-size="15" fill="#BACBD3" font-weight="400">操作日志</text>
+<text x="28" y="871" font-size="12" fill="#A9BEC9" font-weight="400">示例数据 / 无真实支付</text>
+<text x="28" y="895" font-size="12" fill="#A9BEC9" font-weight="400">数据范围以登录身份为准</text>
+<rect x="26" y="934" width="166" height="42" rx="7" fill="#FFFFFF" stroke="#DCE5E9"/>
+<text x="64.0" y="945" font-size="15" fill="#087F82" font-weight="400">切换演示角色</text>
+<rect x="220" y="0" width="1220" height="73" rx="0" fill="#FFFFFF" stroke="none"/>
+<text x="252" y="27" font-size="14" fill="#667C89" font-weight="400">工作空间   /   每日库存、价格与停售</text>
+<text x="1139" y="27" font-size="14" fill="#172B3A" font-weight="400">设计样例  ·  酒店工作台</text>
+<text x="254" y="105" font-size="30" fill="#172B3A" font-weight="700">每日库存、价格与停售</text>
+<text x="254" y="151" font-size="15" fill="#667C89" font-weight="400">房型 RT-1001 · 舒适大床房   |   分清供给总量、已占用与剩余量。</text>
+<text x="254" y="967" font-size="12" fill="#667C89" font-weight="400">UI-09  |  REQ-003 / 006 / 007 / 017   ·   业务校验以服务端为准</text>
+<rect x="254" y="202" width="1152" height="75" rx="9" fill="#E8F5F2" stroke="none"/>
+<text x="274" y="215" font-size="15" fill="#087F82" font-weight="700">剩余房量 = 当日供给总量 − 仍应占用的房量</text>
+<text x="274" y="245" font-size="13" fill="#087F82" font-weight="400">已预留的订单不会因为酒店调价而改变价格；停售只阻止新预订。</text>
+<rect x="254" y="304" width="1152" height="567" rx="12" fill="#FFFFFF" stroke="#DCE5E9"/>
+<rect x="278" y="334" width="1102" height="42" rx="3" fill="#EFF4F5" stroke="none"/>
+<text x="292" y="347" font-size="13" fill="#667C89" font-weight="400">住宿日期</text>
+<text x="462" y="347" font-size="13" fill="#667C89" font-weight="400">供给总量</text>
+<text x="632" y="347" font-size="13" fill="#667C89" font-weight="400">已占用</text>
+<text x="792" y="347" font-size="13" fill="#667C89" font-weight="400">剩余</text>
+<text x="952" y="347" font-size="13" fill="#667C89" font-weight="400">单晚价格</text>
+<text x="1112" y="347" font-size="13" fill="#667C89" font-weight="400">销售状态</text>
+<text x="292" y="395" font-size="14" fill="#172B3A" font-weight="400">2026-11-10</text>
+<text x="462" y="395" font-size="14" fill="#172B3A" font-weight="400">3间</text>
+<text x="632" y="395" font-size="14" fill="#172B3A" font-weight="400">2间</text>
+<text x="792" y="395" font-size="14" fill="#172B3A" font-weight="400">1间</text>
+<text x="952" y="395" font-size="14" fill="#172B3A" font-weight="400">¥ 299</text>
+<text x="1112" y="395" font-size="14" fill="#172B3A" font-weight="400">可售</text>
+<rect x="278" y="435" width="1102" height="1" rx="0" fill="#DCE5E9" stroke="none"/>
+<text x="292" y="455" font-size="14" fill="#172B3A" font-weight="400">2026-11-11</text>
+<text x="462" y="455" font-size="14" fill="#172B3A" font-weight="400">1间</text>
+<text x="632" y="455" font-size="14" fill="#172B3A" font-weight="400">0间</text>
+<text x="792" y="455" font-size="14" fill="#172B3A" font-weight="400">1间</text>
+<text x="952" y="455" font-size="14" fill="#172B3A" font-weight="400">¥ 359</text>
+<text x="1112" y="455" font-size="14" fill="#172B3A" font-weight="400">可售</text>
+<rect x="278" y="495" width="1102" height="1" rx="0" fill="#DCE5E9" stroke="none"/>
+<text x="292" y="515" font-size="14" fill="#172B3A" font-weight="400">2026-11-12</text>
+<text x="462" y="515" font-size="14" fill="#172B3A" font-weight="400">3间</text>
+<text x="632" y="515" font-size="14" fill="#172B3A" font-weight="400">1间</text>
+<text x="792" y="515" font-size="14" fill="#172B3A" font-weight="400">2间</text>
+<text x="952" y="515" font-size="14" fill="#172B3A" font-weight="400">¥ 329</text>
+<text x="1112" y="515" font-size="14" fill="#172B3A" font-weight="400">停售</text>
+<rect x="278" y="555" width="1102" height="1" rx="0" fill="#DCE5E9" stroke="none"/>
+<text x="278" y="615" font-size="13" fill="#667C89" font-weight="400">11月10日供给总量</text>
+<rect x="278" y="642" width="242" height="45" rx="7" fill="#FFFFFF" stroke="#DCE5E9"/>
+<text x="291" y="656" font-size="15" fill="#172B3A" font-weight="400">3</text>
+<text x="544" y="615" font-size="13" fill="#667C89" font-weight="400">11月10日单晚价格</text>
+<rect x="544" y="642" width="242" height="45" rx="7" fill="#FFFFFF" stroke="#DCE5E9"/>
+<text x="557" y="656" font-size="15" fill="#172B3A" font-weight="400">299</text>
+<text x="810" y="615" font-size="13" fill="#667C89" font-weight="400">销售状态</text>
+<rect x="810" y="642" width="242" height="45" rx="7" fill="#FFFFFF" stroke="#DCE5E9"/>
+<text x="823" y="656" font-size="15" fill="#172B3A" font-weight="400">可售</text>
+<rect x="1076" y="642" width="302" height="42" rx="7" fill="#087F82" stroke="none"/>
+<text x="1182.0" y="653" font-size="15" fill="#FFFFFF" font-weight="400">保存当日变更</text>
+<text x="278" y="756" font-size="15" fill="#667C89" font-weight="400">示例：总量3、占用2，还能再售1间；若把总量调成1，必须拒绝，不能负库存。</text>
+</svg>

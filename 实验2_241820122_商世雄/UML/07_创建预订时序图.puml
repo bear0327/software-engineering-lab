@@ -1,0 +1,47 @@
+@startuml
+title 时序图：幂等提交、报价变化与多夜原子预留
+skinparam defaultFontName Microsoft YaHei
+skinparam shadowing false
+skinparam backgroundColor white
+autonumber
+actor 顾客 as User
+boundary 预订页面 as UI
+control BookingService as B
+control "权限 / 幂等" as G
+database PostgreSQL as DB
+User -> UI : 接受报价并提交
+UI -> B : create(command, requestKey, acceptedQuote)
+B -> G : 校验登录身份，认领请求键
+alt 相同请求已经完成
+  G --> B : 已保存的处理结果
+  B --> UI : 原订单 / 原结果（不再写库存）
+else 新请求
+  B -> DB : BEGIN；请求记录唯一约束
+  B -> DB : 锁酒店和房型状态；\n按(roomTypeId,date)锁全程日历
+  DB --> B : 当前供给、占用、停售和价格版本
+  alt 价格变化
+    B -> DB : ROLLBACK
+    B --> UI : PRICE_CHANGED + 最新逐夜报价
+    UI --> User : 重新确认，不自动成交
+  else 无房 / 停售 / 停业 / 缺失日历
+    B -> DB : ROLLBACK
+    B --> UI : 明确失败原因与冲突日期
+  else 校验通过
+    B -> DB : 更新全程预留；插入订单与逐夜快照
+    B -> DB : 保存幂等结果、审计、通知待办
+    alt 任一步失败
+      B -> DB : ROLLBACK
+      B --> UI : 失败 / 可原键重试，零部分占用
+    else 成功
+      B -> DB : COMMIT
+      B --> UI : 待确认订单、expiresAt、version
+      UI --> User : 展示订单号与确认期限
+    end
+  end
+end
+note over B,DB
+并发争最后一间时，锁后重读并检查 reserved + rooms <= supply。
+酒店启停、日历维护和下单遵循一致锁顺序，避免检查后状态被穿透。
+网络中断不代表失败：用原请求键/订单查询核对，不另建一单。
+end note
+@enduml

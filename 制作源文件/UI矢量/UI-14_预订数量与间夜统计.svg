@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1000" viewBox="0 0 1440 1000">
+<style>text{font-family:"Microsoft YaHei",sans-serif;dominant-baseline:text-before-edge}</style>
+<rect x="0" y="0" width="1440" height="1000" rx="0" fill="#F3F6F7" stroke="none"/>
+<rect x="0" y="0" width="220" height="1000" rx="0" fill="#172B3A" stroke="none"/>
+<text x="27" y="32" font-size="24" fill="#FFFFFF" font-weight="700">泊岸 / STAY</text>
+<text x="28" y="70" font-size="12" fill="#A9BEC9" font-weight="400">酒店预订系统 · 设计原型</text>
+<text x="28" y="135" font-size="14" fill="#7AD5D0" font-weight="700">酒店工作台</text>
+<text x="29" y="183" font-size="15" fill="#BACBD3" font-weight="400">房型资料</text>
+<text x="29" y="239" font-size="15" fill="#BACBD3" font-weight="400">每日库存与价格</text>
+<text x="29" y="295" font-size="15" fill="#BACBD3" font-weight="400">预订确认与拒绝</text>
+<text x="29" y="351" font-size="15" fill="#BACBD3" font-weight="400">入住与退房</text>
+<rect x="16" y="398" width="188" height="43" rx="8" fill="#294450" stroke="none"/>
+<rect x="16" y="405" width="3" height="29" rx="0" fill="#6ED3C9" stroke="none"/>
+<text x="29" y="407" font-size="15" fill="#FFFFFF" font-weight="400">业务统计</text>
+<text x="29" y="463" font-size="15" fill="#BACBD3" font-weight="400">操作日志</text>
+<text x="28" y="871" font-size="12" fill="#A9BEC9" font-weight="400">示例数据 / 无真实支付</text>
+<text x="28" y="895" font-size="12" fill="#A9BEC9" font-weight="400">数据范围以登录身份为准</text>
+<rect x="26" y="934" width="166" height="42" rx="7" fill="#FFFFFF" stroke="#DCE5E9"/>
+<text x="64.0" y="945" font-size="15" fill="#087F82" font-weight="400">切换演示角色</text>
+<rect x="220" y="0" width="1220" height="73" rx="0" fill="#FFFFFF" stroke="none"/>
+<text x="252" y="27" font-size="14" fill="#667C89" font-weight="400">工作空间   /   预订数量与间夜统计</text>
+<text x="1139" y="27" font-size="14" fill="#172B3A" font-weight="400">设计样例  ·  酒店工作台</text>
+<text x="254" y="105" font-size="30" fill="#172B3A" font-weight="700">预订数量与间夜统计</text>
+<text x="254" y="151" font-size="15" fill="#667C89" font-weight="400">工作人员限本酒店，管理员可切换全平台；不统计收入或入住率。</text>
+<text x="254" y="967" font-size="12" fill="#667C89" font-weight="400">UI-14  |  REQ-018 / 001   ·   业务校验以服务端为准</text>
+<rect x="254" y="204" width="1152" height="151" rx="12" fill="#FFFFFF" stroke="#DCE5E9"/>
+<text x="278" y="226" font-size="13" fill="#667C89" font-weight="400">计划入住日从</text>
+<rect x="278" y="253" width="252" height="45" rx="7" fill="#FFFFFF" stroke="#DCE5E9"/>
+<text x="291" y="267" font-size="15" fill="#172B3A" font-weight="400">2026-11-01</text>
+<text x="554" y="226" font-size="13" fill="#667C89" font-weight="400">至</text>
+<rect x="554" y="253" width="252" height="45" rx="7" fill="#FFFFFF" stroke="#DCE5E9"/>
+<text x="567" y="267" font-size="15" fill="#172B3A" font-weight="400">2026-11-30</text>
+<text x="830" y="226" font-size="13" fill="#667C89" font-weight="400">房型</text>
+<rect x="830" y="253" width="285" height="45" rx="7" fill="#FFFFFF" stroke="#DCE5E9"/>
+<text x="843" y="267" font-size="15" fill="#172B3A" font-weight="400">全部房型</text>
+<rect x="1139" y="253" width="239" height="42" rx="7" fill="#087F82" stroke="none"/>
+<text x="1243.5" y="264" font-size="15" fill="#FFFFFF" font-weight="400">汇总</text>
+<rect x="254" y="383" width="566" height="185" rx="12" fill="#FFFFFF" stroke="#DCE5E9"/>
+<text x="278" y="406" font-size="16" fill="#667C89" font-weight="400">有效预订数</text>
+<text x="278" y="449" font-size="38" fill="#087F82" font-weight="700">3 笔</text>
+<text x="278" y="519" font-size="14" fill="#667C89" font-weight="400">已确认 / 已入住 / 已退房</text>
+<rect x="840" y="383" width="566" height="185" rx="12" fill="#FFFFFF" stroke="#DCE5E9"/>
+<text x="864" y="406" font-size="16" fill="#667C89" font-weight="400">已预订间夜数</text>
+<text x="864" y="449" font-size="38" fill="#087F82" font-weight="700">9 间夜</text>
+<text x="864" y="519" font-size="14" fill="#667C89" font-weight="400">每单间数 × 计划住宿夜数</text>
+<rect x="254" y="594" width="1152" height="281" rx="12" fill="#FFFFFF" stroke="#DCE5E9"/>
+<text x="278" y="618" font-size="19" fill="#172B3A" font-weight="700">计算明细</text>
+<rect x="278" y="656" width="1102" height="42" rx="3" fill="#EFF4F5" stroke="none"/>
+<text x="292" y="669" font-size="13" fill="#667C89" font-weight="400">状态</text>
+<text x="542" y="669" font-size="13" fill="#667C89" font-weight="400">订单数</text>
+<text x="792" y="669" font-size="13" fill="#667C89" font-weight="400">间数 × 夜数</text>
+<text x="1042" y="669" font-size="13" fill="#667C89" font-weight="400">间夜贡献</text>
+<text x="292" y="717" font-size="14" fill="#172B3A" font-weight="400">已确认</text>
+<text x="542" y="717" font-size="14" fill="#172B3A" font-weight="400">1</text>
+<text x="792" y="717" font-size="14" fill="#172B3A" font-weight="400">2 × 3</text>
+<text x="1042" y="717" font-size="14" fill="#172B3A" font-weight="400">6</text>
+<rect x="278" y="744" width="1102" height="1" rx="0" fill="#DCE5E9" stroke="none"/>
+<text x="292" y="764" font-size="14" fill="#172B3A" font-weight="400">已入住</text>
+<text x="542" y="764" font-size="14" fill="#172B3A" font-weight="400">1</text>
+<text x="792" y="764" font-size="14" fill="#172B3A" font-weight="400">1 × 1</text>
+<text x="1042" y="764" font-size="14" fill="#172B3A" font-weight="400">1</text>
+<rect x="278" y="791" width="1102" height="1" rx="0" fill="#DCE5E9" stroke="none"/>
+<text x="292" y="811" font-size="14" fill="#172B3A" font-weight="400">已退房</text>
+<text x="542" y="811" font-size="14" fill="#172B3A" font-weight="400">1</text>
+<text x="792" y="811" font-size="14" fill="#172B3A" font-weight="400">1 × 2</text>
+<text x="1042" y="811" font-size="14" fill="#172B3A" font-weight="400">2</text>
+<rect x="278" y="838" width="1102" height="1" rx="0" fill="#DCE5E9" stroke="none"/>
+<text x="254" y="913" font-size="14" fill="#667C89" font-weight="400">按计划入住日归入区间，非逐夜分摊；日期端点仍待约定，界面应明确显示最终口径。</text>
+</svg>

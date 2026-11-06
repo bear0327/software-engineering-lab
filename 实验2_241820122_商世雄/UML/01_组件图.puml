@@ -1,0 +1,58 @@
+@startuml
+!pragma layout smetana
+title 组件图：分层单体与模块协作
+skinparam defaultFontName Microsoft YaHei
+skinparam defaultFontSize 15
+skinparam componentStyle rectangle
+skinparam shadowing false
+skinparam backgroundColor white
+top to bottom direction
+package "展示层" {
+  [顾客端] as customer
+  [酒店工作台] as staff
+  [平台管理台] as admin
+}
+package "应用层（一个部署单元）" {
+  [认证与权限\nAuthService] as auth
+  [酒店与房型\nCatalogService] as catalog
+  [组合查询\nSearchService] as search
+  [预订编排\nBookingService] as booking
+  [逐日库存与报价\nInventory / Pricing] as inventory
+  [异常处置\nExceptionService] as exception
+  [统计与日志查询\nReport / Audit] as report
+  [定时任务\nTimeout / No-show] as job
+}
+database "PostgreSQL\n订单、房型日历、价格快照\n幂等记录、审计、通知待办" as db
+component "Outbox 分发器\n通知失败重试" as outbox
+customer --> auth
+staff --> auth
+admin --> auth
+customer --> search
+customer --> booking
+staff --> catalog
+staff --> booking
+admin --> catalog
+admin --> exception
+staff --> report
+admin --> report
+search --> inventory : 读可订区间和报价
+booking --> inventory : 同事务预留 / 释放
+exception --> booking : 原因必填的异常取消
+job --> booking : 条件状态转换
+catalog --> db
+auth --> db
+search --> db
+inventory --> db
+booking --> db
+report --> db
+db --> outbox : 已提交事件
+note right of booking
+所有写入口统一校验登录身份、对象归属、
+当前版本和状态；同一数据库事务提交。
+此图箭头是调用或数据访问，不是数据流管道。
+end note
+note bottom of outbox
+业务状态和库存不依赖通知是否成功；
+通知先落待办再重试，界面展示处理进度。
+end note
+@enduml

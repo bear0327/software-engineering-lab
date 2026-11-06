@@ -1,0 +1,117 @@
+@startuml
+!pragma layout smetana
+title 领域类图：订单、逐夜库存及一致性约束
+skinparam defaultFontName Microsoft YaHei
+skinparam defaultFontSize 14
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+skinparam backgroundColor white
+hide empty methods
+class User {
+  +id: UUID
+  +passwordHash: String
+  +role: Role
+  +hotelId: UUID [0..1]
+  +enabled: Boolean
+}
+class Hotel {
+  +id: UUID
+  +name / city / address: String
+  +contact: String
+  +status: HotelStatus
+  +timeZone: String <<候选技术字段>>
+}
+class RoomType {
+  +id: UUID
+  +name: String
+  +capacity: Integer
+  +totalRooms: Integer
+}
+class RoomDay {
+  +roomTypeId: UUID
+  +stayDate: LocalDate
+  +supply: Integer
+  +reserved: Integer
+  +soldOut: Boolean
+  +price: Decimal(12,2)
+  +version: Long
+  +available(): Integer
+}
+class Booking {
+  +id: UUID
+  +customerId / hotelId / roomTypeId: UUID
+  +checkIn / checkOut: LocalDate
+  +rooms / guests: Integer
+  +contactName / contactPhone: String
+  +status: BookingStatus
+  +totalPrice: Decimal(12,2)
+  +createdAt / updatedAt: Instant
+  +pendingSince / expiresAt: Instant
+  +version: Long
+  +canTransition(action, actor, now): Boolean
+}
+class BookingNight {
+  +bookingId / roomTypeId: UUID
+  +stayDate: LocalDate
+  +unitPrice: Decimal(12,2)
+  +quantity: Integer
+  +allocationState: AllocationState
+}
+class RequestRecord {
+  +actorId: UUID
+  +operation / requestKey: String
+  +payloadHash: String
+  +resultCode / resultRef: String
+}
+class AuditLog {
+  +id / actorId / targetId: UUID
+  +hotelId: UUID [0..1]
+  +action / before / after: String
+  +result / reason: String
+  +occurredAt: Instant
+}
+class NotificationTask {
+  +id / bookingId: UUID
+  +status / retryCount: Integer
+  +reason: String
+}
+enum BookingStatus {
+  PENDING
+  CONFIRMED
+  CHECKED_IN
+  CHECKED_OUT
+  CANCELLED
+  REJECTED
+  EXPIRED
+  NO_SHOW
+}
+Hotel "1" -- "0..*" RoomType : 拥有
+Hotel "0..1" -- "0..*" User : 工作人员唯一归属
+RoomType "1" -- "0..*" RoomDay : 逐日供给
+User "1" -- "0..*" Booking : 顾客发起
+Hotel "1" -- "0..*" Booking
+RoomType "1" -- "0..*" Booking
+Booking "1" *-- "1..*" BookingNight : 当前版本逐夜明细
+RoomDay "1" -- "0..*" BookingNight : 对应同房型同住宿日
+User "1" -- "0..*" RequestRecord
+User "0..1" -- "0..*" AuditLog : 系统任务可无用户
+Booking "1" -- "0..*" NotificationTask
+Booking ..> BookingStatus
+note bottom of RoomDay
+PK(roomTypeId, stayDate)
+0 <= reserved <= supply <= RoomType.totalRooms
+available = supply - reserved
+缺少日历记录时不可预订，不按无限库存处理。
+end note
+note bottom of BookingNight
+PK(bookingId, stayDate)
+日期区间为 [checkIn, checkOut)。
+allocationState = HELD / CONSUMED / RELEASED；
+历史消费不回补；释放必须只执行一次。
+修改后的旧明细由审计变更快照保存。
+end note
+note bottom of RequestRecord
+UNIQUE(actorId, operation, requestKey)
+同键不同内容的拒绝方案属于候选设计，待确认。
+end note
+@enduml

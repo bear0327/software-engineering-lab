@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1000" viewBox="0 0 1440 1000">
+<style>text{font-family:"Microsoft YaHei",sans-serif;dominant-baseline:text-before-edge}</style>
+<rect x="0" y="0" width="1440" height="1000" rx="0" fill="#F3F6F7" stroke="none"/>
+<rect x="0" y="0" width="220" height="1000" rx="0" fill="#172B3A" stroke="none"/>
+<text x="27" y="32" font-size="24" fill="#FFFFFF" font-weight="700">泊岸 / STAY</text>
+<text x="28" y="70" font-size="12" fill="#A9BEC9" font-weight="400">酒店预订系统 · 设计原型</text>
+<text x="28" y="135" font-size="14" fill="#7AD5D0" font-weight="700">顾客端</text>
+<text x="29" y="183" font-size="15" fill="#BACBD3" font-weight="400">酒店与空房</text>
+<text x="29" y="239" font-size="15" fill="#BACBD3" font-weight="400">我的订单</text>
+<rect x="16" y="286" width="188" height="43" rx="8" fill="#294450" stroke="none"/>
+<rect x="16" y="293" width="3" height="29" rx="0" fill="#6ED3C9" stroke="none"/>
+<text x="29" y="295" font-size="15" fill="#FFFFFF" font-weight="400">账号与登录</text>
+<text x="28" y="871" font-size="12" fill="#A9BEC9" font-weight="400">示例数据 / 无真实支付</text>
+<text x="28" y="895" font-size="12" fill="#A9BEC9" font-weight="400">数据范围以登录身份为准</text>
+<rect x="26" y="934" width="166" height="42" rx="7" fill="#FFFFFF" stroke="#DCE5E9"/>
+<text x="64.0" y="945" font-size="15" fill="#087F82" font-weight="400">切换演示角色</text>
+<rect x="220" y="0" width="1220" height="73" rx="0" fill="#FFFFFF" stroke="none"/>
+<text x="252" y="27" font-size="14" fill="#667C89" font-weight="400">工作空间   /   账号登录与注册</text>
+<text x="1139" y="27" font-size="14" fill="#172B3A" font-weight="400">设计样例  ·  顾客端</text>
+<text x="254" y="105" font-size="30" fill="#172B3A" font-weight="700">账号登录与注册</text>
+<text x="254" y="151" font-size="15" fill="#667C89" font-weight="400">顾客自行注册；酒店工作人员账号由平台管理员创建。</text>
+<text x="254" y="967" font-size="12" fill="#667C89" font-weight="400">UI-01  |  REQ-001 / 023   ·   业务校验以服务端为准</text>
+<rect x="254" y="202" width="596" height="690" rx="12" fill="#FFFFFF" stroke="#DCE5E9"/>
+<rect x="278" y="226" width="548" height="214" rx="9" fill="#E8F1EF" stroke="none"/>
+<rect x="325" y="306" width="66" height="115" rx="3" fill="#C2D8D3" stroke="none"/>
+<rect x="340" y="315" width="11" height="12" rx="0" fill="#F4F9F6" stroke="none"/>
+<rect x="366" y="315" width="11" height="12" rx="0" fill="#F4F9F6" stroke="none"/>
+<rect x="340" y="341" width="11" height="12" rx="0" fill="#F4F9F6" stroke="none"/>
+<rect x="366" y="341" width="11" height="12" rx="0" fill="#F4F9F6" stroke="none"/>
+<rect x="340" y="367" width="11" height="12" rx="0" fill="#F4F9F6" stroke="none"/>
+<rect x="366" y="367" width="11" height="12" rx="0" fill="#F4F9F6" stroke="none"/>
+<rect x="340" y="393" width="11" height="12" rx="0" fill="#F4F9F6" stroke="none"/>
+<rect x="366" y="393" width="11" height="12" rx="0" fill="#F4F9F6" stroke="none"/>
+<rect x="413" y="261" width="66" height="160" rx="3" fill="#C2D8D3" stroke="none"/>
+<rect x="428" y="270" width="11" height="12" rx="0" fill="#F4F9F6" stroke="none"/>
+<rect x="454" y="270" width="11" height="12" rx="0" fill="#F4F9F6" stroke="none"/>
+<rect x="428" y="296" width="11" height="12" rx="0" fill="#F4F9F6" stroke="none"/>
+<rect x="454" y="296" width="11" height="12" rx="0" fill="#F4F9F6" stroke="none"/>
+<rect x="428" y="322" width="11" height="12" rx="0" fill="#F4F9F6" stroke="none"/>
+<rect x="454" y="322" width="11" height="12" rx="0" fill="#F4F9F6" stroke="none"/>
+<rect x="428" y="348" width="11" height="12" rx="0" fill="#F4F9F6" stroke="none"/>
+<rect x="454" y="348" width="11" height="12" rx="0" fill="#F4F9F6" stroke="none"/>
+<rect x="428" y="374" width="11" height="12" rx="0" fill="#F4F9F6" stroke="none"/>
+<rect x="454" y="374" width="11" height="12" rx="0" fill="#F4F9F6" stroke="none"/>
+<rect x="428" y="400" width="11" height="12" rx="0" fill="#F4F9F6" stroke="none"/>
+<rect x="454" y="400" width="11" height="12" rx="0" fill="#F4F9F6" stroke="none"/>
+<rect x="514" y="291" width="66" height="130" rx="3" fill="#C2D8D3" stroke="none"/>
+<rect x="529" y="300" width="11" height="12" rx="0" fill="#F4F9F6" stroke="none"/>
+<rect x="555" y="300" width="11" height="12" rx="0" fill="#F4F9F6" stroke="none"/>
+<rect x="529" y="326" width="11" height="12" rx="0" fill="#F4F9F6" stroke="none"/>
+<rect x="555" y="326" width="11" height="12" rx="0" fill="#F4F9F6" stroke="none"/>
+<rect x="529" y="352" width="11" height="12" rx="0" fill="#F4F9F6" stroke="none"/>
+<rect x="555" y="352" width="11" height="12" rx="0" fill="#F4F9F6" stroke="none"/>
+<rect x="529" y="378" width="11" height="12" rx="0" fill="#F4F9F6" stroke="none"/>
+<rect x="555" y="378" width="11" height="12" rx="0" fill="#F4F9F6" stroke="none"/>
+<rect x="614" y="244" width="66" height="177" rx="3" fill="#C2D8D3" stroke="none"/>
+<rect x="629" y="253" width="11" height="12" rx="0" fill="#F4F9F6" stroke="none"/>
+<rect x="655" y="253" width="11" height="12" rx="0" fill="#F4F9F6" stroke="none"/>
+<rect x="629" y="279" width="11" height="12" rx="0" fill="#F4F9F6" stroke="none"/>
+<rect x="655" y="279" width="11" height="12" rx="0" fill="#F4F9F6" stroke="none"/>
+<rect x="629" y="305" width="11" height="12" rx="0" fill="#F4F9F6" stroke="none"/>
+<rect x="655" y="305" width="11" height="12" rx="0" fill="#F4F9F6" stroke="none"/>
+<rect x="629" y="331" width="11" height="12" rx="0" fill="#F4F9F6" stroke="none"/>
+<rect x="655" y="331" width="11" height="12" rx="0" fill="#F4F9F6" stroke="none"/>
+<rect x="629" y="357" width="11" height="12" rx="0" fill="#F4F9F6" stroke="none"/>
+<rect x="655" y="357" width="11" height="12" rx="0" fill="#F4F9F6" stroke="none"/>
+<rect x="629" y="383" width="11" height="12" rx="0" fill="#F4F9F6" stroke="none"/>
+<rect x="655" y="383" width="11" height="12" rx="0" fill="#F4F9F6" stroke="none"/>
+<rect x="713" y="310" width="66" height="111" rx="3" fill="#C2D8D3" stroke="none"/>
+<rect x="728" y="319" width="11" height="12" rx="0" fill="#F4F9F6" stroke="none"/>
+<rect x="754" y="319" width="11" height="12" rx="0" fill="#F4F9F6" stroke="none"/>
+<rect x="728" y="345" width="11" height="12" rx="0" fill="#F4F9F6" stroke="none"/>
+<rect x="754" y="345" width="11" height="12" rx="0" fill="#F4F9F6" stroke="none"/>
+<rect x="728" y="371" width="11" height="12" rx="0" fill="#F4F9F6" stroke="none"/>
+<rect x="754" y="371" width="11" height="12" rx="0" fill="#F4F9F6" stroke="none"/>
+<rect x="728" y="397" width="11" height="12" rx="0" fill="#F4F9F6" stroke="none"/>
+<rect x="754" y="397" width="11" height="12" rx="0" fill="#F4F9F6" stroke="none"/>
+<text x="289" y="471" font-size="28" fill="#172B3A" font-weight="700">把每一晚安排妥当</text>
+<text x="289" y="536" font-size="18" fill="#667C89" font-weight="400">全程有房再预订，按入住夜准确计价。</text>
+<text x="289" y="582" font-size="18" fill="#667C89" font-weight="400">订单状态和处理结果清晰可查。</text>
+<text x="289" y="628" font-size="18" fill="#667C89" font-weight="400">不接入在线支付，住宿费用线下结算。</text>
+<rect x="289" y="730" width="178" height="28" rx="6" fill="#E8F5F2" stroke="none"/>
+<text x="301" y="736" font-size="13" fill="#087F82" font-weight="400">三类身份 · 各自授权</text>
+<rect x="878" y="202" width="528" height="690" rx="12" fill="#FFFFFF" stroke="#DCE5E9"/>
+<text x="902" y="226" font-size="19" fill="#172B3A" font-weight="700">欢迎登录</text>
+<text x="908" y="281" font-size="13" fill="#667C89" font-weight="400">账号</text>
+<rect x="908" y="308" width="466" height="45" rx="7" fill="#FFFFFF" stroke="#DCE5E9"/>
+<text x="921" y="322" font-size="15" fill="#172B3A" font-weight="400">customer@example.com</text>
+<text x="908" y="378" font-size="13" fill="#667C89" font-weight="400">密码</text>
+<rect x="908" y="405" width="466" height="45" rx="7" fill="#FFFFFF" stroke="#DCE5E9"/>
+<text x="921" y="419" font-size="15" fill="#172B3A" font-weight="400">••••••••</text>
+<text x="908" y="475" font-size="13" fill="#667C89" font-weight="400">登录身份</text>
+<rect x="908" y="502" width="466" height="45" rx="7" fill="#FFFFFF" stroke="#DCE5E9"/>
+<text x="921" y="516" font-size="15" fill="#172B3A" font-weight="400">顾客</text>
+<rect x="908" y="584" width="466" height="42" rx="7" fill="#087F82" stroke="none"/>
+<text x="1126.0" y="595" font-size="15" fill="#FFFFFF" font-weight="400">登录</text>
+<rect x="908" y="645" width="466" height="42" rx="7" fill="#FFFFFF" stroke="#DCE5E9"/>
+<text x="1096.0" y="656" font-size="15" fill="#087F82" font-weight="400">注册顾客账号</text>
+<text x="908" y="732" font-size="14" fill="#667C89" font-weight="400">密码仅作原型演示，不进行真实认证。</text>
+<text x="908" y="765" font-size="13" fill="#667C89" font-weight="400">真实系统使用加盐单向哈希和服务端权限校验。</text>
+</svg>

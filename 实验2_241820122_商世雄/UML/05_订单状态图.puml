@@ -1,0 +1,41 @@
+@startuml
+title 状态图：订单生命周期与库存效果
+skinparam defaultFontName Microsoft YaHei
+skinparam defaultFontSize 14
+skinparam shadowing false
+skinparam backgroundColor white
+state 待确认 as Pending
+state 已确认 as Confirmed
+state 已入住 as CheckedIn
+state 已退房 as CheckedOut
+state 已取消 as Cancelled
+state 已拒绝 as Rejected
+state 已超时 as Expired
+state 未入住 as NoShow
+[*] --> Pending : 顾客提交成功 / 全程预留
+Pending --> Pending : 顾客成功修改 / 净库存变更、重核价、重置计时
+Pending --> Confirmed : 酒店确认 / 不重复扣减
+Pending --> Rejected : 酒店拒绝 / 释放未消费预留
+Pending --> Cancelled : 顾客取消或管理员异常取消\n/ 释放未消费预留
+Pending --> Expired : 系统超时处理 [30分钟]\n/ 一次性释放
+Confirmed --> Confirmed : 顾客只改联系人 / 不改变计时及库存
+Confirmed --> CheckedIn : 本酒店核验 [符合入住日期]\n/ 不重复扣库存
+Confirmed --> Cancelled : 顾客 [未入住且入住日18:00前]\n或管理员停业异常取消 / 释放未消费预留
+Confirmed --> NoShow : 系统 [入住日次日00:00仍未入住]\n/ 仅释放未来夜
+CheckedIn --> CheckedOut : 本酒店正常退房 / 不回补历史消费
+CheckedOut --> [*]
+Cancelled --> [*]
+Rejected --> [*]
+Expired --> [*]
+NoShow --> [*]
+note right of Expired
+待确认：到期但后台尚未提交时是否可确认。
+图中不把某一种候选竞争策略写成已确认需求。
+end note
+note bottom of CheckedIn
+禁止：已入住直接取消；已退房再次入住；
+终态恢复待确认或确认。所有请求重验权限及版本。
+确认/取消竞争按合法提交顺序执行；可能顺序成功两次，
+不是简单地说“二者永远只能一个成功”。
+end note
+@enduml

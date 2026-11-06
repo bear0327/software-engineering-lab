@@ -1,0 +1,35 @@
+@startuml
+title 时序图：原订单与新旧重叠夜的净变化
+skinparam defaultFontName Microsoft YaHei
+skinparam shadowing false
+skinparam backgroundColor white
+autonumber
+actor 顾客 as U
+boundary 修改页面 as UI
+control BookingService as B
+control InventoryService as I
+database PostgreSQL as DB
+U -> UI : 修改日期/房型/间数并接受新报价
+UI -> B : modify(id, command, expectedVersion, requestKey)
+B -> DB : BEGIN；锁订单和幂等记录
+B -> B : 核验本人、待确认、版本与允许范围
+B -> I : replaceByDelta(oldNights, newNights)
+I -> DB : 对旧/新库存键并集排序后锁定
+DB --> I : 当前供给、占用、价格、停售
+I -> I : 对每键计算 delta = 新占用 - 原占用
+alt 任一夜余量不足 / 报价变化 / 状态冲突
+  I --> B : 拒绝原因
+  B -> DB : ROLLBACK
+  B --> UI : 原订单、价格和库存保持不变
+else 全部可用
+  I -> DB : reserved += delta（重叠夜不重复扣减）
+  B -> DB : 替换逐夜明细、价格快照，version+1
+  B -> DB : 更新pendingSince、expiresAt；审计与幂等结果
+  B -> DB : COMMIT（任一步失败则全回滚）
+  B --> UI : 修改后的订单与新计时
+end
+note over B,I
+已确认状态不走库存改期：只允许联系人修改。
+跨酒店修改、停售期间扩大占用仍待确认；不推定已支持。
+end note
+@enduml
