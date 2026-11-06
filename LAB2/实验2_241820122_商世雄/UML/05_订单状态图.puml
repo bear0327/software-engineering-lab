@@ -13,11 +13,11 @@ state "已拒绝" as Rejected
 state "已超时" as Expired
 state "未入住" as NoShow
 [*] --> Pending : 顾客提交成功 / 全程预留
-Pending --> Pending : 顾客成功修改 / 净库存变更、重核价、重置计时
-Pending --> Confirmed : 酒店确认 / 不重复扣减
+Pending --> Pending : 顾客成功修改 [now < expiresAt]\n/ 净库存变更、重核价、重置计时
+Pending --> Confirmed : 酒店确认 [now < expiresAt]\n/ 不重复扣减
 Pending --> Rejected : 酒店拒绝 / 释放未消费预留
 Pending --> Cancelled : 顾客取消或管理员异常取消\n/ 释放未消费预留
-Pending --> Expired : 系统超时处理 [30分钟]\n/ 一次性释放
+Pending --> Expired : 定时任务或写接口 [now >= expiresAt]\n/ 一次性释放
 Confirmed --> Confirmed : 顾客只改联系人 / 不改变计时及库存
 Confirmed --> CheckedIn : 本酒店核验 [符合入住日期]\n/ 不重复扣库存
 Confirmed --> Cancelled : 顾客 [未入住且入住日18:00前]\n或管理员停业异常取消 / 释放未消费预留
@@ -29,8 +29,9 @@ Rejected --> [*]
 Expired --> [*]
 NoShow --> [*]
 note right of Expired
-待确认：到期但后台尚未提交时是否可确认。
-图中不把某一种候选竞争策略写成已确认需求。
+严格截止：锁定订单后以服务器当前时间判断。
+恰好到期也不能确认，不受定时任务延迟影响。
+写接口可先完成超时转换；释放只执行一次。
 end note
 note bottom of CheckedIn
 禁止：已入住直接取消；已退房再次入住；

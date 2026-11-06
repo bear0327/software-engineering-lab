@@ -19,7 +19,7 @@ class Hotel {
   +name / city / address: String
   +contact: String
   +status: HotelStatus
-  +timeZone: String <<候选技术字段>>
+  +timeZone: String <<IANA时区>>
 }
 class RoomType {
   +id: UUID
@@ -112,6 +112,7 @@ allocationState = HELD / CONSUMED / RELEASED；
 end note
 note bottom of RequestRecord
 UNIQUE(actorId, operation, requestKey)
-同键不同内容的拒绝方案属于候选设计，待确认。
+同键同内容返回原结果；同键不同内容返回409，
+不修改原请求结果，不再次执行业务。
 end note
 @enduml

@@ -199,7 +199,7 @@ def build_boards():
     b.button(1021, 779, 359, '演示提交前价格变化', 'reprice', True)
 
     b = Board('05', '我的订单', '顾客端', '仅展示本人订单；待确认可改期，已确认只允许修改联系人。', 'REQ-008 / 011 / 012 / 016')
-    b.banner(201, '待确认订单保留30分钟', '成功修改待确认订单后重新计时；准确截止规则仍需业务确认。', 'gold')
+    b.banner(201, '待确认订单保留30分钟', '成功修改后重新计时；到期即不能确认或修改，后台任务延迟不延长期限。', 'gold')
     b.card(254, 303, 1152, 554)
     b.text(278, 331, '全部订单     待确认     已确认     已入住     已结束', 17)
     b.table(278, 395, [222, 270, 218, 128, 132, 132], ['订单编号', '酒店 / 房型', '入住 — 离店', '间数 / 夜数', '成交总价', '当前状态'], [['HB261106001', '泊岸 · 舒适大床房', '11-10 — 11-12', '1间 / 2晚', '¥ 658', '待确认'], ['HB261105006', '泊岸 · 城景双床房', '11-15 — 11-17', '1间 / 2晚', '¥ 728', '已确认'], ['HB261101018', '秦淮 · 大床房', '11-01 — 11-03', '1间 / 2晚', '¥ 598', '已退房']])
@@ -222,6 +222,7 @@ def build_boards():
     b.text(852, 594, '不把自己的原预留误判成他人占用。', 15, MUTED)
     b.button(852, 658, 526, '接受新报价并保存', 'modify')
     b.button(852, 720, 526, '演示新日期无房：原单保留', 'modifyFail', True)
+    b.button(852, 782, 526, '演示停售日期增加间数：拒绝', 'modifySoldOut', True)
 
     b = Board('07', '订单详情与操作历史', '顾客端', 'HB261106001  ·  服务端版本 v3  ·  当前状态和操作结果以最新数据为准', 'REQ-008 / 012 / 016 / 019')
     b.banner(201, '待确认 · 已预留全程房量', '示例订单：入住11月10日、离店11月12日；酒店确认不再重复扣减库存。')
@@ -249,7 +250,7 @@ def build_boards():
     b.text(278, 726, '减少房间总数时，需确保仍覆盖相关住宿日供给与已有占用；不删除订单引用。', 15, MUTED)
 
     b = Board('09', '每日库存、价格与停售', '酒店工作台', '房型 RT-1001 · 舒适大床房   |   分清供给总量、已占用与剩余量。', 'REQ-003 / 006 / 007 / 017')
-    b.banner(202, '剩余房量 = 当日供给总量 − 仍应占用的房量', '已预留的订单不会因为酒店调价而改变价格；停售只阻止新预订。')
+    b.banner(202, '剩余房量 = 当日供给总量 − 仍应占用的房量', '停售日期不能增加占用，原订单可减少或释放占用；已生成订单的价格快照保持不变。')
     b.card(254, 304, 1152, 567)
     b.table(278, 334, [170, 170, 160, 160, 160, 282], ['住宿日期', '供给总量', '已占用', '剩余', '单晚价格', '销售状态'], [['2026-11-10', '3间', '2间', '1间', '¥ 299', '可售'], ['2026-11-11', '1间', '0间', '1间', '¥ 359', '可售'], ['2026-11-12', '3间', '1间', '2间', '¥ 329', '停售']])
     b.field(278, 615, 242, '11月10日供给总量', '3', 'supply')
@@ -259,7 +260,7 @@ def build_boards():
     b.text(278, 756, '示例：总量3、占用2，还能再售1间；若把总量调成1，必须拒绝，不能负库存。', 15, MUTED)
 
     b = Board('10', '预订确认与拒绝', '酒店工作台', '按本酒店、当前状态与版本处理；其他酒店订单不可访问。', 'REQ-009 / 010 / 016')
-    b.banner(202, '待确认订单 1 笔', '30分钟到期但超时任务尚未提交的竞争规则待确认；本设计不擅自定为已确认策略。', 'gold')
+    b.banner(202, '待确认订单 1 笔 · 截止时间 14:30', '以服务器持锁核验时刻为准；14:30整及以后不能确认，即使后台超时任务还未执行。', 'gold')
     b.card(254, 305, 1152, 547, '订单 HB261106001')
     b.table(278, 381, [222, 220, 180, 180, 300], ['顾客联系人', '住宿日期', '房型 / 间数', '成交总价', '当前状态'], [['商同学 / 138****8000', '11-10 → 11-12', '大床房 / 1间', '¥ 658', '待确认 · v3']])
     b.text(278, 525, '提交时全程房量已预留；确认只改变状态，不再扣减。', 18)
@@ -267,6 +268,8 @@ def build_boards():
     b.button(278, 708, 224, '确认该预订', 'confirm')
     b.button(526, 708, 224, '拒绝并释放预留', 'reject', danger=True)
     b.button(774, 708, 224, '刷新当前状态', 'refresh', True)
+    b.button(278, 775, 224, '演示时钟到达截止', 'expireDemo', True)
+    b.text(526, 786, '到期后再次确认：转为已超时，库存只释放一次。', 14, MUTED)
 
     b = Board('11', '现场入住与正常退房', '酒店工作台', '核对订单和顾客身份，系统只记录核验结果，不保存身份证照片。', 'REQ-013 / 014 / 015 / 016')
     b.card(254, 202, 1152, 176)
@@ -306,8 +309,8 @@ def build_boards():
 
     b = Board('14', '预订数量与间夜统计', '酒店工作台', '工作人员限本酒店，管理员可切换全平台；不统计收入或入住率。', 'REQ-018 / 001')
     b.card(254, 204, 1152, 151)
-    b.field(278, 226, 252, '计划入住日从', '2026-11-01', 'statStart')
-    b.field(554, 226, 252, '至', '2026-11-30', 'statEnd')
+    b.field(278, 226, 252, '计划入住日从（含当日）', '2026-11-01', 'statStart')
+    b.field(554, 226, 252, '至（含当日）', '2026-11-30', 'statEnd')
     b.field(830, 226, 285, '房型', '全部房型', 'statRoom')
     b.button(1139, 253, 239, '汇总', 'stats')
     for x, title, value, sub in [(254, '有效预订数', '3 笔', '已确认 / 已入住 / 已退房'), (840, '已预订间夜数', '9 间夜', '每单间数 × 计划住宿夜数')]:
@@ -317,7 +320,7 @@ def build_boards():
         b.text(x + 24, 519, sub, 14, MUTED)
     b.card(254, 594, 1152, 281, '计算明细')
     b.table(278, 656, [250, 250, 250, 352], ['状态', '订单数', '间数 × 夜数', '间夜贡献'], [['已确认', '1', '2 × 3', '6'], ['已入住', '1', '1 × 1', '1'], ['已退房', '1', '1 × 2', '2']], 47)
-    b.text(254, 913, '按计划入住日归入区间，非逐夜分摊；日期端点仍待约定，界面应明确显示最终口径。', 14, MUTED)
+    b.text(254, 913, '按计划入住日归入区间，包含开始日和结束日，不按住宿夜分摊；只计已确认、已入住和已退房。', 14, MUTED)
 
     b = Board('15', '操作日志与追踪', '酒店工作台', '日志只读、保留180天；管理员查全平台，酒店人员只查本酒店。', 'REQ-019 / 023 / 024')
     b.card(254, 205, 1152, 152)
@@ -417,6 +420,7 @@ function show(key){current=key;const p=pages.find(p=>p.key===key);selector.value
 function val(n){return canvas.querySelector(`[data-name="${n}"]`)?.value||''}function msg(s){document.querySelector('#message').textContent=s;document.querySelector('#state').textContent=`动态状态：${state.booking} / 版本${state.version} / ${state.nights}晚 / ¥${state.total}。固定底图不是实时业务数据。`;dialog.showModal();show(current)}
 function act(a){if(a.startsWith('goto:'))return show(a.split(':')[1]);switch(a){case'role':return show(current==='12'?'02':current==='10'?'12':'10');case'login':return show(val('role')==='平台管理员'?'12':val('role')==='酒店工作人员'?'10':'02');case'register':return msg('顾客注册演示：真实系统应校验账号唯一性、密码规则并保存加盐哈希。工作人员不能自行注册。');case'search':if(!val('city'))return msg('请填写城市。');if(val('checkOut')<=val('checkIn'))return msg('离店日期必须晚于入住日期，未进行查询。');return msg('查询演示完成：只展示全程有房且无停售的房型。当前为固定样例，未查询真实数据库。');case'reprice':state.priceChanged=true;return msg('报价变化：11月11日由¥359变为¥379，新总价¥678。尚未创建订单，再次点击提交表示接受新报价（演示）。');case'create':if(state.hotel==='停业')return msg('酒店已停业，不能新订。');if(!val('contact')||!/^1[0-9]{10}$/.test(val('phone')))return msg('请检查联系人与11位联系电话。');if(+val('rooms')<1||+val('guests')<1||+val('guests')>2*+val('rooms'))return msg('房间数与人数非法，或超过房型容量。');state.booking='待确认';state.total=state.priceChanged?678:658;state.nights=2;state.version++;show('07');return msg('提交成功（演示）。订单待确认，库存逐夜预留一次。重复点击应使用同一请求键；本原型不实现服务器幂等持久化。');case'modifyFail':return msg('新日期无房，修改整体失败。原订单、原价格和原预留保持不变。');case'modify':if(state.booking!=='待确认')return msg('当前不是待确认，只允许按状态规则修改。');if(val('newOut')<=val('newIn'))return msg('新离店日期必须晚于入住日期。');state.nights=1;state.total=299;state.version++;return msg('修改演示成功：保留10日预留，释放11日，价格¥299，重置30分钟。此按钮仅演示图示的缩短日期场景。');case'cancel':if(!['待确认','已确认'].includes(state.booking))return msg('当前状态不可取消，不重复释放库存。');if(state.booking==='已确认'&&!confirm('真实系统须校验入住日当地18:00之前，是否演示符合截止条件？'))return;state.booking='已取消';state.version++;return msg('取消成功（演示），释放尚未消费的预留，不处理退款。');case'confirm':if(state.booking!=='待确认')return msg('当前状态不允许确认，请刷新。');state.booking='已确认';state.version++;return msg('已确认，不重复扣减库存。');case'reject':if(state.booking!=='待确认')return msg('当前状态不允许拒绝。');if(!val('rejectReason'))return msg('请填写拒绝原因。');state.booking='已拒绝';state.version++;return msg('拒绝成功，释放未消费预留并记录原因。');case'checkin':if(state.stay!=='已确认')return msg('重复入住被阻止，不重复变更状态或库存。');if(!confirm('现场已核验身份且今天符合计划入住日期？'))return;state.stay='已入住';return msg('现场样例订单 HB261110016 已入住。与顾客待确认样例是不同订单。');case'checkout':if(state.stay!=='已入住')return msg('只有已入住订单可正常退房。');state.stay='已退房';return msg('已退房，不恢复历史消费夜的库存，不能再次入住。');case'calendarSave':if(+val('supply')<2)return msg('保存失败：供给总量不能低于已有占用2间。');if(+val('supply')>10)return msg('保存失败：供给不能超过房型房间总数10间。');if(+val('nightPrice')<=0)return msg('价格必须大于0。');return msg('保存演示成功，记录价格/供给/停售变更；旧订单价格不变。');case'closeHotel':if(!val('closureReason'))return msg('请填写停业原因。');state.hotel='停业';return msg('酒店已停业，新订禁止。下一步逐单处理待确认和已确认订单；已入住保持状态。');case'openHotel':state.hotel='营业中';return msg('管理员手动恢复营业。');case'handleException':return msg('异常处置演示：选择一笔未入住订单，核对原因后取消并生成通知待办；已入住订单转人工协调。');case'approveHotel':return msg('酒店审核通过演示，记录审核人员与原因。');case'stats':return msg('统计口径：已确认、已入住、已退房共3单；2×3 + 1×1 + 1×2 = 9间夜。');case'logs':return msg('演示查询：依据登录身份过滤范围，日志只读且联系人脱敏。');case'refresh':return msg('已刷新演示状态；真实系统应重新读取当前版本。');case'lookup':return msg('查找到本酒店已确认样例订单 HB261110016。');case'createStaff':return msg('创建演示：工作人员唯一绑定酒店，禁止自行扩大权限。');case'disableStaff':return msg('停用账号演示：拒绝后续业务请求，保留原操作历史。');default:return msg('原型操作已触发。仅展示设计行为，未写入真实数据库。')}}
 selector.onchange=()=>show(selector.value);document.querySelector('#close').onclick=()=>dialog.close();document.querySelector('#reset').onclick=()=>location.reload();show(current);</script></html>'''
+    document = document.replace('</script></html>', '</script><script src="边界规则演示.js"></script></html>')
     (SOURCE / '交互原型.html').write_text(document.replace('MANIFEST', data), encoding='utf-8')
 
 

@@ -22,7 +22,7 @@
 <text x="254" y="967" font-size="12" fill="#667C89" font-weight="400">UI-05  |  REQ-008 / 011 / 012 / 016   ·   业务校验以服务端为准</text>
 <rect x="254" y="201" width="1152" height="75" rx="9" fill="#FFF4E6" stroke="none"/>
 <text x="274" y="214" font-size="15" fill="#B47835" font-weight="700">待确认订单保留30分钟</text>
-<text x="274" y="244" font-size="13" fill="#B47835" font-weight="400">成功修改待确认订单后重新计时；准确截止规则仍需业务确认。</text>
+<text x="274" y="244" font-size="13" fill="#B47835" font-weight="400">成功修改后重新计时；到期即不能确认或修改，后台任务延迟不延长期限。</text>
 <rect x="254" y="303" width="1152" height="554" rx="12" fill="#FFFFFF" stroke="#DCE5E9"/>
 <text x="278" y="331" font-size="17" fill="#172B3A" font-weight="400">全部订单     待确认     已确认     已入住     已结束</text>
 <rect x="278" y="395" width="1102" height="42" rx="3" fill="#EFF4F5" stroke="none"/>

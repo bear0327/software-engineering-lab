@@ -25,7 +25,7 @@
 <text x="254" y="967" font-size="12" fill="#667C89" font-weight="400">UI-09  |  REQ-003 / 006 / 007 / 017   ·   业务校验以服务端为准</text>
 <rect x="254" y="202" width="1152" height="75" rx="9" fill="#E8F5F2" stroke="none"/>
 <text x="274" y="215" font-size="15" fill="#087F82" font-weight="700">剩余房量 = 当日供给总量 − 仍应占用的房量</text>
-<text x="274" y="245" font-size="13" fill="#087F82" font-weight="400">已预留的订单不会因为酒店调价而改变价格；停售只阻止新预订。</text>
+<text x="274" y="245" font-size="13" fill="#087F82" font-weight="400">停售日期不能增加占用，原订单可减少或释放占用；已生成订单的价格快照保持不变。</text>
 <rect x="254" y="304" width="1152" height="567" rx="12" fill="#FFFFFF" stroke="#DCE5E9"/>
 <rect x="278" y="334" width="1102" height="42" rx="3" fill="#EFF4F5" stroke="none"/>
 <text x="292" y="347" font-size="13" fill="#667C89" font-weight="400">住宿日期</text>

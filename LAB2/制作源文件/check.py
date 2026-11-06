@@ -54,7 +54,12 @@ def main():
     assert all(p.get_text().strip() for p in report)
     for p in manifest:
         assert 'UI-' + p['key'] in text
-    results['pdf'] = {'pages': len(report), 'all_pages_have_text': True, 'all_ui_included': True}
+    fonts = sorted({f[3] for page in report for f in page.get_fonts()})
+    assert not any('bold' in name.lower() or 'yahei' in name.lower() for name in fonts)
+    for page in report:
+        for drawing in page.get_drawings():
+            assert drawing['fill'] in (None, (1.0, 1.0, 1.0)), (page.number + 1, drawing['fill'])
+    results['pdf'] = {'pages': len(report), 'all_pages_have_text': True, 'all_ui_included': True, 'fonts': fonts, 'no_bold_font_or_background_panels': True}
     with zipfile.ZipFile(ROOT / (PACKAGE.name + '.zip')) as z:
         assert len(z.namelist()) == 35
         assert not any('/.git/' in n for n in z.namelist())
@@ -129,6 +134,69 @@ def main():
         page.get_by_role('button', name='确认报价并提交', exact=True).click()
         assert '酒店已停业' in page.locator('#message').inner_text()
         checks.append('closed hotel blocks demo bookings')
+        page.locator('#close').click()
+
+        page.reload()
+        page.locator('#pages').select_option('10')
+        page.evaluate('state.now = state.expiresAt - 1000')
+        page.get_by_role('button', name='确认该预订', exact=True).click()
+        assert page.evaluate('state.booking') == '已确认'
+        assert page.evaluate('state.releasedCount') == 0
+        page.locator('#close').click()
+        checks.append('confirmation one second before deadline succeeds')
+
+        page.reload()
+        page.locator('#pages').select_option('10')
+        page.get_by_role('button', name='演示时钟到达截止', exact=True).click()
+        assert page.evaluate('state.booking') == '待确认'
+        page.locator('#close').click()
+        page.get_by_role('button', name='确认该预订', exact=True).click()
+        assert page.evaluate('state.booking') == '已超时'
+        assert page.evaluate('state.releasedCount') == 1
+        page.locator('#close').click()
+        page.get_by_role('button', name='确认该预订', exact=True).click()
+        assert page.evaluate('state.releasedCount') == 1
+        page.locator('#close').click()
+        checks.append('exact deadline rejects confirmation even before background job; releases once')
+
+        page.reload()
+        page.locator('#pages').select_option('06')
+        page.get_by_role('button', name='演示停售日期增加间数：拒绝', exact=True).click()
+        assert page.evaluate('state.total') == 658 and page.evaluate('state.nights') == 2
+        page.locator('#close').click()
+        page.get_by_role('button', name='接受新报价并保存', exact=True).click()
+        assert page.evaluate('state.total') == 299 and page.evaluate('state.nights') == 1
+        assert page.evaluate('state.expiresAt - state.now') == 30 * 60 * 1000
+        page.locator('#close').click()
+        checks.append('sold-out night cannot gain allocation; shortening releases and resets deadline')
+
+        page.reload()
+        page.locator('#pages').select_option('02')
+        page.locator('[data-name="checkIn"]').fill('')
+        page.locator('[data-name="checkOut"]').fill('')
+        assert page.locator('[data-name="price"]').is_disabled()
+        page.get_by_role('button', name='查询空房', exact=True).click()
+        assert '不计算全程总价' in page.locator('#message').inner_text()
+        page.locator('#close').click()
+        page.locator('[data-name="checkOut"]').fill('')
+        page.get_by_role('button', name='查询空房', exact=True).click()
+        assert '请同时填写' in page.locator('#message').inner_text()
+        page.locator('#close').click()
+        checks.append('undated browse disables price filter; partial date interval rejected')
+
+        page.locator('#pages').select_option('14')
+        page.get_by_role('button', name='汇总', exact=True).click()
+        assert '3单，9间夜' in page.locator('#message').inner_text()
+        page.locator('#close').click()
+        page.locator('[data-name="statEnd"]').fill('2026-11-01')
+        page.get_by_role('button', name='汇总', exact=True).click()
+        assert '1单，6间夜' in page.locator('#message').inner_text()
+        page.locator('#close').click()
+        page.locator('[data-name="statStart"]').fill('2026-11-30')
+        page.get_by_role('button', name='汇总', exact=True).click()
+        assert '1单，2间夜' in page.locator('#message').inner_text()
+        page.locator('#close').click()
+        checks.append('statistics include both start date and end date')
         assert not errors, errors
         browser.close()
     results['prototype_browser'] = {'checks': checks, 'javascript_errors': errors, 'scope': 'UI demonstration only, not real business tests'}

@@ -913,8 +913,8 @@
         <mxCell id="23" value="待确认订单保留30分钟" style="text;html=0;align=left;verticalAlign=top;whiteSpace=wrap;overflow=visible;strokeColor=none;fillColor=none;fontFamily=Microsoft YaHei;fontSize=15;fontColor=#B47835;fontStyle=1;spacing=0;" vertex="1" parent="1">
           <mxGeometry as="geometry" x="274" y="214" width="159.0" height="22.5" />
         </mxCell>
-        <mxCell id="24" value="成功修改待确认订单后重新计时；准确截止规则仍需业务确认。" style="text;html=0;align=left;verticalAlign=top;whiteSpace=wrap;overflow=visible;strokeColor=none;fillColor=none;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#B47835;fontStyle=0;spacing=0;" vertex="1" parent="1">
-          <mxGeometry as="geometry" x="274" y="244" width="369.0" height="19.5" />
+        <mxCell id="24" value="成功修改后重新计时；到期即不能确认或修改，后台任务延迟不延长期限。" style="text;html=0;align=left;verticalAlign=top;whiteSpace=wrap;overflow=visible;strokeColor=none;fillColor=none;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#B47835;fontStyle=0;spacing=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="274" y="244" width="434.0" height="19.5" />
         </mxCell>
         <mxCell id="25" value="" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=#DCE5E9;arcSize=12;" vertex="1" parent="1">
           <mxGeometry as="geometry" x="254" y="303" width="1152" height="554" />
@@ -1178,6 +1178,12 @@
         </mxCell>
         <mxCell id="51" value="演示新日期无房：原单保留" style="text;html=0;align=left;verticalAlign=top;whiteSpace=wrap;overflow=visible;strokeColor=none;fillColor=none;fontFamily=Microsoft YaHei;fontSize=15;fontColor=#087F82;fontStyle=0;spacing=0;" vertex="1" parent="1">
           <mxGeometry as="geometry" x="1025.0" y="731" width="185.0" height="22.5" />
+        </mxCell>
+        <mxCell id="52" value="" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=#DCE5E9;arcSize=12;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="852" y="782" width="526" height="42" />
+        </mxCell>
+        <mxCell id="53" value="演示停售日期增加间数：拒绝" style="text;html=0;align=left;verticalAlign=top;whiteSpace=wrap;overflow=visible;strokeColor=none;fillColor=none;fontFamily=Microsoft YaHei;fontSize=15;fontColor=#087F82;fontStyle=0;spacing=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1017.5" y="793" width="200.0" height="22.5" />
         </mxCell>
       </root>
     </mxGraphModel>
@@ -1620,8 +1626,8 @@
         <mxCell id="26" value="剩余房量 = 当日供给总量 − 仍应占用的房量" style="text;html=0;align=left;verticalAlign=top;whiteSpace=wrap;overflow=visible;strokeColor=none;fillColor=none;fontFamily=Microsoft YaHei;fontSize=15;fontColor=#087F82;fontStyle=1;spacing=0;" vertex="1" parent="1">
           <mxGeometry as="geometry" x="274" y="215" width="301.0" height="22.5" />
         </mxCell>
-        <mxCell id="27" value="已预留的订单不会因为酒店调价而改变价格；停售只阻止新预订。" style="text;html=0;align=left;verticalAlign=top;whiteSpace=wrap;overflow=visible;strokeColor=none;fillColor=none;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#087F82;fontStyle=0;spacing=0;" vertex="1" parent="1">
-          <mxGeometry as="geometry" x="274" y="245" width="382.0" height="19.5" />
+        <mxCell id="27" value="停售日期不能增加占用，原订单可减少或释放占用；已生成订单的价格快照保持不变。" style="text;html=0;align=left;verticalAlign=top;whiteSpace=wrap;overflow=visible;strokeColor=none;fillColor=none;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#087F82;fontStyle=0;spacing=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="274" y="245" width="499.0" height="19.5" />
         </mxCell>
         <mxCell id="28" value="" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=#DCE5E9;arcSize=12;" vertex="1" parent="1">
           <mxGeometry as="geometry" x="254" y="304" width="1152" height="567" />
@@ -1826,11 +1832,11 @@
         <mxCell id="25" value="" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#FFF4E6;strokeColor=none;arcSize=12;" vertex="1" parent="1">
           <mxGeometry as="geometry" x="254" y="202" width="1152" height="75" />
         </mxCell>
-        <mxCell id="26" value="待确认订单 1 笔" style="text;html=0;align=left;verticalAlign=top;whiteSpace=wrap;overflow=visible;strokeColor=none;fillColor=none;fontFamily=Microsoft YaHei;fontSize=15;fontColor=#B47835;fontStyle=1;spacing=0;" vertex="1" parent="1">
-          <mxGeometry as="geometry" x="274" y="215" width="113.5" height="22.5" />
+        <mxCell id="26" value="待确认订单 1 笔 · 截止时间 14:30" style="text;html=0;align=left;verticalAlign=top;whiteSpace=wrap;overflow=visible;strokeColor=none;fillColor=none;fontFamily=Microsoft YaHei;fontSize=15;fontColor=#B47835;fontStyle=1;spacing=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="274" y="215" width="236.0" height="22.5" />
         </mxCell>
-        <mxCell id="27" value="30分钟到期但超时任务尚未提交的竞争规则待确认；本设计不擅自定为已确认策略。" style="text;html=0;align=left;verticalAlign=top;whiteSpace=wrap;overflow=visible;strokeColor=none;fillColor=none;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#B47835;fontStyle=0;spacing=0;" vertex="1" parent="1">
-          <mxGeometry as="geometry" x="274" y="245" width="488.0" height="19.5" />
+        <mxCell id="27" value="以服务器持锁核验时刻为准；14:30整及以后不能确认，即使后台超时任务还未执行。" style="text;html=0;align=left;verticalAlign=top;whiteSpace=wrap;overflow=visible;strokeColor=none;fillColor=none;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#B47835;fontStyle=0;spacing=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="274" y="245" width="493.0" height="19.5" />
         </mxCell>
         <mxCell id="28" value="" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=#DCE5E9;arcSize=12;" vertex="1" parent="1">
           <mxGeometry as="geometry" x="254" y="305" width="1152" height="547" />
@@ -1903,6 +1909,15 @@
         </mxCell>
         <mxCell id="51" value="刷新当前状态" style="text;html=0;align=left;verticalAlign=top;whiteSpace=wrap;overflow=visible;strokeColor=none;fillColor=none;fontFamily=Microsoft YaHei;fontSize=15;fontColor=#087F82;fontStyle=0;spacing=0;" vertex="1" parent="1">
           <mxGeometry as="geometry" x="841.0" y="719" width="95.0" height="22.5" />
+        </mxCell>
+        <mxCell id="52" value="" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=#DCE5E9;arcSize=12;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="278" y="775" width="224" height="42" />
+        </mxCell>
+        <mxCell id="53" value="演示时钟到达截止" style="text;html=0;align=left;verticalAlign=top;whiteSpace=wrap;overflow=visible;strokeColor=none;fillColor=none;fontFamily=Microsoft YaHei;fontSize=15;fontColor=#087F82;fontStyle=0;spacing=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="330.0" y="786" width="125.0" height="22.5" />
+        </mxCell>
+        <mxCell id="54" value="到期后再次确认：转为已超时，库存只释放一次。" style="text;html=0;align=left;verticalAlign=top;whiteSpace=wrap;overflow=visible;strokeColor=none;fillColor=none;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#667C89;fontStyle=0;spacing=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="526" y="786" width="313.0" height="21.0" />
         </mxCell>
       </root>
     </mxGraphModel>
@@ -2494,8 +2509,8 @@
         <mxCell id="25" value="" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=#DCE5E9;arcSize=12;" vertex="1" parent="1">
           <mxGeometry as="geometry" x="254" y="204" width="1152" height="151" />
         </mxCell>
-        <mxCell id="26" value="计划入住日从" style="text;html=0;align=left;verticalAlign=top;whiteSpace=wrap;overflow=visible;strokeColor=none;fillColor=none;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#667C89;fontStyle=0;spacing=0;" vertex="1" parent="1">
-          <mxGeometry as="geometry" x="278" y="226" width="83.0" height="19.5" />
+        <mxCell id="26" value="计划入住日从（含当日）" style="text;html=0;align=left;verticalAlign=top;whiteSpace=wrap;overflow=visible;strokeColor=none;fillColor=none;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#667C89;fontStyle=0;spacing=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="278" y="226" width="148.0" height="19.5" />
         </mxCell>
         <mxCell id="27" value="" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=#DCE5E9;arcSize=12;" vertex="1" parent="1">
           <mxGeometry as="geometry" x="278" y="253" width="252" height="45" />
@@ -2503,8 +2518,8 @@
         <mxCell id="28" value="2026-11-01" style="text;html=0;align=left;verticalAlign=top;whiteSpace=wrap;overflow=visible;strokeColor=none;fillColor=none;fontFamily=Microsoft YaHei;fontSize=15;fontColor=#172B3A;fontStyle=0;spacing=0;" vertex="1" parent="1">
           <mxGeometry as="geometry" x="291" y="267" width="90.0" height="22.5" />
         </mxCell>
-        <mxCell id="29" value="至" style="text;html=0;align=left;verticalAlign=top;whiteSpace=wrap;overflow=visible;strokeColor=none;fillColor=none;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#667C89;fontStyle=0;spacing=0;" vertex="1" parent="1">
-          <mxGeometry as="geometry" x="554" y="226" width="18.0" height="19.5" />
+        <mxCell id="29" value="至（含当日）" style="text;html=0;align=left;verticalAlign=top;whiteSpace=wrap;overflow=visible;strokeColor=none;fillColor=none;fontFamily=Microsoft YaHei;fontSize=13;fontColor=#667C89;fontStyle=0;spacing=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="554" y="226" width="83.0" height="19.5" />
         </mxCell>
         <mxCell id="30" value="" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#FFFFFF;strokeColor=#DCE5E9;arcSize=12;" vertex="1" parent="1">
           <mxGeometry as="geometry" x="554" y="253" width="252" height="45" />
@@ -2617,8 +2632,8 @@
         <mxCell id="66" value="" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#DCE5E9;strokeColor=none;arcSize=12;" vertex="1" parent="1">
           <mxGeometry as="geometry" x="278" y="838" width="1102" height="1" />
         </mxCell>
-        <mxCell id="67" value="按计划入住日归入区间，非逐夜分摊；日期端点仍待约定，界面应明确显示最终口径。" style="text;html=0;align=left;verticalAlign=top;whiteSpace=wrap;overflow=visible;strokeColor=none;fillColor=none;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#667C89;fontStyle=0;spacing=0;" vertex="1" parent="1">
-          <mxGeometry as="geometry" x="254" y="913" width="537.0" height="21.0" />
+        <mxCell id="67" value="按计划入住日归入区间，包含开始日和结束日，不按住宿夜分摊；只计已确认、已入住和已退房。" style="text;html=0;align=left;verticalAlign=top;whiteSpace=wrap;overflow=visible;strokeColor=none;fillColor=none;fontFamily=Microsoft YaHei;fontSize=14;fontColor=#667C89;fontStyle=0;spacing=0;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="254" y="913" width="607.0" height="21.0" />
         </mxCell>
       </root>
     </mxGraphModel>

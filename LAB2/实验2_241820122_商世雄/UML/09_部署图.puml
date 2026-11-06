@@ -7,14 +7,16 @@ skinparam backgroundColor white
 node "桌面 / 手机浏览器" as browser {
   artifact "顾客端 / 酒店工作台 / 管理台" as web
 }
-node "应用主机" as app {
+node "测试主机：8核逻辑CPU / 16GB / 100GB SSD\nUbuntu 22.04 LTS" as testHost {
+node "应用运行环境" as app {
   node "反向代理（TLS）" as proxy
   node "应用进程：分层单体" as process {
     artifact "API、领域服务、定时任务\nOutbox 分发器" as api
   }
 }
-node "数据主机（私网）" as data {
+node "数据库运行环境（仅内网访问）" as data {
   database "PostgreSQL\n业务表 / 幂等表 / 审计 / 通知待办" as db
+}
 }
 node "隔离备份存储" as backup {
   artifact "24小时备份 / 校验清单" as dump
@@ -27,7 +29,9 @@ db --> dump : 受限备份账号
 dump --> restore : 演练恢复至最近成功备份
 note bottom of data
 业务账号禁止 UPDATE / DELETE 审计表；
-日志保留180天，清理策略待确认。
+日志保留180天，由独立系统任务到期清理。
+OpenJDK17 / Spring Boot3.3 / PostgreSQL16；
+应用与数据库测试时同机运行，压测端独立。
 备份目标：RPO <= 24h，RTO <= 2h。
 这些是后续验证目标，不是本次已通过的测试结论。
 end note
