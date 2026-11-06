@@ -54,7 +54,12 @@ def main():
     assert all(p.get_text().strip() for p in report)
     for p in manifest:
         assert 'UI-' + p['key'] in text
-    results['pdf'] = {'pages': len(report), 'all_pages_have_text': True, 'all_ui_included': True}
+    fonts = sorted({f[3] for page in report for f in page.get_fonts()})
+    assert not any('bold' in name.lower() or 'yahei' in name.lower() for name in fonts)
+    for page in report:
+        for drawing in page.get_drawings():
+            assert drawing['fill'] in (None, (1.0, 1.0, 1.0)), (page.number + 1, drawing['fill'])
+    results['pdf'] = {'pages': len(report), 'all_pages_have_text': True, 'all_ui_included': True, 'fonts': fonts, 'no_bold_font_or_background_panels': True}
     with zipfile.ZipFile(ROOT / (PACKAGE.name + '.zip')) as z:
         assert len(z.namelist()) == 35
         assert not any('/.git/' in n for n in z.namelist())
