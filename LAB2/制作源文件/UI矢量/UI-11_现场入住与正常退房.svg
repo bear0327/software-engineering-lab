@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1000" viewBox="0 0 1440 1000">
+<style>text{font-family:"Microsoft YaHei",sans-serif;dominant-baseline:text-before-edge}</style>
+<rect x="0" y="0" width="1440" height="1000" rx="0" fill="#F3F6F7" stroke="none"/>
+<rect x="0" y="0" width="220" height="1000" rx="0" fill="#172B3A" stroke="none"/>
+<text x="27" y="32" font-size="24" fill="#FFFFFF" font-weight="700">泊岸 / STAY</text>
+<text x="28" y="70" font-size="12" fill="#A9BEC9" font-weight="400">酒店预订系统 · 设计原型</text>
+<text x="28" y="135" font-size="14" fill="#7AD5D0" font-weight="700">酒店工作台</text>
+<text x="29" y="183" font-size="15" fill="#BACBD3" font-weight="400">房型资料</text>
+<text x="29" y="239" font-size="15" fill="#BACBD3" font-weight="400">每日库存与价格</text>
+<text x="29" y="295" font-size="15" fill="#BACBD3" font-weight="400">预订确认与拒绝</text>
+<rect x="16" y="342" width="188" height="43" rx="8" fill="#294450" stroke="none"/>
+<rect x="16" y="349" width="3" height="29" rx="0" fill="#6ED3C9" stroke="none"/>
+<text x="29" y="351" font-size="15" fill="#FFFFFF" font-weight="400">入住与退房</text>
+<text x="29" y="407" font-size="15" fill="#BACBD3" font-weight="400">业务统计</text>
+<text x="29" y="463" font-size="15" fill="#BACBD3" font-weight="400">操作日志</text>
+<text x="28" y="871" font-size="12" fill="#A9BEC9" font-weight="400">示例数据 / 无真实支付</text>
+<text x="28" y="895" font-size="12" fill="#A9BEC9" font-weight="400">数据范围以登录身份为准</text>
+<rect x="26" y="934" width="166" height="42" rx="7" fill="#FFFFFF" stroke="#DCE5E9"/>
+<text x="64.0" y="945" font-size="15" fill="#087F82" font-weight="400">切换演示角色</text>
+<rect x="220" y="0" width="1220" height="73" rx="0" fill="#FFFFFF" stroke="none"/>
+<text x="252" y="27" font-size="14" fill="#667C89" font-weight="400">工作空间   /   现场入住与正常退房</text>
+<text x="1139" y="27" font-size="14" fill="#172B3A" font-weight="400">设计样例  ·  酒店工作台</text>
+<text x="254" y="105" font-size="30" fill="#172B3A" font-weight="700">现场入住与正常退房</text>
+<text x="254" y="151" font-size="15" fill="#667C89" font-weight="400">核对订单和顾客身份，系统只记录核验结果，不保存身份证照片。</text>
+<text x="254" y="967" font-size="12" fill="#667C89" font-weight="400">UI-11  |  REQ-013 / 014 / 015 / 016   ·   业务校验以服务端为准</text>
+<rect x="254" y="202" width="1152" height="176" rx="12" fill="#FFFFFF" stroke="#DCE5E9"/>
+<text x="278" y="226" font-size="13" fill="#667C89" font-weight="400">订单编号 / 联系方式</text>
+<rect x="278" y="253" width="715" height="45" rx="7" fill="#FFFFFF" stroke="#DCE5E9"/>
+<text x="291" y="267" font-size="15" fill="#172B3A" font-weight="400">HB261110016</text>
+<rect x="1017" y="253" width="361" height="42" rx="7" fill="#087F82" stroke="none"/>
+<text x="1145.0" y="264" font-size="15" fill="#FFFFFF" font-weight="400">查找本酒店订单</text>
+<rect x="254" y="405" width="1152" height="469" rx="12" fill="#FFFFFF" stroke="#DCE5E9"/>
+<text x="278" y="429" font-size="19" fill="#172B3A" font-weight="700">入住核验</text>
+<rect x="1180" y="426" width="66" height="28" rx="6" fill="#E8F5F2" stroke="none"/>
+<text x="1192" y="432" font-size="13" fill="#087F82" font-weight="400">已确认</text>
+<rect x="278" y="490" width="1102" height="42" rx="3" fill="#EFF4F5" stroke="none"/>
+<text x="292" y="503" font-size="13" fill="#667C89" font-weight="400">订单编号</text>
+<text x="542" y="503" font-size="13" fill="#667C89" font-weight="400">计划住宿日期</text>
+<text x="792" y="503" font-size="13" fill="#667C89" font-weight="400">房型 / 数量</text>
+<text x="1042" y="503" font-size="13" fill="#667C89" font-weight="400">核验结果</text>
+<text x="292" y="551" font-size="14" fill="#172B3A" font-weight="400">HB261110016</text>
+<text x="542" y="551" font-size="14" fill="#172B3A" font-weight="400">11-10 → 11-12</text>
+<text x="792" y="551" font-size="14" fill="#172B3A" font-weight="400">舒适大床房 / 1间</text>
+<text x="1042" y="551" font-size="14" fill="#172B3A" font-weight="400">现场人工核对通过</text>
+<rect x="278" y="591" width="1102" height="1" rx="0" fill="#DCE5E9" stroke="none"/>
+<text x="278" y="632" font-size="16" fill="#172B3A" font-weight="400">办理入住须符合入住日期；已取消、已拒绝、已超时、未入住不能入住。</text>
+<rect x="278" y="710" width="237" height="42" rx="7" fill="#087F82" stroke="none"/>
+<text x="329.0" y="721" font-size="15" fill="#FFFFFF" font-weight="400">记录核验并办理入住</text>
+<rect x="538" y="710" width="237" height="42" rx="7" fill="#FFFFFF" stroke="#DCE5E9"/>
+<text x="589.0" y="721" font-size="15" fill="#087F82" font-weight="400">已入住订单正常退房</text>
+<text x="278" y="803" font-size="15" fill="#667C89" font-weight="400">重复操作不产生第二次效果。正常退房不把已经消费的住宿夜恢复为可售。</text>
+</svg>

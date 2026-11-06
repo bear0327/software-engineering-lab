@@ -1,0 +1,52 @@
+@startuml
+!pragma layout smetana
+title 用例图：三类业务角色和游客
+left to right direction
+skinparam defaultFontName Microsoft YaHei
+skinparam shadowing false
+skinparam backgroundColor white
+actor 游客 as guest
+actor 顾客 as customer
+actor 酒店工作人员 as staff
+actor 平台管理员 as admin
+actor "时钟调度器" as clock
+rectangle 酒店预订系统 {
+  usecase "注册 / 登录" as auth
+  usecase "组合查询酒店房型" as search
+  usecase "核对报价并提交预订" as create
+  usecase "查看本人订单 / 修改 / 取消" as own
+  usecase "维护本酒店房型与逐日价量停售" as maintain
+  usecase "确认 / 拒绝本酒店预订" as confirm
+  usecase "核验入住 / 正常退房" as stay
+  usecase "审核与启停酒店 / 管理员工账号" as hotel
+  usecase "停业订单逐单异常处理" as exception
+  usecase "查看授权范围统计与日志" as report
+  usecase "自动超时 / 未入住处理" as job
+  usecase "校验权限、版本与合法状态" as guard
+}
+guest --> search
+guest --> auth
+customer --> auth
+customer --> search
+customer --> create
+customer --> own
+staff --> auth
+staff --> maintain
+staff --> confirm
+staff --> stay
+staff --> report
+admin --> auth
+admin --> hotel
+admin --> exception
+admin --> report
+clock --> job
+create ..> guard : <<include>>
+own ..> guard : <<include>>
+confirm ..> guard : <<include>>
+stay ..> guard : <<include>>
+exception ..> guard : <<include>>
+note bottom of report
+顾客另可在本人订单详情查看操作历史。
+工作人员限本酒店；管理员全平台。
+end note
+@enduml

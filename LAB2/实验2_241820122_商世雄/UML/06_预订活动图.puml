@@ -1,0 +1,41 @@
+@startuml
+title 活动图：查询到创建预订（含失败分支）
+skinparam defaultFontName Microsoft YaHei
+skinparam shadowing false
+skinparam backgroundColor white
+start
+:输入城市、入住/离店、人数、间数和价格条件;
+if (参数有效？) then (否)
+  :定位非法字段并解释原因;
+  stop
+endif
+:查询全程库存与逐夜价格;
+if (有符合结果？) then (否)
+  :显示暂无符合条件的可订房型;
+  stop
+endif
+:选择房型，填写联系人，接受报价;
+:提交登录身份、请求键、报价版本;
+if (同一请求已有结果？) then (是)
+  :返回原处理结果，不再次扣房;
+  stop
+endif
+:开始事务，校验权限及酒店状态;
+:按房型/日期顺序锁定全程日历;
+if (价格仍与已接受报价相同？) then (否)
+  :回滚，展示最新价格并要求重新确认;
+  stop
+endif
+if (酒店营业、全程可售且余量充足？) then (否)
+  :回滚，返回冲突日期或停业原因;
+  stop
+endif
+:预留全部住宿夜，创建待确认订单和逐夜快照;
+:保存请求结果、成功审计与通知待办;
+if (整体提交成功？) then (是)
+  :显示订单号、价格明细和确认期限;
+else (否)
+  :整体回滚，记录失败并允许原请求安全重试;
+endif
+stop
+@enduml

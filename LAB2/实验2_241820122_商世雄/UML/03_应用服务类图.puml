@@ -1,0 +1,74 @@
+@startuml
+!pragma layout smetana
+title 应用服务类图：职责与依赖倒置
+skinparam defaultFontName Microsoft YaHei
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+skinparam backgroundColor white
+interface BookingRepository {
+  +lockBooking(id): Booking
+  +save(booking, expectedVersion)
+}
+interface RoomDayRepository {
+  +lockInOrder(roomDateKeys): RoomDay[]
+  +applyDelta(key, quantity)
+}
+interface UnitOfWork {
+  +begin()
+  +commit()
+  +rollback()
+}
+class BookingService {
+  +create(command, actor, key): Result
+  +modify(id, command, version, key): Result
+  +transition(id, action, version, key): Result
+}
+class AuthorizationPolicy {
+  +checkRoleAndOwnership(actor, target)
+}
+class TransitionPolicy {
+  +check(status, action, now, hotelZone)
+}
+class InventoryService {
+  +reserveAll(nights)
+  +replaceByDelta(oldNights, newNights)
+  +releaseOnce(unconsumedNights)
+}
+class PricingService {
+  +quote(roomType, dates, rooms): Quote
+  +verifyQuote(acceptedQuote, currentPrices)
+}
+class IdempotencyService {
+  +claim(actor, operation, key, payloadHash)
+  +complete(result)
+}
+class AuditService {
+  +appendSuccessInTransaction(change)
+  +recordFailureSeparately(error)
+}
+class LifecycleJob {
+  +expirePending(now)
+  +markNoShow(now)
+}
+BookingService --> AuthorizationPolicy
+BookingService --> TransitionPolicy
+BookingService --> InventoryService
+BookingService --> PricingService
+BookingService --> IdempotencyService
+BookingService --> AuditService
+BookingService --> BookingRepository
+BookingService --> UnitOfWork
+InventoryService --> RoomDayRepository
+PricingService --> RoomDayRepository
+LifecycleJob --> BookingService
+AuthorizationPolicy -[hidden]down-> TransitionPolicy
+TransitionPolicy -[hidden]down-> IdempotencyService
+IdempotencyService -[hidden]down-> AuditService
+InventoryService -[hidden]down-> PricingService
+BookingRepository -[hidden]down-> UnitOfWork
+note bottom of BookingService
+应用服务负责事务编排；策略决定是否合法，
+领域对象维护状态，Repository 不作业务决定。
+所有库存键使用 (roomTypeId, date) 固定顺序锁定。
+end note
+@enduml

@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1000" viewBox="0 0 1440 1000">
+<style>text{font-family:"Microsoft YaHei",sans-serif;dominant-baseline:text-before-edge}</style>
+<rect x="0" y="0" width="1440" height="1000" rx="0" fill="#F3F6F7" stroke="none"/>
+<rect x="0" y="0" width="220" height="1000" rx="0" fill="#172B3A" stroke="none"/>
+<text x="27" y="32" font-size="24" fill="#FFFFFF" font-weight="700">泊岸 / STAY</text>
+<text x="28" y="70" font-size="12" fill="#A9BEC9" font-weight="400">酒店预订系统 · 设计原型</text>
+<text x="28" y="135" font-size="14" fill="#7AD5D0" font-weight="700">酒店工作台</text>
+<text x="29" y="183" font-size="15" fill="#BACBD3" font-weight="400">房型资料</text>
+<text x="29" y="239" font-size="15" fill="#BACBD3" font-weight="400">每日库存与价格</text>
+<rect x="16" y="286" width="188" height="43" rx="8" fill="#294450" stroke="none"/>
+<rect x="16" y="293" width="3" height="29" rx="0" fill="#6ED3C9" stroke="none"/>
+<text x="29" y="295" font-size="15" fill="#FFFFFF" font-weight="400">预订确认与拒绝</text>
+<text x="29" y="351" font-size="15" fill="#BACBD3" font-weight="400">入住与退房</text>
+<text x="29" y="407" font-size="15" fill="#BACBD3" font-weight="400">业务统计</text>
+<text x="29" y="463" font-size="15" fill="#BACBD3" font-weight="400">操作日志</text>
+<text x="28" y="871" font-size="12" fill="#A9BEC9" font-weight="400">示例数据 / 无真实支付</text>
+<text x="28" y="895" font-size="12" fill="#A9BEC9" font-weight="400">数据范围以登录身份为准</text>
+<rect x="26" y="934" width="166" height="42" rx="7" fill="#FFFFFF" stroke="#DCE5E9"/>
+<text x="64.0" y="945" font-size="15" fill="#087F82" font-weight="400">切换演示角色</text>
+<rect x="220" y="0" width="1220" height="73" rx="0" fill="#FFFFFF" stroke="none"/>
+<text x="252" y="27" font-size="14" fill="#667C89" font-weight="400">工作空间   /   预订确认与拒绝</text>
+<text x="1139" y="27" font-size="14" fill="#172B3A" font-weight="400">设计样例  ·  酒店工作台</text>
+<text x="254" y="105" font-size="30" fill="#172B3A" font-weight="700">预订确认与拒绝</text>
+<text x="254" y="151" font-size="15" fill="#667C89" font-weight="400">按本酒店、当前状态与版本处理；其他酒店订单不可访问。</text>
+<text x="254" y="967" font-size="12" fill="#667C89" font-weight="400">UI-10  |  REQ-009 / 010 / 016   ·   业务校验以服务端为准</text>
+<rect x="254" y="202" width="1152" height="75" rx="9" fill="#FFF4E6" stroke="none"/>
+<text x="274" y="215" font-size="15" fill="#B47835" font-weight="700">待确认订单 1 笔</text>
+<text x="274" y="245" font-size="13" fill="#B47835" font-weight="400">30分钟到期但超时任务尚未提交的竞争规则待确认；本设计不擅自定为已确认策略。</text>
+<rect x="254" y="305" width="1152" height="547" rx="12" fill="#FFFFFF" stroke="#DCE5E9"/>
+<text x="278" y="329" font-size="19" fill="#172B3A" font-weight="700">订单 HB261106001</text>
+<rect x="278" y="381" width="1102" height="42" rx="3" fill="#EFF4F5" stroke="none"/>
+<text x="292" y="394" font-size="13" fill="#667C89" font-weight="400">顾客联系人</text>
+<text x="514" y="394" font-size="13" fill="#667C89" font-weight="400">住宿日期</text>
+<text x="734" y="394" font-size="13" fill="#667C89" font-weight="400">房型 / 间数</text>
+<text x="914" y="394" font-size="13" fill="#667C89" font-weight="400">成交总价</text>
+<text x="1094" y="394" font-size="13" fill="#667C89" font-weight="400">当前状态</text>
+<text x="292" y="442" font-size="14" fill="#172B3A" font-weight="400">商同学 / 138****8000</text>
+<text x="514" y="442" font-size="14" fill="#172B3A" font-weight="400">11-10 → 11-12</text>
+<text x="734" y="442" font-size="14" fill="#172B3A" font-weight="400">大床房 / 1间</text>
+<text x="914" y="442" font-size="14" fill="#172B3A" font-weight="400">¥ 658</text>
+<text x="1094" y="442" font-size="14" fill="#172B3A" font-weight="400">待确认 · v3</text>
+<rect x="278" y="482" width="1102" height="1" rx="0" fill="#DCE5E9" stroke="none"/>
+<text x="278" y="525" font-size="18" fill="#172B3A" font-weight="400">提交时全程房量已预留；确认只改变状态，不再扣减。</text>
+<text x="278" y="584" font-size="13" fill="#667C89" font-weight="400">拒绝原因（拒绝时填写）</text>
+<rect x="278" y="611" width="708" height="45" rx="7" fill="#FFFFFF" stroke="#DCE5E9"/>
+<text x="291" y="625" font-size="15" fill="#172B3A" font-weight="400">无法满足特殊接待条件</text>
+<rect x="278" y="708" width="224" height="42" rx="7" fill="#087F82" stroke="none"/>
+<text x="352.5" y="719" font-size="15" fill="#FFFFFF" font-weight="400">确认该预订</text>
+<rect x="526" y="708" width="224" height="42" rx="7" fill="#FFF3F0" stroke="none"/>
+<text x="585.5" y="719" font-size="15" fill="#B64D46" font-weight="400">拒绝并释放预留</text>
+<rect x="774" y="708" width="224" height="42" rx="7" fill="#FFFFFF" stroke="#DCE5E9"/>
+<text x="841.0" y="719" font-size="15" fill="#087F82" font-weight="400">刷新当前状态</text>
+</svg>

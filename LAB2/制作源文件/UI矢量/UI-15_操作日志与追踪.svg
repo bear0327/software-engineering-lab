@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1000" viewBox="0 0 1440 1000">
+<style>text{font-family:"Microsoft YaHei",sans-serif;dominant-baseline:text-before-edge}</style>
+<rect x="0" y="0" width="1440" height="1000" rx="0" fill="#F3F6F7" stroke="none"/>
+<rect x="0" y="0" width="220" height="1000" rx="0" fill="#172B3A" stroke="none"/>
+<text x="27" y="32" font-size="24" fill="#FFFFFF" font-weight="700">泊岸 / STAY</text>
+<text x="28" y="70" font-size="12" fill="#A9BEC9" font-weight="400">酒店预订系统 · 设计原型</text>
+<text x="28" y="135" font-size="14" fill="#7AD5D0" font-weight="700">酒店工作台</text>
+<text x="29" y="183" font-size="15" fill="#BACBD3" font-weight="400">房型资料</text>
+<text x="29" y="239" font-size="15" fill="#BACBD3" font-weight="400">每日库存与价格</text>
+<text x="29" y="295" font-size="15" fill="#BACBD3" font-weight="400">预订确认与拒绝</text>
+<text x="29" y="351" font-size="15" fill="#BACBD3" font-weight="400">入住与退房</text>
+<text x="29" y="407" font-size="15" fill="#BACBD3" font-weight="400">业务统计</text>
+<rect x="16" y="454" width="188" height="43" rx="8" fill="#294450" stroke="none"/>
+<rect x="16" y="461" width="3" height="29" rx="0" fill="#6ED3C9" stroke="none"/>
+<text x="29" y="463" font-size="15" fill="#FFFFFF" font-weight="400">操作日志</text>
+<text x="28" y="871" font-size="12" fill="#A9BEC9" font-weight="400">示例数据 / 无真实支付</text>
+<text x="28" y="895" font-size="12" fill="#A9BEC9" font-weight="400">数据范围以登录身份为准</text>
+<rect x="26" y="934" width="166" height="42" rx="7" fill="#FFFFFF" stroke="#DCE5E9"/>
+<text x="64.0" y="945" font-size="15" fill="#087F82" font-weight="400">切换演示角色</text>
+<rect x="220" y="0" width="1220" height="73" rx="0" fill="#FFFFFF" stroke="none"/>
+<text x="252" y="27" font-size="14" fill="#667C89" font-weight="400">工作空间   /   操作日志与追踪</text>
+<text x="1139" y="27" font-size="14" fill="#172B3A" font-weight="400">设计样例  ·  酒店工作台</text>
+<text x="254" y="105" font-size="30" fill="#172B3A" font-weight="700">操作日志与追踪</text>
+<text x="254" y="151" font-size="15" fill="#667C89" font-weight="400">日志只读、保留180天；管理员查全平台，酒店人员只查本酒店。</text>
+<text x="254" y="967" font-size="12" fill="#667C89" font-weight="400">UI-15  |  REQ-019 / 023 / 024   ·   业务校验以服务端为准</text>
+<rect x="254" y="205" width="1152" height="152" rx="12" fill="#FFFFFF" stroke="#DCE5E9"/>
+<text x="278" y="228" font-size="13" fill="#667C89" font-weight="400">操作者</text>
+<rect x="278" y="255" width="240" height="45" rx="7" fill="#FFFFFF" stroke="#DCE5E9"/>
+<text x="291" y="269" font-size="15" fill="#172B3A" font-weight="400">全部</text>
+<text x="542" y="228" font-size="13" fill="#667C89" font-weight="400">时间范围</text>
+<rect x="542" y="255" width="332" height="45" rx="7" fill="#FFFFFF" stroke="#DCE5E9"/>
+<text x="555" y="269" font-size="15" fill="#172B3A" font-weight="400">2026-11-06 00:00 — 23:59</text>
+<text x="898" y="228" font-size="13" fill="#667C89" font-weight="400">操作类型</text>
+<rect x="898" y="255" width="236" height="45" rx="7" fill="#FFFFFF" stroke="#DCE5E9"/>
+<text x="911" y="269" font-size="15" fill="#172B3A" font-weight="400">全部</text>
+<rect x="1158" y="255" width="220" height="42" rx="7" fill="#087F82" stroke="none"/>
+<text x="1238.0" y="266" font-size="15" fill="#FFFFFF" font-weight="400">查询日志</text>
+<rect x="254" y="383" width="1152" height="509" rx="12" fill="#FFFFFF" stroke="#DCE5E9"/>
+<text x="278" y="407" font-size="19" fill="#172B3A" font-weight="700">关键操作记录（脱敏）</text>
+<rect x="278" y="451" width="1102" height="42" rx="3" fill="#EFF4F5" stroke="none"/>
+<text x="292" y="464" font-size="13" fill="#667C89" font-weight="400">时间</text>
+<text x="422" y="464" font-size="13" fill="#667C89" font-weight="400">操作者</text>
+<text x="570" y="464" font-size="13" fill="#667C89" font-weight="400">对象编号</text>
+<text x="750" y="464" font-size="13" fill="#667C89" font-weight="400">动作</text>
+<text x="890" y="464" font-size="13" fill="#667C89" font-weight="400">前后状态 / 结果</text>
+<text x="1130" y="464" font-size="13" fill="#667C89" font-weight="400">原因</text>
+<text x="292" y="512" font-size="14" fill="#172B3A" font-weight="400">14:00:12</text>
+<text x="422" y="512" font-size="14" fill="#172B3A" font-weight="400">顾客 C-001</text>
+<text x="570" y="512" font-size="14" fill="#172B3A" font-weight="400">HB261106001</text>
+<text x="750" y="512" font-size="14" fill="#172B3A" font-weight="400">提交预订</text>
+<text x="890" y="512" font-size="14" fill="#172B3A" font-weight="400">无 → 待确认 / 成功</text>
+<text x="1130" y="512" font-size="14" fill="#172B3A" font-weight="400">联系人 138****8000</text>
+<rect x="278" y="552" width="1102" height="1" rx="0" fill="#DCE5E9" stroke="none"/>
+<text x="292" y="572" font-size="14" fill="#172B3A" font-weight="400">14:01:32</text>
+<text x="422" y="572" font-size="14" fill="#172B3A" font-weight="400">staff-001</text>
+<text x="570" y="572" font-size="14" fill="#172B3A" font-weight="400">HB261106001</text>
+<text x="750" y="572" font-size="14" fill="#172B3A" font-weight="400">确认预订</text>
+<text x="890" y="572" font-size="14" fill="#172B3A" font-weight="400">待确认 → 已确认</text>
+<text x="1130" y="572" font-size="14" fill="#172B3A" font-weight="400">本酒店确认</text>
+<rect x="278" y="612" width="1102" height="1" rx="0" fill="#DCE5E9" stroke="none"/>
+<text x="292" y="632" font-size="14" fill="#172B3A" font-weight="400">14:02:01</text>
+<text x="422" y="632" font-size="14" fill="#172B3A" font-weight="400">staff-001</text>
+<text x="570" y="632" font-size="14" fill="#172B3A" font-weight="400">RT-1001/11-10</text>
+<text x="750" y="632" font-size="14" fill="#172B3A" font-weight="400">调减供给</text>
+<text x="890" y="632" font-size="14" fill="#172B3A" font-weight="400">拒绝 / 数据未变</text>
+<text x="1130" y="632" font-size="14" fill="#172B3A" font-weight="400">新总量不足覆盖占用</text>
+<rect x="278" y="672" width="1102" height="1" rx="0" fill="#DCE5E9" stroke="none"/>
+<text x="292" y="692" font-size="14" fill="#172B3A" font-weight="400">14:03:04</text>
+<text x="422" y="692" font-size="14" fill="#172B3A" font-weight="400">系统任务</text>
+<text x="570" y="692" font-size="14" fill="#172B3A" font-weight="400">HB261106020</text>
+<text x="750" y="692" font-size="14" fill="#172B3A" font-weight="400">超时处理</text>
+<text x="890" y="692" font-size="14" fill="#172B3A" font-weight="400">待确认 → 已超时</text>
+<text x="1130" y="692" font-size="14" fill="#172B3A" font-weight="400">到期释放一次</text>
+<rect x="278" y="732" width="1102" height="1" rx="0" fill="#DCE5E9" stroke="none"/>
+<text x="278" y="781" font-size="15" fill="#667C89" font-weight="400">日志与订单历史均按身份和对象归属过滤；页面与接口都不提供改写日志功能。</text>
+<text x="278" y="821" font-size="15" fill="#667C89" font-weight="400">失败请求另记安全审计；成功状态、库存和业务审计在同一事务提交。</text>
+</svg>

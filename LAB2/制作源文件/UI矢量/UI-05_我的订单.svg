@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1000" viewBox="0 0 1440 1000">
+<style>text{font-family:"Microsoft YaHei",sans-serif;dominant-baseline:text-before-edge}</style>
+<rect x="0" y="0" width="1440" height="1000" rx="0" fill="#F3F6F7" stroke="none"/>
+<rect x="0" y="0" width="220" height="1000" rx="0" fill="#172B3A" stroke="none"/>
+<text x="27" y="32" font-size="24" fill="#FFFFFF" font-weight="700">泊岸 / STAY</text>
+<text x="28" y="70" font-size="12" fill="#A9BEC9" font-weight="400">酒店预订系统 · 设计原型</text>
+<text x="28" y="135" font-size="14" fill="#7AD5D0" font-weight="700">顾客端</text>
+<text x="29" y="183" font-size="15" fill="#BACBD3" font-weight="400">酒店与空房</text>
+<rect x="16" y="230" width="188" height="43" rx="8" fill="#294450" stroke="none"/>
+<rect x="16" y="237" width="3" height="29" rx="0" fill="#6ED3C9" stroke="none"/>
+<text x="29" y="239" font-size="15" fill="#FFFFFF" font-weight="400">我的订单</text>
+<text x="29" y="295" font-size="15" fill="#BACBD3" font-weight="400">账号与登录</text>
+<text x="28" y="871" font-size="12" fill="#A9BEC9" font-weight="400">示例数据 / 无真实支付</text>
+<text x="28" y="895" font-size="12" fill="#A9BEC9" font-weight="400">数据范围以登录身份为准</text>
+<rect x="26" y="934" width="166" height="42" rx="7" fill="#FFFFFF" stroke="#DCE5E9"/>
+<text x="64.0" y="945" font-size="15" fill="#087F82" font-weight="400">切换演示角色</text>
+<rect x="220" y="0" width="1220" height="73" rx="0" fill="#FFFFFF" stroke="none"/>
+<text x="252" y="27" font-size="14" fill="#667C89" font-weight="400">工作空间   /   我的订单</text>
+<text x="1139" y="27" font-size="14" fill="#172B3A" font-weight="400">设计样例  ·  顾客端</text>
+<text x="254" y="105" font-size="30" fill="#172B3A" font-weight="700">我的订单</text>
+<text x="254" y="151" font-size="15" fill="#667C89" font-weight="400">仅展示本人订单；待确认可改期，已确认只允许修改联系人。</text>
+<text x="254" y="967" font-size="12" fill="#667C89" font-weight="400">UI-05  |  REQ-008 / 011 / 012 / 016   ·   业务校验以服务端为准</text>
+<rect x="254" y="201" width="1152" height="75" rx="9" fill="#FFF4E6" stroke="none"/>
+<text x="274" y="214" font-size="15" fill="#B47835" font-weight="700">待确认订单保留30分钟</text>
+<text x="274" y="244" font-size="13" fill="#B47835" font-weight="400">成功修改待确认订单后重新计时；准确截止规则仍需业务确认。</text>
+<rect x="254" y="303" width="1152" height="554" rx="12" fill="#FFFFFF" stroke="#DCE5E9"/>
+<text x="278" y="331" font-size="17" fill="#172B3A" font-weight="400">全部订单     待确认     已确认     已入住     已结束</text>
+<rect x="278" y="395" width="1102" height="42" rx="3" fill="#EFF4F5" stroke="none"/>
+<text x="292" y="408" font-size="13" fill="#667C89" font-weight="400">订单编号</text>
+<text x="514" y="408" font-size="13" fill="#667C89" font-weight="400">酒店 / 房型</text>
+<text x="784" y="408" font-size="13" fill="#667C89" font-weight="400">入住 — 离店</text>
+<text x="1002" y="408" font-size="13" fill="#667C89" font-weight="400">间数 / 夜数</text>
+<text x="1130" y="408" font-size="13" fill="#667C89" font-weight="400">成交总价</text>
+<text x="1262" y="408" font-size="13" fill="#667C89" font-weight="400">当前状态</text>
+<text x="292" y="456" font-size="14" fill="#172B3A" font-weight="400">HB261106001</text>
+<text x="514" y="456" font-size="14" fill="#172B3A" font-weight="400">泊岸 · 舒适大床房</text>
+<text x="784" y="456" font-size="14" fill="#172B3A" font-weight="400">11-10 — 11-12</text>
+<text x="1002" y="456" font-size="14" fill="#172B3A" font-weight="400">1间 / 2晚</text>
+<text x="1130" y="456" font-size="14" fill="#172B3A" font-weight="400">¥ 658</text>
+<text x="1262" y="456" font-size="14" fill="#172B3A" font-weight="400">待确认</text>
+<rect x="278" y="496" width="1102" height="1" rx="0" fill="#DCE5E9" stroke="none"/>
+<text x="292" y="516" font-size="14" fill="#172B3A" font-weight="400">HB261105006</text>
+<text x="514" y="516" font-size="14" fill="#172B3A" font-weight="400">泊岸 · 城景双床房</text>
+<text x="784" y="516" font-size="14" fill="#172B3A" font-weight="400">11-15 — 11-17</text>
+<text x="1002" y="516" font-size="14" fill="#172B3A" font-weight="400">1间 / 2晚</text>
+<text x="1130" y="516" font-size="14" fill="#172B3A" font-weight="400">¥ 728</text>
+<text x="1262" y="516" font-size="14" fill="#172B3A" font-weight="400">已确认</text>
+<rect x="278" y="556" width="1102" height="1" rx="0" fill="#DCE5E9" stroke="none"/>
+<text x="292" y="576" font-size="14" fill="#172B3A" font-weight="400">HB261101018</text>
+<text x="514" y="576" font-size="14" fill="#172B3A" font-weight="400">秦淮 · 大床房</text>
+<text x="784" y="576" font-size="14" fill="#172B3A" font-weight="400">11-01 — 11-03</text>
+<text x="1002" y="576" font-size="14" fill="#172B3A" font-weight="400">1间 / 2晚</text>
+<text x="1130" y="576" font-size="14" fill="#172B3A" font-weight="400">¥ 598</text>
+<text x="1262" y="576" font-size="14" fill="#172B3A" font-weight="400">已退房</text>
+<rect x="278" y="616" width="1102" height="1" rx="0" fill="#DCE5E9" stroke="none"/>
+<rect x="278" y="682" width="172" height="42" rx="7" fill="#087F82" stroke="none"/>
+<text x="311.5" y="693" font-size="15" fill="#FFFFFF" font-weight="400">查看第一笔详情</text>
+<rect x="469" y="682" width="172" height="42" rx="7" fill="#FFFFFF" stroke="#DCE5E9"/>
+<text x="502.5" y="693" font-size="15" fill="#087F82" font-weight="400">修改待确认订单</text>
+<text x="278" y="775" font-size="15" fill="#667C89" font-weight="400">已取消、已拒绝、已超时、未入住和已退房均不可重新入住。</text>
+</svg>

@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1000" viewBox="0 0 1440 1000">
+<style>text{font-family:"Microsoft YaHei",sans-serif;dominant-baseline:text-before-edge}</style>
+<rect x="0" y="0" width="1440" height="1000" rx="0" fill="#F3F6F7" stroke="none"/>
+<rect x="0" y="0" width="220" height="1000" rx="0" fill="#172B3A" stroke="none"/>
+<text x="27" y="32" font-size="24" fill="#FFFFFF" font-weight="700">泊岸 / STAY</text>
+<text x="28" y="70" font-size="12" fill="#A9BEC9" font-weight="400">酒店预订系统 · 设计原型</text>
+<text x="28" y="135" font-size="14" fill="#7AD5D0" font-weight="700">平台管理台</text>
+<rect x="16" y="174" width="188" height="43" rx="8" fill="#294450" stroke="none"/>
+<rect x="16" y="181" width="3" height="29" rx="0" fill="#6ED3C9" stroke="none"/>
+<text x="29" y="183" font-size="15" fill="#FFFFFF" font-weight="400">酒店审核与启停</text>
+<text x="29" y="239" font-size="15" fill="#BACBD3" font-weight="400">工作人员账号</text>
+<text x="29" y="295" font-size="15" fill="#BACBD3" font-weight="400">全平台统计</text>
+<text x="29" y="351" font-size="15" fill="#BACBD3" font-weight="400">全平台日志</text>
+<text x="28" y="871" font-size="12" fill="#A9BEC9" font-weight="400">示例数据 / 无真实支付</text>
+<text x="28" y="895" font-size="12" fill="#A9BEC9" font-weight="400">数据范围以登录身份为准</text>
+<rect x="26" y="934" width="166" height="42" rx="7" fill="#FFFFFF" stroke="#DCE5E9"/>
+<text x="64.0" y="945" font-size="15" fill="#087F82" font-weight="400">切换演示角色</text>
+<rect x="220" y="0" width="1220" height="73" rx="0" fill="#FFFFFF" stroke="none"/>
+<text x="252" y="27" font-size="14" fill="#667C89" font-weight="400">工作空间   /   酒店审核、启停与异常处置</text>
+<text x="1139" y="27" font-size="14" fill="#172B3A" font-weight="400">设计样例  ·  平台管理台</text>
+<text x="254" y="105" font-size="30" fill="#172B3A" font-weight="700">酒店审核、启停与异常处置</text>
+<text x="254" y="151" font-size="15" fill="#667C89" font-weight="400">停业阻止新预订；已有订单分类处理，不能抹去历史记录。</text>
+<text x="254" y="967" font-size="12" fill="#667C89" font-weight="400">UI-12  |  REQ-002 / 017 / 019   ·   业务校验以服务端为准</text>
+<rect x="254" y="204" width="1152" height="274" rx="12" fill="#FFFFFF" stroke="#DCE5E9"/>
+<text x="278" y="228" font-size="19" fill="#172B3A" font-weight="700">酒店管理</text>
+<rect x="278" y="277" width="1102" height="42" rx="3" fill="#EFF4F5" stroke="none"/>
+<text x="292" y="290" font-size="13" fill="#667C89" font-weight="400">酒店编号</text>
+<text x="502" y="290" font-size="13" fill="#667C89" font-weight="400">酒店名称</text>
+<text x="772" y="290" font-size="13" fill="#667C89" font-weight="400">城市</text>
+<text x="932" y="290" font-size="13" fill="#667C89" font-weight="400">当前状态</text>
+<text x="1092" y="290" font-size="13" fill="#667C89" font-weight="400">审核信息</text>
+<text x="292" y="338" font-size="14" fill="#172B3A" font-weight="400">HT-1001</text>
+<text x="502" y="338" font-size="14" fill="#172B3A" font-weight="400">南京泊岸酒店</text>
+<text x="772" y="338" font-size="14" fill="#172B3A" font-weight="400">南京</text>
+<text x="932" y="338" font-size="14" fill="#172B3A" font-weight="400">营业中</text>
+<text x="1092" y="338" font-size="14" fill="#172B3A" font-weight="400">审核通过 / 2位工作人员</text>
+<rect x="278" y="378" width="1102" height="1" rx="0" fill="#DCE5E9" stroke="none"/>
+<text x="292" y="398" font-size="14" fill="#172B3A" font-weight="400">HT-1002</text>
+<text x="502" y="398" font-size="14" fill="#172B3A" font-weight="400">秦淮栖居酒店</text>
+<text x="772" y="398" font-size="14" fill="#172B3A" font-weight="400">南京</text>
+<text x="932" y="398" font-size="14" fill="#172B3A" font-weight="400">待审核</text>
+<text x="1092" y="398" font-size="14" fill="#172B3A" font-weight="400">资料待核对</text>
+<rect x="278" y="438" width="1102" height="1" rx="0" fill="#DCE5E9" stroke="none"/>
+<rect x="254" y="503" width="1152" height="405" rx="12" fill="#FFFFFF" stroke="#DCE5E9"/>
+<text x="278" y="527" font-size="19" fill="#172B3A" font-weight="700">停业影响预览 · 南京泊岸酒店</text>
+<text x="278" y="568" font-size="20" fill="#172B3A" font-weight="700">待确认 1笔   /   已确认 1笔   /   已入住 1笔</text>
+<text x="278" y="624" font-size="13" fill="#667C89" font-weight="400">处理原因（必填）</text>
+<rect x="278" y="651" width="708" height="45" rx="7" fill="#FFFFFF" stroke="#DCE5E9"/>
+<text x="291" y="665" font-size="15" fill="#172B3A" font-weight="400">酒店临时停业检修</text>
+<rect x="1010" y="651" width="368" height="42" rx="7" fill="#FFF3F0" stroke="none"/>
+<text x="1119.0" y="662" font-size="15" fill="#B64D46" font-weight="400">标记停业，停止新预订</text>
+<text x="278" y="731" font-size="15" fill="#172B3A" font-weight="400">待确认 / 已确认：管理员逐单取消，释放未消费预留，并记录通知待办。</text>
+<text x="278" y="771" font-size="15" fill="#172B3A" font-weight="400">已入住：保留当前状态，由酒店与平台人工协调，不直接变为已退房。</text>
+<rect x="278" y="827" width="188" height="42" rx="7" fill="#FFFFFF" stroke="#DCE5E9"/>
+<text x="327.0" y="838" font-size="15" fill="#087F82" font-weight="400">逐单处理异常</text>
+<rect x="486" y="827" width="188" height="42" rx="7" fill="#FFFFFF" stroke="#DCE5E9"/>
+<text x="535.0" y="838" font-size="15" fill="#087F82" font-weight="400">审核通过酒店</text>
+<rect x="694" y="827" width="188" height="42" rx="7" fill="#FFFFFF" stroke="#DCE5E9"/>
+<text x="743.0" y="838" font-size="15" fill="#087F82" font-weight="400">手动恢复营业</text>
+<text x="916" y="842" font-size="13" fill="#667C89" font-weight="400">通知状态：待处理 / 已通知 / 重试</text>
+</svg>

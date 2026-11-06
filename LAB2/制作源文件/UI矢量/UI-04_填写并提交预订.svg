@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1000" viewBox="0 0 1440 1000">
+<style>text{font-family:"Microsoft YaHei",sans-serif;dominant-baseline:text-before-edge}</style>
+<rect x="0" y="0" width="1440" height="1000" rx="0" fill="#F3F6F7" stroke="none"/>
+<rect x="0" y="0" width="220" height="1000" rx="0" fill="#172B3A" stroke="none"/>
+<text x="27" y="32" font-size="24" fill="#FFFFFF" font-weight="700">泊岸 / STAY</text>
+<text x="28" y="70" font-size="12" fill="#A9BEC9" font-weight="400">酒店预订系统 · 设计原型</text>
+<text x="28" y="135" font-size="14" fill="#7AD5D0" font-weight="700">顾客端</text>
+<text x="29" y="183" font-size="15" fill="#BACBD3" font-weight="400">酒店与空房</text>
+<text x="29" y="239" font-size="15" fill="#BACBD3" font-weight="400">我的订单</text>
+<text x="29" y="295" font-size="15" fill="#BACBD3" font-weight="400">账号与登录</text>
+<text x="28" y="871" font-size="12" fill="#A9BEC9" font-weight="400">示例数据 / 无真实支付</text>
+<text x="28" y="895" font-size="12" fill="#A9BEC9" font-weight="400">数据范围以登录身份为准</text>
+<rect x="26" y="934" width="166" height="42" rx="7" fill="#FFFFFF" stroke="#DCE5E9"/>
+<text x="64.0" y="945" font-size="15" fill="#087F82" font-weight="400">切换演示角色</text>
+<rect x="220" y="0" width="1220" height="73" rx="0" fill="#FFFFFF" stroke="none"/>
+<text x="252" y="27" font-size="14" fill="#667C89" font-weight="400">工作空间   /   填写并提交预订</text>
+<text x="1139" y="27" font-size="14" fill="#172B3A" font-weight="400">设计样例  ·  顾客端</text>
+<text x="254" y="105" font-size="30" fill="#172B3A" font-weight="700">填写并提交预订</text>
+<text x="254" y="151" font-size="15" fill="#667C89" font-weight="400">提交成功即预留全程库存，等待本酒店工作人员确认。</text>
+<text x="254" y="967" font-size="12" fill="#667C89" font-weight="400">UI-04  |  REQ-005 / 006 / 007 / 008   ·   业务校验以服务端为准</text>
+<rect x="254" y="201" width="720" height="707" rx="12" fill="#FFFFFF" stroke="#DCE5E9"/>
+<text x="278" y="225" font-size="19" fill="#172B3A" font-weight="700">入住资料</text>
+<text x="278" y="272" font-size="20" fill="#172B3A" font-weight="700">南京泊岸酒店  ·  舒适大床房</text>
+<text x="278" y="317" font-size="17" fill="#172B3A" font-weight="400">11月10日入住 → 11月12日离店   /   共2晚</text>
+<text x="278" y="379" font-size="13" fill="#667C89" font-weight="400">房间数量</text>
+<rect x="278" y="406" width="312" height="45" rx="7" fill="#FFFFFF" stroke="#DCE5E9"/>
+<text x="291" y="420" font-size="15" fill="#172B3A" font-weight="400">1</text>
+<text x="614" y="379" font-size="13" fill="#667C89" font-weight="400">入住人数</text>
+<rect x="614" y="406" width="332" height="45" rx="7" fill="#FFFFFF" stroke="#DCE5E9"/>
+<text x="627" y="420" font-size="15" fill="#172B3A" font-weight="400">2</text>
+<text x="278" y="482" font-size="13" fill="#667C89" font-weight="400">联系人</text>
+<rect x="278" y="509" width="668" height="45" rx="7" fill="#FFFFFF" stroke="#DCE5E9"/>
+<text x="291" y="523" font-size="15" fill="#172B3A" font-weight="400">商同学</text>
+<text x="278" y="586" font-size="13" fill="#667C89" font-weight="400">联系电话</text>
+<rect x="278" y="613" width="668" height="45" rx="7" fill="#FFFFFF" stroke="#DCE5E9"/>
+<text x="291" y="627" font-size="15" fill="#172B3A" font-weight="400">13800138000</text>
+<text x="278" y="703" font-size="15" fill="#667C89" font-weight="400">提交表示接受右侧本次逐夜报价。</text>
+<text x="278" y="744" font-size="14" fill="#667C89" font-weight="400">报价变化时先重新确认；无房时整体失败，不留下部分占用。</text>
+<rect x="997" y="201" width="409" height="707" rx="12" fill="#FFFFFF" stroke="#DCE5E9"/>
+<text x="1021" y="225" font-size="19" fill="#172B3A" font-weight="700">本次价格明细</text>
+<rect x="1021" y="278" width="360" height="42" rx="3" fill="#EFF4F5" stroke="none"/>
+<text x="1035" y="291" font-size="13" fill="#667C89" font-weight="400">住宿夜</text>
+<text x="1215" y="291" font-size="13" fill="#667C89" font-weight="400">单间单价</text>
+<text x="1035" y="339" font-size="14" fill="#172B3A" font-weight="400">11月10日</text>
+<text x="1215" y="339" font-size="14" fill="#172B3A" font-weight="400">¥ 299</text>
+<rect x="1021" y="379" width="360" height="1" rx="0" fill="#DCE5E9" stroke="none"/>
+<text x="1035" y="399" font-size="14" fill="#172B3A" font-weight="400">11月11日</text>
+<text x="1215" y="399" font-size="14" fill="#172B3A" font-weight="400">¥ 359</text>
+<rect x="1021" y="439" width="360" height="1" rx="0" fill="#DCE5E9" stroke="none"/>
+<rect x="1021" y="486" width="359" height="1" rx="0" fill="#DCE5E9" stroke="none"/>
+<text x="1021" y="520" font-size="16" fill="#667C89" font-weight="400">2晚 × 1间</text>
+<text x="1021" y="564" font-size="38" fill="#087F82" font-weight="700">¥ 658</text>
+<rect x="1021" y="638" width="108" height="28" rx="6" fill="#E8F5F2" stroke="none"/>
+<text x="1033" y="644" font-size="13" fill="#087F82" font-weight="400">不含离店当晚</text>
+<rect x="1021" y="717" width="359" height="42" rx="7" fill="#087F82" stroke="none"/>
+<text x="1148.0" y="728" font-size="15" fill="#FFFFFF" font-weight="400">确认报价并提交</text>
+<rect x="1021" y="779" width="359" height="42" rx="7" fill="#FFFFFF" stroke="#DCE5E9"/>
+<text x="1133.0" y="790" font-size="15" fill="#087F82" font-weight="400">演示提交前价格变化</text>
+</svg>

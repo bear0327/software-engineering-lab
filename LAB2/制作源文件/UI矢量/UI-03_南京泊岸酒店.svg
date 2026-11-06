@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1000" viewBox="0 0 1440 1000">
+<style>text{font-family:"Microsoft YaHei",sans-serif;dominant-baseline:text-before-edge}</style>
+<rect x="0" y="0" width="1440" height="1000" rx="0" fill="#F3F6F7" stroke="none"/>
+<rect x="0" y="0" width="220" height="1000" rx="0" fill="#172B3A" stroke="none"/>
+<text x="27" y="32" font-size="24" fill="#FFFFFF" font-weight="700">泊岸 / STAY</text>
+<text x="28" y="70" font-size="12" fill="#A9BEC9" font-weight="400">酒店预订系统 · 设计原型</text>
+<text x="28" y="135" font-size="14" fill="#7AD5D0" font-weight="700">顾客端</text>
+<text x="29" y="183" font-size="15" fill="#BACBD3" font-weight="400">酒店与空房</text>
+<text x="29" y="239" font-size="15" fill="#BACBD3" font-weight="400">我的订单</text>
+<text x="29" y="295" font-size="15" fill="#BACBD3" font-weight="400">账号与登录</text>
+<text x="28" y="871" font-size="12" fill="#A9BEC9" font-weight="400">示例数据 / 无真实支付</text>
+<text x="28" y="895" font-size="12" fill="#A9BEC9" font-weight="400">数据范围以登录身份为准</text>
+<rect x="26" y="934" width="166" height="42" rx="7" fill="#FFFFFF" stroke="#DCE5E9"/>
+<text x="64.0" y="945" font-size="15" fill="#087F82" font-weight="400">切换演示角色</text>
+<rect x="220" y="0" width="1220" height="73" rx="0" fill="#FFFFFF" stroke="none"/>
+<text x="252" y="27" font-size="14" fill="#667C89" font-weight="400">工作空间   /   南京泊岸酒店</text>
+<text x="1139" y="27" font-size="14" fill="#172B3A" font-weight="400">设计样例  ·  顾客端</text>
+<text x="254" y="105" font-size="30" fill="#172B3A" font-weight="700">南京泊岸酒店</text>
+<text x="254" y="151" font-size="15" fill="#667C89" font-weight="400">南京市鼓楼区湖南路18号  ·  联系电话 025-8000-1234</text>
+<text x="254" y="967" font-size="12" fill="#667C89" font-weight="400">UI-03  |  REQ-002 / 003 / 004   ·   业务校验以服务端为准</text>
+<rect x="254" y="204" width="1152" height="180" rx="12" fill="#FFFFFF" stroke="#DCE5E9"/>
+<text x="278" y="228" font-size="19" fill="#172B3A" font-weight="700">舒适、清晰、可确定的入住安排</text>
+<rect x="278" y="267" width="66" height="28" rx="6" fill="#E8F5F2" stroke="none"/>
+<text x="290" y="273" font-size="13" fill="#087F82" font-weight="400">营业中</text>
+<text x="430" y="272" font-size="17" fill="#172B3A" font-weight="400">只管理房型数量，不指定具体房间号。</text>
+<text x="278" y="329" font-size="17" fill="#172B3A" font-weight="400">入住 2026-11-10   →   离店 2026-11-12     2晚 / 1间 / 2人</text>
+<rect x="254" y="411" width="1152" height="439" rx="12" fill="#FFFFFF" stroke="#DCE5E9"/>
+<text x="278" y="435" font-size="19" fill="#172B3A" font-weight="700">可订房型</text>
+<rect x="278" y="476" width="1102" height="42" rx="3" fill="#EFF4F5" stroke="none"/>
+<text x="292" y="489" font-size="13" fill="#667C89" font-weight="400">房型</text>
+<text x="562" y="489" font-size="13" fill="#667C89" font-weight="400">入住容量</text>
+<text x="722" y="489" font-size="13" fill="#667C89" font-weight="400">11月10日</text>
+<text x="902" y="489" font-size="13" fill="#667C89" font-weight="400">11月11日</text>
+<text x="1122" y="489" font-size="13" fill="#667C89" font-weight="400">每间2晚总价</text>
+<text x="292" y="537" font-size="14" fill="#172B3A" font-weight="400">舒适大床房</text>
+<text x="562" y="537" font-size="14" fill="#172B3A" font-weight="400">2人 / 间</text>
+<text x="722" y="537" font-size="14" fill="#172B3A" font-weight="400">¥ 299 / 余3</text>
+<text x="902" y="537" font-size="14" fill="#172B3A" font-weight="400">¥ 359 / 余1</text>
+<text x="1122" y="537" font-size="14" fill="#172B3A" font-weight="400">¥ 658</text>
+<rect x="278" y="577" width="1102" height="1" rx="0" fill="#DCE5E9" stroke="none"/>
+<text x="292" y="597" font-size="14" fill="#172B3A" font-weight="400">城景双床房</text>
+<text x="562" y="597" font-size="14" fill="#172B3A" font-weight="400">2人 / 间</text>
+<text x="722" y="597" font-size="14" fill="#172B3A" font-weight="400">¥ 329 / 余2</text>
+<text x="902" y="597" font-size="14" fill="#172B3A" font-weight="400">¥ 399 / 余2</text>
+<text x="1122" y="597" font-size="14" fill="#172B3A" font-weight="400">¥ 728</text>
+<rect x="278" y="637" width="1102" height="1" rx="0" fill="#DCE5E9" stroke="none"/>
+<rect x="1069" y="671" width="283" height="42" rx="7" fill="#087F82" stroke="none"/>
+<text x="1158.0" y="682" font-size="15" fill="#FFFFFF" font-weight="400">预订舒适大床房</text>
+<text x="279" y="697" font-size="15" fill="#667C89" font-weight="400">全程逐夜满足库存且无停售才允许预订。</text>
+<text x="279" y="762" font-size="15" fill="#667C89" font-weight="400">费用线下结算。订单生成后保存成交快照，后续酒店调价不倒改订单。</text>
+</svg>
