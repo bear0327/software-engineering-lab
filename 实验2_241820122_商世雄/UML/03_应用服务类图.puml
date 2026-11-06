@@ -61,6 +61,11 @@ BookingService --> UnitOfWork
 InventoryService --> RoomDayRepository
 PricingService --> RoomDayRepository
 LifecycleJob --> BookingService
+AuthorizationPolicy -[hidden]down-> TransitionPolicy
+TransitionPolicy -[hidden]down-> IdempotencyService
+IdempotencyService -[hidden]down-> AuditService
+InventoryService -[hidden]down-> PricingService
+BookingRepository -[hidden]down-> UnitOfWork
 note bottom of BookingService
 应用服务负责事务编排；策略决定是否合法，
 领域对象维护状态，Repository 不作业务决定。

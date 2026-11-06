@@ -4,14 +4,14 @@ skinparam defaultFontName Microsoft YaHei
 skinparam defaultFontSize 14
 skinparam shadowing false
 skinparam backgroundColor white
-state 待确认 as Pending
-state 已确认 as Confirmed
-state 已入住 as CheckedIn
-state 已退房 as CheckedOut
-state 已取消 as Cancelled
-state 已拒绝 as Rejected
-state 已超时 as Expired
-state 未入住 as NoShow
+state "待确认" as Pending
+state "已确认" as Confirmed
+state "已入住" as CheckedIn
+state "已退房" as CheckedOut
+state "已取消" as Cancelled
+state "已拒绝" as Rejected
+state "已超时" as Expired
+state "未入住" as NoShow
 [*] --> Pending : 顾客提交成功 / 全程预留
 Pending --> Pending : 顾客成功修改 / 净库存变更、重核价、重置计时
 Pending --> Confirmed : 酒店确认 / 不重复扣减

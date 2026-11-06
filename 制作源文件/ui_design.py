@@ -112,7 +112,9 @@ class Board:
             py = y + 42 + i * rowh
             px = x
             for w, t in zip(widths, row):
-                self.text(px + 14, py + 19, t, 14)
+                measured = ImageDraw.Draw(Image.new('RGB', (1, 1))).textlength(t, font=font(14))
+                size = min(14, 14 * (w - 24) / max(measured, 1))
+                self.text(px + 14, py + 19, t, size)
                 px += w
             self.line(x, py + rowh - 1, total)
 
