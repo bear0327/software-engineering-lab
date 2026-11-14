@@ -1,0 +1,19 @@
+$ C:\Users\11690\Desktop\IN-USE\软件工程\LAB3\实验3_241820122_商世雄\code\dist\StayHotel\StayHotel.exe --self-test --output evidence/frozen-self-test.json
+
+{
+  "ok": true,
+  "order_id": "HBEDD302337E164988AF",
+  "status": "CONFIRMED",
+  "price_cents": 59800,
+  "idempotency": true,
+  "consistency": {
+    "ok": true,
+    "integrity": "ok",
+    "foreign_keys": [],
+    "stock_errors": [],
+    "price_errors": []
+  },
+  "backup_checked": true
+}
+
+Exit code: 0

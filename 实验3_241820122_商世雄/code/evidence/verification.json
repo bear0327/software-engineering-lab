@@ -1,0 +1,58 @@
+{
+  "executed_at": "2026-11-14T11:25:21.800218+00:00",
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "sqlite": "3.49.1",
+  "results": [
+    {
+      "check": "ruff",
+      "exit_code": 0
+    },
+    {
+      "check": "format",
+      "exit_code": 0
+    },
+    {
+      "check": "pylint",
+      "exit_code": 0
+    },
+    {
+      "check": "pytest",
+      "exit_code": 0
+    },
+    {
+      "check": "source-self-test",
+      "exit_code": 0
+    },
+    {
+      "check": "line-count",
+      "exit_code": 0
+    }
+  ],
+  "ok": true,
+  "source_and_test_sha256": {
+    "src/stay/__init__.py": "902a333e3fdce2a11a7bf24659afabca8a5d93c3ae57e7bb16d2a93899dbc08e",
+    "src/stay/__main__.py": "6dce2c000a3d2c8018c975be4e6f395f946fc96d1555fba23b4732553dddacf4",
+    "src/stay/application.py": "bf0f815203484aa9eadc43f703405a6eaf50f5b4c51d2b772c11a05a08f4f6cb",
+    "src/stay/audit.py": "ba7498c42bbad17869fd19d18c0bcf52832e16569c2af3d906359fd9ce0a06ae",
+    "src/stay/booking.py": "c3ccde59531ce024c30b73de7bf26b52b63497993a9b476a5dc312243d7ec1a4",
+    "src/stay/catalog.py": "4ddfebe7d63f5b820e3a9e8e77678b682e52af805aca9caab5e638c50cf9374e",
+    "src/stay/database.py": "c9e4278b2f6ea7871bb52d6a19dc38ad88df477f8d48b64e474dc285df2f1c20",
+    "src/stay/desktop.py": "b8c11d2bfc5f18655e77ef205728462d4a01404204aa17b55657487c339c6072",
+    "src/stay/domain.py": "30e86f01bea0863e321de2321c46df15c239c5e9a6a408ee1d000e158c34f4ee",
+    "src/stay/inventory.py": "941f4e9e9c6bfb95ddfdfa0252ff8515ecb8b7ac4b6a2f795a6df53dc05fc976",
+    "src/stay/maintenance.py": "4f5ccb073108cc14c0b0339a2a77cce7001778acd1e10b499df445b405ca2c05",
+    "src/stay/pages.py": "e719a1daffbaa6db4e2ac3b17616066b0efbae19c6ba844c1379f7395685c264",
+    "src/stay/reports.py": "382ace3ebf25182652ae4558f3fef11879adc1135a3cac23cccfeedf9ecab90b",
+    "src/stay/security.py": "2987640f22614b4dd4ecccc5e475d666e5690ab6b279afae2c2adf516a690c9f",
+    "src/stay/widgets.py": "a53cbb39830c4e33094b842f6b9053292c38d772a80603b3b9d8fc4b3a20017d",
+    "tests/__init__.py": "30ae70939258bb279d7e93716ae8bcc58fea3845dbe7d8fc3dfac4b61f8c2ace",
+    "tests/conftest.py": "0718731780c96142d00c250c53df5bf6f94034ac9abbf702317432aab3543a3e",
+    "tests/test_cli.py": "00252033319a79f77db00b7ec799a3eacdd7317c70a80fc8b63d7572030dabe7",
+    "tests/test_concurrency.py": "1916711a613bb7725b72386f8d308d0f84a1751d6f96b5c161da21e6dd59c93a",
+    "tests/test_gui.py": "801233698e4641cbc5a965da279addb3815ae9e6a5ca8f6e6e18b2283c30f6b2",
+    "tests/test_lifecycle.py": "1ae0d8890454a6837195d08b034fe8aef44655efce39bfe4391d8d1d627d8714",
+    "tests/test_rules.py": "d97c1b094692a281ff987b0a60d749d6be248afb9d4eec3397cd47735d43d411",
+    "tests/test_security.py": "6483c9f40bd08483b73f2ecef523bd7bbbdf73f1343eee1e729de2a5311d847e"
+  }
+}

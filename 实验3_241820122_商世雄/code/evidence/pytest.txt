@@ -1,0 +1,30 @@
+$ C:\Users\11690\AppData\Local\Programs\Python\Python312\python.exe -m pytest -q --tb=short --cov=stay --cov-report=term-missing --cov-report=xml:evidence/coverage.xml --junitxml=evidence/tests.xml
+
+........................................................................ [ 82%]
+...............                                                          [100%]
+=============================== tests coverage ================================
+______________ coverage: platform win32, python 3.12.10-final-0 _______________
+
+Name                      Stmts   Miss  Cover   Missing
+-------------------------------------------------------
+src\stay\__init__.py          1      0   100%
+src\stay\__main__.py         89     36    60%   22-23, 67, 70, 78-117, 121
+src\stay\application.py      52      1    98%   37
+src\stay\audit.py            60      0   100%
+src\stay\booking.py         192      2    99%   248, 331
+src\stay\catalog.py         108      2    98%   67-68
+src\stay\database.py         57      2    96%   147, 155
+src\stay\desktop.py         166     55    67%   37, 40-51, 54-55, 86-87, 90-104, 136-139, 142-150, 214-217, 220-236, 239-244, 248
+src\stay\domain.py          137      4    97%   112-113, 128-129
+src\stay\inventory.py        80      6    92%   131-132, 142-150
+src\stay\maintenance.py      46     10    78%   56-65
+src\stay\pages.py           312     84    73%   55, 125-135, 147, 164, 239-265, 270-273, 275-279, 283, 296-310, 313-356, 383-395, 398-416, 467-491, 494, 497-499, 536-555, 558-562, 597-614, 617-618, 725-726, 748-751, 754, 757, 760
+src\stay\reports.py          60      3    95%   37, 43-44
+src\stay\security.py        125      5    96%   36, 90, 113-114, 192
+src\stay\widgets.py          85     42    51%   44-76, 79-80, 84-95
+-------------------------------------------------------
+TOTAL                      1570    252    84%
+Coverage XML written to file evidence/coverage.xml
+87 passed in 190.90s (0:03:10)
+
+Exit code: 0

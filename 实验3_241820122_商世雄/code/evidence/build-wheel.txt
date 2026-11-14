@@ -1,0 +1,160 @@
+$ C:\Users\11690\AppData\Local\Programs\Python\Python312\python.exe -m build
+
+running egg_info
+writing src\stay_hotel.egg-info\PKG-INFO
+writing dependency_links to src\stay_hotel.egg-info\dependency_links.txt
+writing entry points to src\stay_hotel.egg-info\entry_points.txt
+writing requirements to src\stay_hotel.egg-info\requires.txt
+writing top-level names to src\stay_hotel.egg-info\top_level.txt
+reading manifest file 'src\stay_hotel.egg-info\SOURCES.txt'
+writing manifest file 'src\stay_hotel.egg-info\SOURCES.txt'
+running sdist
+running egg_info
+writing src\stay_hotel.egg-info\PKG-INFO
+writing dependency_links to src\stay_hotel.egg-info\dependency_links.txt
+writing entry points to src\stay_hotel.egg-info\entry_points.txt
+writing requirements to src\stay_hotel.egg-info\requires.txt
+writing top-level names to src\stay_hotel.egg-info\top_level.txt
+reading manifest file 'src\stay_hotel.egg-info\SOURCES.txt'
+writing manifest file 'src\stay_hotel.egg-info\SOURCES.txt'
+running check
+creating stay_hotel-1.0.0
+creating stay_hotel-1.0.0\src\stay
+creating stay_hotel-1.0.0\src\stay_hotel.egg-info
+creating stay_hotel-1.0.0\tests
+copying files to stay_hotel-1.0.0...
+copying README.md -> stay_hotel-1.0.0
+copying pyproject.toml -> stay_hotel-1.0.0
+copying src\stay\__init__.py -> stay_hotel-1.0.0\src\stay
+copying src\stay\__main__.py -> stay_hotel-1.0.0\src\stay
+copying src\stay\application.py -> stay_hotel-1.0.0\src\stay
+copying src\stay\audit.py -> stay_hotel-1.0.0\src\stay
+copying src\stay\booking.py -> stay_hotel-1.0.0\src\stay
+copying src\stay\catalog.py -> stay_hotel-1.0.0\src\stay
+copying src\stay\database.py -> stay_hotel-1.0.0\src\stay
+copying src\stay\desktop.py -> stay_hotel-1.0.0\src\stay
+copying src\stay\domain.py -> stay_hotel-1.0.0\src\stay
+copying src\stay\inventory.py -> stay_hotel-1.0.0\src\stay
+copying src\stay\maintenance.py -> stay_hotel-1.0.0\src\stay
+copying src\stay\pages.py -> stay_hotel-1.0.0\src\stay
+copying src\stay\reports.py -> stay_hotel-1.0.0\src\stay
+copying src\stay\security.py -> stay_hotel-1.0.0\src\stay
+copying src\stay\widgets.py -> stay_hotel-1.0.0\src\stay
+copying src\stay_hotel.egg-info\PKG-INFO -> stay_hotel-1.0.0\src\stay_hotel.egg-info
+copying src\stay_hotel.egg-info\SOURCES.txt -> stay_hotel-1.0.0\src\stay_hotel.egg-info
+copying src\stay_hotel.egg-info\dependency_links.txt -> stay_hotel-1.0.0\src\stay_hotel.egg-info
+copying src\stay_hotel.egg-info\entry_points.txt -> stay_hotel-1.0.0\src\stay_hotel.egg-info
+copying src\stay_hotel.egg-info\requires.txt -> stay_hotel-1.0.0\src\stay_hotel.egg-info
+copying src\stay_hotel.egg-info\top_level.txt -> stay_hotel-1.0.0\src\stay_hotel.egg-info
+copying tests\test_cli.py -> stay_hotel-1.0.0\tests
+copying tests\test_concurrency.py -> stay_hotel-1.0.0\tests
+copying tests\test_gui.py -> stay_hotel-1.0.0\tests
+copying tests\test_lifecycle.py -> stay_hotel-1.0.0\tests
+copying tests\test_rules.py -> stay_hotel-1.0.0\tests
+copying tests\test_security.py -> stay_hotel-1.0.0\tests
+Writing stay_hotel-1.0.0\setup.cfg
+Creating tar archive
+removing 'stay_hotel-1.0.0' (and everything under it)
+running egg_info
+writing src\stay_hotel.egg-info\PKG-INFO
+writing dependency_links to src\stay_hotel.egg-info\dependency_links.txt
+writing entry points to src\stay_hotel.egg-info\entry_points.txt
+writing requirements to src\stay_hotel.egg-info\requires.txt
+writing top-level names to src\stay_hotel.egg-info\top_level.txt
+reading manifest file 'src\stay_hotel.egg-info\SOURCES.txt'
+writing manifest file 'src\stay_hotel.egg-info\SOURCES.txt'
+running bdist_wheel
+running build
+running build_py
+creating build\lib\stay
+copying src\stay\application.py -> build\lib\stay
+copying src\stay\audit.py -> build\lib\stay
+copying src\stay\booking.py -> build\lib\stay
+copying src\stay\catalog.py -> build\lib\stay
+copying src\stay\database.py -> build\lib\stay
+copying src\stay\desktop.py -> build\lib\stay
+copying src\stay\domain.py -> build\lib\stay
+copying src\stay\inventory.py -> build\lib\stay
+copying src\stay\maintenance.py -> build\lib\stay
+copying src\stay\pages.py -> build\lib\stay
+copying src\stay\reports.py -> build\lib\stay
+copying src\stay\security.py -> build\lib\stay
+copying src\stay\widgets.py -> build\lib\stay
+copying src\stay\__init__.py -> build\lib\stay
+copying src\stay\__main__.py -> build\lib\stay
+running egg_info
+writing src\stay_hotel.egg-info\PKG-INFO
+writing dependency_links to src\stay_hotel.egg-info\dependency_links.txt
+writing entry points to src\stay_hotel.egg-info\entry_points.txt
+writing requirements to src\stay_hotel.egg-info\requires.txt
+writing top-level names to src\stay_hotel.egg-info\top_level.txt
+reading manifest file 'src\stay_hotel.egg-info\SOURCES.txt'
+writing manifest file 'src\stay_hotel.egg-info\SOURCES.txt'
+installing to build\bdist.win-amd64\wheel
+running install
+running install_lib
+creating build\bdist.win-amd64\wheel
+creating build\bdist.win-amd64\wheel\stay
+copying build\lib\stay\application.py -> build\bdist.win-amd64\wheel\.\stay
+copying build\lib\stay\audit.py -> build\bdist.win-amd64\wheel\.\stay
+copying build\lib\stay\booking.py -> build\bdist.win-amd64\wheel\.\stay
+copying build\lib\stay\catalog.py -> build\bdist.win-amd64\wheel\.\stay
+copying build\lib\stay\database.py -> build\bdist.win-amd64\wheel\.\stay
+copying build\lib\stay\desktop.py -> build\bdist.win-amd64\wheel\.\stay
+copying build\lib\stay\domain.py -> build\bdist.win-amd64\wheel\.\stay
+copying build\lib\stay\inventory.py -> build\bdist.win-amd64\wheel\.\stay
+copying build\lib\stay\maintenance.py -> build\bdist.win-amd64\wheel\.\stay
+copying build\lib\stay\pages.py -> build\bdist.win-amd64\wheel\.\stay
+copying build\lib\stay\reports.py -> build\bdist.win-amd64\wheel\.\stay
+copying build\lib\stay\security.py -> build\bdist.win-amd64\wheel\.\stay
+copying build\lib\stay\widgets.py -> build\bdist.win-amd64\wheel\.\stay
+copying build\lib\stay\__init__.py -> build\bdist.win-amd64\wheel\.\stay
+copying build\lib\stay\__main__.py -> build\bdist.win-amd64\wheel\.\stay
+running install_egg_info
+Copying src\stay_hotel.egg-info to build\bdist.win-amd64\wheel\.\stay_hotel-1.0.0-py3.12.egg-info
+running install_scripts
+creating build\bdist.win-amd64\wheel\stay_hotel-1.0.0.dist-info\WHEEL
+creating 'C:\\Users\\11690\\Desktop\\IN-USE\\软件工程\\LAB3\\实验3_241820122_商世雄\\code\\dist\\.tmp-utmybo_7\\stay_hotel-1.0.0-py3-none-any.whl' and adding 'build\\bdist.win-amd64\\wheel' to it
+adding 'stay/__init__.py'
+adding 'stay/__main__.py'
+adding 'stay/application.py'
+adding 'stay/audit.py'
+adding 'stay/booking.py'
+adding 'stay/catalog.py'
+adding 'stay/database.py'
+adding 'stay/desktop.py'
+adding 'stay/domain.py'
+adding 'stay/inventory.py'
+adding 'stay/maintenance.py'
+adding 'stay/pages.py'
+adding 'stay/reports.py'
+adding 'stay/security.py'
+adding 'stay/widgets.py'
+adding 'stay_hotel-1.0.0.dist-info/METADATA'
+adding 'stay_hotel-1.0.0.dist-info/WHEEL'
+adding 'stay_hotel-1.0.0.dist-info/entry_points.txt'
+adding 'stay_hotel-1.0.0.dist-info/top_level.txt'
+adding 'stay_hotel-1.0.0.dist-info/RECORD'
+removing build\bdist.win-amd64\wheel
+Successfully built stay_hotel-1.0.0.tar.gz and stay_hotel-1.0.0-py3-none-any.whl
+* Creating isolated environment: venv+pip...
+* Installing packages in isolated environment:
+  - setuptools>=75
+  - wheel
+* Getting build dependencies for sdist...
+* Installed build dependency versions:
+  - setuptools==84.2.1
+  - wheel==0.48.0
+* Building sdist...
+* Building wheel from sdist
+* Creating isolated environment: venv+pip...
+* Installing packages in isolated environment:
+  - setuptools>=75
+  - wheel
+* Getting build dependencies for wheel...
+* Installed build dependency versions:
+  - setuptools==84.2.1
+  - wheel==0.48.0
+* Building wheel...
+
+Exit code: 0

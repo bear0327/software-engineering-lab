@@ -1,0 +1,35 @@
+$ C:\Users\11690\AppData\Local\Programs\Python\Python312\python.exe -m pip install --target C:\Users\11690\AppData\Local\Temp\stay-wheel-b_kmnlxs C:\Users\11690\Desktop\IN-USE\软件工程\LAB3\实验3_241820122_商世雄\code\dist\stay_hotel-1.0.0-py3-none-any.whl
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Processing c:\users\11690\desktop\in-use\软件工程\lab3\实验3_241820122_商世雄\code\dist\stay_hotel-1.0.0-py3-none-any.whl
+Collecting tzdata>=2025.1 (from stay-hotel==1.0.0)
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/0a/66/9a06c2227fedfd4919f0eaaa8b94377d9730882a7e4f95823c9a331ab5e1/tzdata-2026.6-py2.py3-none-any.whl (348 kB)
+Installing collected packages: tzdata, stay-hotel
+
+Successfully installed stay-hotel-1.0.0 tzdata-2026.6
+
+
+[notice] A new release of pip is available: 25.1.1 -> 26.3
+[notice] To update, run: python.exe -m pip install --upgrade pip
+
+$ C:\Users\11690\AppData\Local\Programs\Python\Python312\python.exe -I -S -c import json,sys; sys.path.insert(0,sys.argv[1]); import stay; from stay.__main__ import self_test; print(json.dumps({'loaded_from':stay.__file__,'result':self_test()},indent=2)) C:\Users\11690\AppData\Local\Temp\stay-wheel-b_kmnlxs
+{
+  "loaded_from": "C:\\Users\\11690\\AppData\\Local\\Temp\\stay-wheel-b_kmnlxs\\stay\\__init__.py",
+  "result": {
+    "ok": true,
+    "order_id": "HB91464348580F452CA1",
+    "status": "CONFIRMED",
+    "price_cents": 59800,
+    "idempotency": true,
+    "consistency": {
+      "ok": true,
+      "integrity": "ok",
+      "foreign_keys": [],
+      "stock_errors": [],
+      "price_errors": []
+    },
+    "backup_checked": true
+  }
+}
+
+
+Exit code: 0

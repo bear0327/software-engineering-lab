@@ -1,0 +1,116 @@
+{
+  "scope": "src/stay only; no tests, scripts, caches or generated GUI code",
+  "files": [
+    {
+      "path": "src/stay/__init__.py",
+      "physical": 3,
+      "code_without_docstrings": 1,
+      "comment_only": 0,
+      "logical_statements": 2
+    },
+    {
+      "path": "src/stay/__main__.py",
+      "physical": 121,
+      "code_without_docstrings": 105,
+      "comment_only": 1,
+      "logical_statements": 89
+    },
+    {
+      "path": "src/stay/application.py",
+      "physical": 70,
+      "code_without_docstrings": 62,
+      "comment_only": 0,
+      "logical_statements": 54
+    },
+    {
+      "path": "src/stay/audit.py",
+      "physical": 148,
+      "code_without_docstrings": 133,
+      "comment_only": 0,
+      "logical_statements": 61
+    },
+    {
+      "path": "src/stay/booking.py",
+      "physical": 448,
+      "code_without_docstrings": 419,
+      "comment_only": 2,
+      "logical_statements": 188
+    },
+    {
+      "path": "src/stay/catalog.py",
+      "physical": 246,
+      "code_without_docstrings": 229,
+      "comment_only": 2,
+      "logical_statements": 108
+    },
+    {
+      "path": "src/stay/database.py",
+      "physical": 159,
+      "code_without_docstrings": 145,
+      "comment_only": 2,
+      "logical_statements": 56
+    },
+    {
+      "path": "src/stay/desktop.py",
+      "physical": 249,
+      "code_without_docstrings": 227,
+      "comment_only": 0,
+      "logical_statements": 162
+    },
+    {
+      "path": "src/stay/domain.py",
+      "physical": 207,
+      "code_without_docstrings": 149,
+      "comment_only": 0,
+      "logical_statements": 134
+    },
+    {
+      "path": "src/stay/inventory.py",
+      "physical": 200,
+      "code_without_docstrings": 185,
+      "comment_only": 2,
+      "logical_statements": 78
+    },
+    {
+      "path": "src/stay/maintenance.py",
+      "physical": 65,
+      "code_without_docstrings": 56,
+      "comment_only": 0,
+      "logical_statements": 47
+    },
+    {
+      "path": "src/stay/pages.py",
+      "physical": 760,
+      "code_without_docstrings": 699,
+      "comment_only": 0,
+      "logical_statements": 312
+    },
+    {
+      "path": "src/stay/reports.py",
+      "physical": 139,
+      "code_without_docstrings": 128,
+      "comment_only": 0,
+      "logical_statements": 60
+    },
+    {
+      "path": "src/stay/security.py",
+      "physical": 253,
+      "code_without_docstrings": 222,
+      "comment_only": 0,
+      "logical_statements": 123
+    },
+    {
+      "path": "src/stay/widgets.py",
+      "physical": 104,
+      "code_without_docstrings": 90,
+      "comment_only": 0,
+      "logical_statements": 86
+    }
+  ],
+  "totals": {
+    "physical": 3172,
+    "code_without_docstrings": 2850,
+    "comment_only": 9,
+    "logical_statements": 1560
+  }
+}

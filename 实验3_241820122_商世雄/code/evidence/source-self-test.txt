@@ -1,0 +1,19 @@
+$ C:\Users\11690\AppData\Local\Programs\Python\Python312\python.exe run.py --self-test --output evidence/source-self-test.json
+
+{
+  "ok": true,
+  "order_id": "HB49B8D49CE3F549089F",
+  "status": "CONFIRMED",
+  "price_cents": 59800,
+  "idempotency": true,
+  "consistency": {
+    "ok": true,
+    "integrity": "ok",
+    "foreign_keys": [],
+    "stock_errors": [],
+    "price_errors": []
+  },
+  "backup_checked": true
+}
+
+Exit code: 0

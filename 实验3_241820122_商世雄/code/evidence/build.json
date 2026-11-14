@@ -1,0 +1,18 @@
+{
+  "executed_at": "2026-11-14T11:22:44.325705+00:00",
+  "steps": [
+    {
+      "step": "build-wheel",
+      "exit_code": 0
+    },
+    {
+      "step": "build-executable",
+      "exit_code": 0
+    },
+    {
+      "step": "frozen-self-test",
+      "exit_code": 0
+    }
+  ],
+  "ok": true
+}

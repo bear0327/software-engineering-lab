@@ -1,0 +1,15 @@
+{
+  "ok": true,
+  "order_id": "HBEDD302337E164988AF",
+  "status": "CONFIRMED",
+  "price_cents": 59800,
+  "idempotency": true,
+  "consistency": {
+    "ok": true,
+    "integrity": "ok",
+    "foreign_keys": [],
+    "stock_errors": [],
+    "price_errors": []
+  },
+  "backup_checked": true
+}
