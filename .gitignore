@@ -16,3 +16,4 @@ dist/
 .pylint.d/
 coverage.xml
 evidence/coverage.xml
+远程归档记录.json

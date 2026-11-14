@@ -1,0 +1,53 @@
+@startuml
+!pragma layout smetana
+title LAB3 组件图：桌面模块化单体
+skinparam defaultFontName Microsoft YaHei
+skinparam backgroundColor white
+skinparam shadowing false
+package "展示层" {
+  [Desktop / MaintenanceWorker] as shell
+  [Pages / Widgets] as ui
+}
+package "应用与业务层" {
+  [AuthService / AuthorizationPolicy] as auth
+  [CatalogService] as catalog
+  [PricingService / InventoryService] as stock
+  [BookingService / TransitionPolicy] as booking
+  [CommandExecutor / AuditService] as audit
+  [ReportService] as report
+  [LifecycleJob] as job
+}
+package "领域与持久化" {
+  [Actor / BookingCommand / Status / Clock] as domain
+  [Database] as db
+  database "SQLite：WAL + 外键 + CHECK" as sqlite
+}
+shell --> ui
+shell --> job : 每5秒
+ui --> auth
+ui --> catalog
+ui --> booking
+ui --> stock
+ui --> report
+ui --> job
+job --> booking
+booking --> stock
+booking --> audit
+audit --> auth
+catalog --> auth
+catalog --> audit
+report --> auth
+booking --> domain
+auth --> domain
+stock --> domain
+auth --> db
+catalog --> db
+audit --> db
+stock --> db
+report --> db
+db --> sqlite
+note bottom of db
+写操作 BEGIN IMMEDIATE：读检查和多日更新串行化。
+页面不直接执行SQL；一个操作使用独立连接。
+end note
+@enduml

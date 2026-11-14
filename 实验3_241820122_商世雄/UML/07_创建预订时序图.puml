@@ -1,0 +1,43 @@
+@startuml
+title LAB3 创建预订时序：SQLite事务与幂等结果
+skinparam defaultFontName Microsoft YaHei
+skinparam backgroundColor white
+skinparam shadowing false
+actor 顾客
+participant SearchPage
+participant BookingService
+participant CommandExecutor
+participant AuthService
+participant PricingService
+participant InventoryService
+database SQLite
+顾客 -> SearchPage : 接受报价并提交
+SearchPage -> BookingService : create(token, command, key)
+BookingService -> CommandExecutor : execute(..., apply)
+CommandExecutor -> SQLite : BEGIN IMMEDIATE
+CommandExecutor -> AuthService : resolve(connection, token)
+CommandExecutor -> SQLite : 按操作者/操作/键读取request_record
+alt 同键、同内容
+  CommandExecutor --> BookingService : 原结果
+else 同键、不同内容
+  CommandExecutor --> BookingService : REQUEST_KEY_CONFLICT
+else 新请求
+  CommandExecutor -> SQLite : SAVEPOINT business
+  CommandExecutor -> BookingService : apply(connection, actor)
+  BookingService -> PricingService : calculate(connection, ...)
+  PricingService -> SQLite : 读取酒店、房型、全部住宿夜
+  BookingService -> BookingService : 校验权限、容量和已接受报价
+  BookingService -> InventoryService : replace({}, new)
+  InventoryService -> SQLite : 按序更新reserved，检查supply/停售
+  BookingService -> SQLite : INSERT booking / booking_night / audit_log
+  BookingService --> CommandExecutor : 订单结果
+  CommandExecutor -> SQLite : RELEASE + INSERT request_record + COMMIT
+end
+CommandExecutor --> BookingService : 结果或业务错误
+BookingService --> SearchPage : 订单
+SearchPage --> 顾客 : 显示成功
+note over CommandExecutor,SQLite
+业务错误：回滚SAVEPOINT，保存失败结果后提交。
+SQLite/OSError：整事务回滚，不缓存基础设施错误。
+end note
+@enduml

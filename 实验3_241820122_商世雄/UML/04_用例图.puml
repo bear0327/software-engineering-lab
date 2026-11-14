@@ -1,0 +1,49 @@
+@startuml
+!pragma layout smetana
+title LAB3 用例图：三类账号与游客
+left to right direction
+skinparam defaultFontName Microsoft YaHei
+skinparam backgroundColor white
+skinparam shadowing false
+actor 游客 as guest
+actor 顾客 as customer
+actor 酒店工作人员 as staff
+actor 平台管理员 as admin
+actor 后台维护线程 as clock
+rectangle 桌面酒店预订系统 {
+  usecase "注册 / 登录 / 修改密码" as auth
+  usecase "查房与逐夜报价" as search
+  usecase "提交 / 修改 / 取消本人预订" as own
+  usecase "维护本酒店房型与价量日历" as calendar
+  usecase "确认 / 拒绝预订" as confirm
+  usecase "现场核验入住 / 正常退房" as stay
+  usecase "审核启停酒店 / 管理人员" as hotels
+  usecase "逐笔异常取消" as exception
+  usecase "授权范围统计与日志" as reports
+  usecase "通知待办处理" as notification
+  usecase "备份与一致性检查" as backup
+  usecase "超时 / 未入住 / 自动备份" as job
+}
+guest --> search
+guest --> auth
+customer --> auth
+customer --> search
+customer --> own
+staff --> auth
+staff --> calendar
+staff --> confirm
+staff --> stay
+staff --> reports
+staff --> notification
+admin --> auth
+admin --> hotels
+admin --> exception
+admin --> reports
+admin --> notification
+admin --> backup
+clock --> job
+note bottom of own
+所有写入口重新解析会话，校验角色和资源归属。
+订单写操作还检查版本、状态和时间。
+end note
+@enduml

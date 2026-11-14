@@ -1,0 +1,102 @@
+@startuml
+!pragma layout smetana
+title LAB3 领域数据与SQLite表映射
+skinparam defaultFontName Microsoft YaHei
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+hide empty methods
+class app_user {
+  id: INTEGER PK
+  username: UNIQUE TEXT
+  password_hash: TEXT
+  role: CUSTOMER / STAFF / ADMIN
+  hotel_id: INTEGER?
+  enabled: 0 / 1
+}
+class hotel {
+  id: INTEGER PK
+  name / city / address / contact: TEXT
+  time_zone: IANA TEXT
+  status: PENDING / OPEN / CLOSED
+}
+class room_type {
+  id: INTEGER PK
+  hotel_id: INTEGER FK
+  name: TEXT
+  capacity / total_rooms: INTEGER
+  version: INTEGER
+}
+class room_day {
+  room_type_id + stay_date: 联合PK
+  supply / reserved: INTEGER
+  price_cents: INTEGER
+  sold_out: 0 / 1
+  version: INTEGER
+}
+class booking {
+  id: TEXT PK (HB + UUID片段)
+  customer_id / hotel_id / room_type_id: FK
+  check_in / check_out: ISO日期
+  rooms / guests: INTEGER
+  contact_name / contact_phone: TEXT
+  total_cents: INTEGER
+  status: Status
+  pending_since / expires_at: UTC
+  created_at / updated_at: UTC
+  version: INTEGER
+}
+class booking_night {
+  booking_id + stay_date: 联合PK
+  room_type_id: INTEGER
+  unit_price_cents / quantity: INTEGER
+  allocation_state: HELD / CONSUMED / RELEASED
+}
+class request_record {
+  actor_id + operation + request_key: 联合PK
+  payload_hash: SHA256
+  result_json: TEXT
+  created_at: UTC
+}
+class audit_log {
+  id: INTEGER PK
+  actor_id / hotel_id / customer_id
+  target / action / result / reason
+  before_state / after_state
+  occurred_at: UTC
+}
+class notification_task {
+  id: INTEGER PK
+  booking_id: TEXT FK
+  message: TEXT
+  state: PENDING / DONE / RETRY
+  attempts: INTEGER
+}
+class session {
+  token_hash: TEXT PK
+  user_id: INTEGER FK
+  expires_at: UTC
+}
+hotel "1" -- "0..*" room_type
+hotel "0..1" -- "0..*" app_user : 工作人员唯一酒店
+room_type "1" -- "0..*" room_day
+app_user "1" -- "0..*" booking : 顾客
+hotel "1" -- "0..*" booking
+room_type "1" -- "0..*" booking
+booking "1" *-- "1..*" booking_night
+room_day "1" -- "0..*" booking_night : 房型+日期外键
+app_user "1" -- "0..*" session
+app_user "1" -- "0..*" request_record
+app_user "0..1" -- "0..*" audit_log
+booking "1" -- "0..*" notification_task
+note bottom of room_day
+0 <= reserved <= supply <= total_rooms
+触发器限制供给；金额统一以整数分存储。
+日期范围 [check_in, check_out)。
+end note
+note bottom of booking
+领域表使用 sqlite3.Row / dict，不设置虚假的ORM类。
+Actor、BookingCommand 是代码中的dataclass。
+Status、Role 是StrEnum。
+end note
+@enduml
