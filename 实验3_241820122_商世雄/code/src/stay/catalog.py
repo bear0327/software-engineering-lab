@@ -40,7 +40,8 @@ class CatalogService:
         with self.database.transaction() as connection:
             actor = ensure_admin(connection, self.auth, token)
             cursor = connection.execute(
-                "INSERT INTO hotel(name,city,address,contact,time_zone,status) VALUES(?,?,?,?,?,'PENDING')",
+                "INSERT INTO hotel(name,city,address,contact,time_zone,status) "
+                "VALUES(?,?,?,?,?,'PENDING')",
                 (name, city, address, contact, zone),
             )
             self.audit.append(
@@ -212,9 +213,11 @@ class CatalogService:
                     f"{day}供给不足覆盖已占用",
                 )
                 connection.execute(
-                    "INSERT INTO room_day(room_type_id,stay_date,supply,price_cents,sold_out) VALUES(?,?,?,?,?) "
+                    "INSERT INTO room_day(room_type_id,stay_date,supply,price_cents,sold_out) "
+                    "VALUES(?,?,?,?,?) "
                     "ON CONFLICT(room_type_id,stay_date) DO UPDATE SET supply=excluded.supply,"
-                    "price_cents=excluded.price_cents,sold_out=excluded.sold_out,version=room_day.version+1",
+                    "price_cents=excluded.price_cents,sold_out=excluded.sold_out,"
+                    "version=room_day.version+1",
                     (room_id, day, supply, price_value, int(sold_out)),
                 )
             self.audit.append(

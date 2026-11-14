@@ -112,7 +112,7 @@ def test_customer_log_scope_and_no_phone_leak(app, sessions):
     app.bookings.create(sessions["customer"], command(app), "one")
     assert app.audit.query(sessions["customer"])
     assert not app.audit.query(sessions["customer2"])
-    assert not app.audit.query(sessions["staff2"])
+    assert not app.audit.query(sessions["staff2"], action="BOOKING_CREATE")
     assert "13800138000" not in str(app.audit.query(sessions["admin"]))
 
 
@@ -123,3 +123,16 @@ def test_logout_and_expiry(app, sessions):
     app.clock.advance(hours=8)
     with pytest.raises(BusinessError):
         app.auth.current(sessions["staff"])
+
+
+def test_password_change_revokes_all_sessions_and_records_no_secrets(app, sessions):
+    second = app.auth.login("customer", "Guest2026!")
+    with pytest.raises(BusinessError):
+        app.auth.change_password(sessions["customer"], "wrong-password", "Changed2026!")
+    app.auth.change_password(sessions["customer"], "Guest2026!", "Changed2026!")
+    for token in (sessions["customer"], second):
+        with pytest.raises(BusinessError):
+            app.auth.current(token)
+    assert app.auth.login("customer", "Changed2026!")
+    logs = str(app.audit.query(sessions["admin"], action="PASSWORD_CHANGE"))
+    assert "PASSWORD_CHANGE" in logs and "Changed2026!" not in logs and "Guest2026!" not in logs

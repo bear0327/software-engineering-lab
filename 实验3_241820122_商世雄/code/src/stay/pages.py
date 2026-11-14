@@ -5,7 +5,7 @@ from __future__ import annotations
 import json
 import tkinter as tk
 import uuid
-from datetime import timedelta
+from datetime import date, timedelta
 from tkinter import messagebox, ttk
 from zoneinfo import ZoneInfo
 
@@ -15,6 +15,8 @@ from stay.domain import (
     Role,
     Status,
     cents,
+    digest,
+    instant,
     money,
     positive_int,
     require,
@@ -27,6 +29,7 @@ class Page(ttk.Frame):
         super().__init__(desktop.content, padding=20)
         self.desktop = desktop
         self.app = desktop.app
+        self.request_keys = {}
         ttk.Label(self, text=title, style="Heading.TLabel").pack(anchor="w")
         ttk.Label(self, text=subtitle, style="Muted.TLabel", wraplength=1000).pack(
             anchor="w", pady=(8, 16)
@@ -53,6 +56,10 @@ class Page(ttk.Frame):
 
     def success(self, message: str):
         self.desktop.notice.set(message)
+
+    def command_key(self, payload):
+        fingerprint = digest(payload)
+        return self.request_keys.setdefault(fingerprint, uuid.uuid4().hex)
 
 
 class SearchPage(Page):
@@ -235,8 +242,13 @@ class OrdersPage(Page):
             f"{row['hotel_name']} / {row['room_name']}",
             f"状态：{STATUS_NAMES[Status(row['status'])]}，版本：{row['version']}",
             f"{row['check_in']}入住 → {row['check_out']}离店，{row['rooms']}间，{row['guests']}人",
-            f"联系人：{row['contact_name']} / {row['contact_phone']}",
+            f"联系人：{row['contact_name']} / "
+            f"{row['contact_phone'][:3]}****{row['contact_phone'][-4:]}",
             f"总价：¥{money(row['total_cents'])}",
+            "酒店确认截止："
+            + instant(row["expires_at"])
+            .astimezone(ZoneInfo(row["time_zone"]))
+            .strftime("%Y-%m-%d %H:%M:%S %Z"),
             "逐夜成交明细：",
         ]
         for night in row["nights"]:
@@ -270,7 +282,12 @@ class OrdersPage(Page):
         ):
             return
         result = self.app.bookings.transition(
-            self.token, row["id"], action, row["version"], uuid.uuid4().hex, reason
+            self.token,
+            row["id"],
+            action,
+            row["version"],
+            self.command_key([row["id"], action, row["version"], reason]),
+            reason,
         )
         self.refresh()
         self.success(f"处理成功：{STATUS_NAMES[Status(result['status'])]}")
@@ -288,7 +305,7 @@ class OrdersPage(Page):
                 result["name"],
                 result["phone"],
                 row["version"],
-                uuid.uuid4().hex,
+                self.command_key([row["id"], "contact", row["version"], result]),
             )
             self.refresh()
 
@@ -329,7 +346,13 @@ class OrdersPage(Page):
             row["contact_phone"],
             quote["quote_id"],
         )
-        self.app.bookings.modify(self.token, row["id"], command, row["version"], uuid.uuid4().hex)
+        self.app.bookings.modify(
+            self.token,
+            row["id"],
+            command,
+            row["version"],
+            self.command_key([row["id"], "modify", row["version"], result, quote["quote_id"]]),
+        )
         self.refresh()
 
 
@@ -471,8 +494,6 @@ class CalendarPage(Page):
         self.apply(self.start.get(), self.end.get(), {})
 
     def edit(self):
-        from datetime import date  # Keep date parsing beside single-day editing.
-
         row = self.selected(self.table)
         end = (date.fromisoformat(row["stay_date"]) + timedelta(days=1)).isoformat()
         self.apply(row["stay_date"], end, row, row["version"])

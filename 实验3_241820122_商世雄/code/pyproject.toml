@@ -41,6 +41,12 @@ max-positional-arguments = 10
 max-locals = 24
 max-attributes = 14
 min-public-methods = 0
+# ttk.Frame already inherits seven Tk mixins; pages add two layers.
+max-parents = 10
+
+[tool.pylint.similarities]
+# Short parameterized SQL authorization checks are intentionally repeated.
+min-similarity-lines = 8
 
 [tool.pylint.messages_control]
 disable = ["missing-function-docstring", "missing-class-docstring", "too-many-lines"]

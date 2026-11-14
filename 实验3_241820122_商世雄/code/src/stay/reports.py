@@ -46,7 +46,8 @@ class ReportService:
                 dict(row)
                 for row in connection.execute(
                     "SELECT b.id,b.hotel_id,b.room_type_id,b.status,b.rooms,b.check_in,b.check_out,"
-                    "b.rooms*CAST(julianday(b.check_out)-julianday(b.check_in) AS INTEGER) room_nights "
+                    "b.rooms*CAST(julianday(b.check_out)-julianday(b.check_in) AS INTEGER) "
+                    "room_nights "
                     "FROM booking b WHERE " + " AND ".join(clauses) + " ORDER BY b.check_in,b.id",
                     args,
                 )
@@ -123,7 +124,8 @@ class ReportService:
         totals = [
             dict(row)
             for row in connection.execute(
-                "SELECT b.id,b.total_cents,COALESCE(SUM(n.quantity*n.unit_price_cents),0) calculated "
+                "SELECT b.id,b.total_cents,"
+                "COALESCE(SUM(n.quantity*n.unit_price_cents),0) calculated "
                 "FROM booking b LEFT JOIN booking_night n ON n.booking_id=b.id "
                 "GROUP BY b.id HAVING b.total_cents!=calculated"
             )

@@ -156,7 +156,8 @@ class BookingService:
             booking_id, now = "HB" + uuid.uuid4().hex[:18].upper(), self.clock.now()
             connection.execute(
                 "INSERT INTO booking(id,customer_id,hotel_id,room_type_id,check_in,check_out,rooms,"
-                "guests,contact_name,contact_phone,total_cents,status,created_at,updated_at,pending_since,expires_at) "
+                "guests,contact_name,contact_phone,total_cents,status,created_at,updated_at,"
+                "pending_since,expires_at) "
                 "VALUES(?,?,?,?,?,?,?,?,?,?,?,'PENDING',?,?,?,?)",
                 (
                     booking_id,
@@ -268,6 +269,17 @@ class BookingService:
                     "room": row["room_type_id"],
                     "rooms": row["rooms"],
                     "total_cents": row["total_cents"],
+                    "night_prices": [
+                        {
+                            "date": night["stay_date"],
+                            "unit_cents": night["unit_price_cents"],
+                            "quantity": night["quantity"],
+                        }
+                        for night in connection.execute(
+                            "SELECT * FROM booking_night WHERE booking_id=? ORDER BY stay_date",
+                            (booking_id,),
+                        )
+                    ],
                 },
                 ensure_ascii=False,
             )
@@ -275,8 +287,9 @@ class BookingService:
             self._save_nights(connection, booking_id, command, quote)
             now = self.clock.now()
             connection.execute(
-                "UPDATE booking SET room_type_id=?,check_in=?,check_out=?,rooms=?,guests=?,contact_name=?,"
-                "contact_phone=?,total_cents=?,version=version+1,updated_at=?,pending_since=?,expires_at=? WHERE id=?",
+                "UPDATE booking SET room_type_id=?,check_in=?,check_out=?,rooms=?,guests=?,"
+                "contact_name=?,contact_phone=?,total_cents=?,version=version+1,updated_at=?,"
+                "pending_since=?,expires_at=? WHERE id=?",
                 (
                     command.room_type_id,
                     command.check_in,

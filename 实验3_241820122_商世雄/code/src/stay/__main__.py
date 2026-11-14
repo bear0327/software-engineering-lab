@@ -105,7 +105,8 @@ def main() -> int:
         )
         app = Application(args.db)
         app.seed_demo()
-        from stay.desktop import Desktop  # Tk is only required when launching the GUI.
+        # Keep CLI self-test/restore available without a graphical display.
+        from stay.desktop import Desktop  # pylint: disable=import-outside-toplevel
 
         Desktop(app).mainloop()
         return 0

@@ -8,9 +8,13 @@ import re
 import secrets
 import sqlite3
 from datetime import timedelta
+from typing import TYPE_CHECKING
 
 from stay.database import Database
 from stay.domain import Actor, BusinessError, Clock, Role, instant, require, stamp, text
+
+if TYPE_CHECKING:
+    from stay.audit import AuditService
 
 
 def hash_password(password: str) -> str:
@@ -75,6 +79,7 @@ class AuthService:
     def __init__(self, database: Database, clock: Clock):
         self.database = database
         self.clock = clock
+        self.audit: AuditService | None = None
 
     def bootstrap(self, account: str, password: str) -> int:
         """Create exactly one initial administrator for a fresh database."""
@@ -84,7 +89,8 @@ class AuthService:
             if existing:
                 return existing["id"]
             cursor = connection.execute(
-                "INSERT INTO app_user(username,password_hash,display_name,role) VALUES(?,?,?,'ADMIN')",
+                "INSERT INTO app_user(username,password_hash,display_name,role) "
+                "VALUES(?,?,?,'ADMIN')",
                 (account, encoded, "平台管理员"),
             )
             return cursor.lastrowid
@@ -172,6 +178,15 @@ class AuthService:
                     "VALUES(?,?,?,'STAFF',?)",
                     (account, encoded, name, hotel_id),
                 )
+                if self.audit:
+                    self.audit.append(
+                        connection,
+                        actor,
+                        "STAFF_CREATE",
+                        str(cursor.lastrowid),
+                        after="ENABLED",
+                        scope={"hotel_id": hotel_id},
+                    )
                 return cursor.lastrowid
         except sqlite3.IntegrityError as error:
             raise BusinessError("CONFLICT", "账号已存在") from error
@@ -183,18 +198,56 @@ class AuthService:
                 dict(row)
                 for row in connection.execute(
                     "SELECT u.id,u.username,u.display_name,u.hotel_id,u.enabled,h.name hotel_name "
-                    "FROM app_user u JOIN hotel h ON h.id=u.hotel_id WHERE u.role='STAFF' ORDER BY u.id"
+                    "FROM app_user u JOIN hotel h ON h.id=u.hotel_id "
+                    "WHERE u.role='STAFF' ORDER BY u.id"
                 )
             ]
 
     def set_enabled(self, token: str, user_id: int, enabled: bool) -> None:
         require(isinstance(enabled, bool), "INVALID_INPUT", "启用状态无效")
         with self.database.transaction() as connection:
-            AuthorizationPolicy.role(self.resolve(connection, token), Role.ADMIN)
-            row = connection.execute("SELECT role FROM app_user WHERE id=?", (user_id,)).fetchone()
+            actor = self.resolve(connection, token)
+            AuthorizationPolicy.role(actor, Role.ADMIN)
+            row = connection.execute("SELECT * FROM app_user WHERE id=?", (user_id,)).fetchone()
             require(
                 row is not None and row["role"] == Role.STAFF, "FORBIDDEN", "此入口只管理工作人员"
             )
             connection.execute("UPDATE app_user SET enabled=? WHERE id=?", (int(enabled), user_id))
             if not enabled:
                 connection.execute("DELETE FROM session WHERE user_id=?", (user_id,))
+            if self.audit:
+                self.audit.append(
+                    connection,
+                    actor,
+                    "STAFF_STATUS",
+                    str(user_id),
+                    str(row["enabled"]),
+                    str(int(enabled)),
+                    scope={"hotel_id": row["hotel_id"]},
+                )
+
+    def change_password(self, token: str, old_password: str, new_password: str) -> None:
+        encoded = hash_password(new_password)
+        with self.database.transaction() as connection:
+            actor = self.resolve(connection, token)
+            row = connection.execute(
+                "SELECT password_hash FROM app_user WHERE id=?", (actor.id,)
+            ).fetchone()
+            require(
+                verify_password(old_password, row["password_hash"]), "AUTH_FAILED", "原密码不正确"
+            )
+            connection.execute(
+                "UPDATE app_user SET password_hash=? WHERE id=?", (encoded, actor.id)
+            )
+            connection.execute("DELETE FROM session WHERE user_id=?", (actor.id,))
+            if self.audit:
+                self.audit.append(
+                    connection,
+                    actor,
+                    "PASSWORD_CHANGE",
+                    str(actor.id),
+                    scope={
+                        "hotel_id": actor.hotel_id,
+                        "customer_id": actor.id if actor.role == Role.CUSTOMER else None,
+                    },
+                )

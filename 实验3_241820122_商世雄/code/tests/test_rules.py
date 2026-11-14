@@ -124,6 +124,62 @@ def test_modified_quote_failure_keeps_original(app, sessions):
     assert app.bookings.get(sessions["customer"], row["id"]) == row
 
 
+def test_room_edit_versions_and_calendar_constraints(app, sessions):
+    room = app.catalog.list_rooms(sessions["staff"])[0]
+    with pytest.raises(BusinessError):
+        app.catalog.update_room(sessions["staff"], room["id"], room["name"], 2, 1, room["version"])
+    app.catalog.update_room(sessions["staff"], room["id"], "更新的大床房", 3, 12, room["version"])
+    with pytest.raises(BusinessError) as error:
+        app.catalog.update_room(sessions["staff"], room["id"], "旧页面", 2, 12, room["version"])
+    assert error.value.code == "STALE_VERSION"
+    day = app.catalog.calendar(sessions["staff"], 1, "2026-11-15", "2026-11-16")[0]
+    app.catalog.set_calendar(
+        sessions["staff"], 1, "2026-11-15", "2026-11-16", 10, "320", expected_version=day["version"]
+    )
+    with pytest.raises(BusinessError) as error:
+        app.catalog.set_calendar(
+            sessions["staff"],
+            1,
+            "2026-11-15",
+            "2026-11-16",
+            10,
+            "350",
+            expected_version=day["version"],
+        )
+    assert error.value.code == "STALE_VERSION"
+
+
+def test_hotel_scope_and_order_list_filters(app, sessions):
+    assert len(app.catalog.list_hotels()) == 2
+    assert len(app.catalog.list_hotels(sessions["staff2"])) == 1
+    pending = app.catalog.create_hotel(
+        sessions["admin"], "待审核酒店", "苏州", "测试路1号", "051280001234"
+    )
+    assert pending not in {row["id"] for row in app.catalog.list_hotels()}
+    order = app.bookings.create(sessions["customer"], command(app), "new")
+    assert app.bookings.list(sessions["staff"], "PENDING", 1)[0]["id"] == order["id"]
+    assert not app.bookings.list(sessions["customer"], "CONFIRMED")
+    with pytest.raises(BusinessError):
+        app.bookings.list(sessions["staff2"], hotel_id=1)
+
+
+def test_modification_audit_preserves_old_nightly_prices(app, sessions):
+    import json
+
+    order = app.bookings.create(sessions["customer"], command(app), "new")
+    quote = app.bookings.quote_modification(
+        sessions["customer"], order["id"], 1, "2026-11-15", "2026-11-16", 1, 2
+    )
+    changed = BookingCommand(
+        1, "2026-11-15", "2026-11-16", 1, 2, "测试", "13800138000", quote["quote_id"]
+    )
+    app.bookings.modify(sessions["customer"], order["id"], changed, 1, "shrink")
+    record = app.audit.query(sessions["customer"], action="BOOKING_MODIFY")[0]
+    before = json.loads(record["before_state"])
+    assert len(before["night_prices"]) == 2
+    assert sum(n["unit_cents"] * n["quantity"] for n in before["night_prices"]) == 59800
+
+
 def test_undated_browse_and_price_filter(app):
     rows = app.pricing.search("南京")
     assert rows and all("total_cents" not in row for row in rows)

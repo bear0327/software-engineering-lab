@@ -5,6 +5,7 @@ from __future__ import annotations
 import hashlib
 import json
 import sqlite3
+from contextlib import closing
 from datetime import timedelta
 from pathlib import Path
 
@@ -36,7 +37,7 @@ class LifecycleJob:
         self.backup_dir.mkdir(parents=True, exist_ok=True)
         path = self.backup_dir / (now.strftime("stay-%Y%m%d-%H%M%S-%f") + ".sqlite3")
         self.booking.database.backup(path)
-        with sqlite3.connect(path) as connection:
+        with closing(sqlite3.connect(path)) as connection:
             connection.row_factory = sqlite3.Row
             diagnostics = ReportService.check_consistency(connection)
         manifest = {

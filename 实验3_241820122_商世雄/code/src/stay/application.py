@@ -23,6 +23,7 @@ class Application:
         self.database = Database(path)
         self.auth = AuthService(self.database, self.clock)
         self.audit = AuditService(self.database, self.auth, self.clock)
+        self.auth.audit = self.audit
         self.catalog = CatalogService(self.database, self.auth, self.audit, self.clock)
         self.pricing = PricingService(self.database, self.clock)
         self.bookings = BookingService(self.database, self.auth, self.audit, self.clock)

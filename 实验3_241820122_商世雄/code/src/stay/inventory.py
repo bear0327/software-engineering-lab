@@ -43,7 +43,8 @@ class PricingService:
         require(guests <= room["capacity"] * rooms, "CAPACITY_CONFLICT", "人数超过房型容量乘以间数")
         rows = list(
             connection.execute(
-                "SELECT * FROM room_day WHERE room_type_id=? AND stay_date>=? AND stay_date<? ORDER BY stay_date",
+                "SELECT * FROM room_day WHERE room_type_id=? AND stay_date>=? AND stay_date<? "
+                "ORDER BY stay_date",
                 (room_id, start, end),
             )
         )
@@ -118,7 +119,8 @@ class PricingService:
         with self.database.read() as connection:
             sql = (
                 "SELECT r.id room_type_id,r.name room_name,r.capacity,h.id hotel_id,"
-                "h.name hotel_name,h.city,h.address FROM room_type r JOIN hotel h ON h.id=r.hotel_id "
+                "h.name hotel_name,h.city,h.address FROM room_type r "
+                "JOIN hotel h ON h.id=r.hotel_id "
                 "WHERE h.status='OPEN'"
             )
             args = []

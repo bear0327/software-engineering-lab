@@ -161,6 +161,10 @@ class Desktop(tk.Tk):
         ttk.Button(top, text="返回登录" if guest else "退出登录", command=self.logout).pack(
             side="right"
         )
+        if not guest:
+            ttk.Button(
+                top, text="修改密码", command=lambda: self.invoke(self.change_password)
+            ).pack(side="right", padx=8)
         layout = ttk.Frame(self.body)
         layout.pack(fill="both", expand=True)
         side = ttk.Frame(layout, padding=12, width=185)
@@ -211,6 +215,25 @@ class Desktop(tk.Tk):
             self.app.auth.logout(self.token)
         self.token, self.actor = "", None
         self.login_view()
+
+    def change_password(self):
+        result = FormDialog(
+            self,
+            "修改密码",
+            [
+                ("old_password", "原密码", ""),
+                ("new_password", "新密码（8至128位）", ""),
+                ("repeat_password", "确认新密码", ""),
+            ],
+        ).result
+        if not result:
+            return
+        if result["new_password"] != result["repeat_password"]:
+            raise BusinessError("INVALID_INPUT", "两次新密码不一致")
+        self.app.auth.change_password(self.token, result["old_password"], result["new_password"])
+        self.token, self.actor = "", None
+        self.login_view()
+        self.notice.set("密码已修改，所有旧登录已失效，请重新登录")
 
     def poll_worker(self):
         try:

@@ -13,3 +13,6 @@ dist/
 *.zip
 *.exe
 .venv/
+.pylint.d/
+coverage.xml
+evidence/coverage.xml
