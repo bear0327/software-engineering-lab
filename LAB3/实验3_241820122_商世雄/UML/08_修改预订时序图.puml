@@ -1,0 +1,45 @@
+@startuml
+title LAB3 修改预订时序：原占用参与核算
+skinparam defaultFontName Microsoft YaHei
+skinparam backgroundColor white
+skinparam shadowing false
+actor 顾客
+participant OrdersPage
+participant CommandExecutor
+participant BookingService
+participant PricingService
+participant InventoryService
+database SQLite
+顾客 -> OrdersPage : 输入修改方案
+OrdersPage -> BookingService : quote_modification(...)
+BookingService -> PricingService : calculate(..., original_allocations)
+PricingService --> OrdersPage : 新逐夜价格和总价
+顾客 -> OrdersPage : 接受新报价
+OrdersPage -> BookingService : modify(..., version, request_key)
+BookingService -> CommandExecutor : execute(..., apply)
+CommandExecutor -> SQLite : BEGIN IMMEDIATE / 解析会话 / 幂等检查
+CommandExecutor -> BookingService : apply(connection, actor)
+BookingService -> SQLite : 读取订单与酒店时区
+alt 已到期
+  BookingService -> InventoryService : release(...)
+  BookingService -> SQLite : EXPIRED + 审计 + 通知待办
+  BookingService --> CommandExecutor : 错误字典（不抛异常）
+  CommandExecutor -> SQLite : 保存错误结果并提交
+else 未到期
+  BookingService -> BookingService : 检查归属、PENDING和version
+  BookingService -> InventoryService : allocations(connection, id)
+  BookingService -> PricingService : calculate(..., old)
+  PricingService -> SQLite : 检查新方案的价格、余量、停售净变化
+  BookingService -> InventoryService : replace(old, new)
+  InventoryService -> SQLite : 逐日delta = new - old
+  BookingService -> SQLite : 替换逐夜快照，更新订单与总价
+  BookingService -> SQLite : version+1，expires_at = now+30分钟，审计
+  BookingService --> CommandExecutor : 新订单结果
+  CommandExecutor -> SQLite : 保存请求结果并提交
+end
+CommandExecutor --> OrdersPage : 成功 / 要求刷新
+note over BookingService,SQLite
+任一晚无房、报价改变或写入失败：原订单和库存不变。
+停售日允许delta <= 0，不能增加原占用。
+end note
+@enduml

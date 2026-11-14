@@ -1,0 +1,98 @@
+@startuml
+!pragma layout smetana
+title LAB3 应用服务：实际类名和方法
+skinparam defaultFontName Microsoft YaHei
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+class Application {
+  +seed_demo(): dict
+}
+class Database {
+  +read(): Connection
+  +transaction(): Connection
+  +backup(destination): Path
+}
+class AuthService {
+  +register(account, password, display_name): int
+  +login(account, password): str
+  +resolve(connection, token): Actor
+  +change_password(token, old, new)
+  +create_staff(...): int
+  +set_enabled(...)
+}
+class AuthorizationPolicy {
+  +role(actor, roles)
+  +hotel(actor, hotel_id)
+  +booking(actor, booking)
+}
+class BookingService {
+  +create(token, command, request_key): dict
+  +quote_modification(...): dict
+  +modify(token, id, command, version, key): dict
+  +update_contact(...): dict
+  +transition(token, id, action, version, key, reason): dict
+  +finalize_due(connection, row): dict?
+}
+class TransitionPolicy {
+  +authorize(actor, action)
+  +target(row, action, now, zone): Status
+}
+class PricingService {
+  +search(...): list
+  +quote(...): dict
+  +calculate(connection, ..., original): dict
+}
+class InventoryService {
+  +allocations(connection, booking_id): dict
+  +replace(connection, old, new)
+  +release(connection, booking_id, today)
+}
+class CommandExecutor {
+  +execute(token, operation, key, payload, handler): dict
+}
+class AuditService {
+  +append(connection, actor, action, target, ...)
+  +query(token, ...): list
+}
+class CatalogService {
+  +create_hotel(...): int
+  +set_status(...)
+  +create_room(...): int
+  +update_room(...)
+  +set_calendar(...)
+}
+class ReportService {
+  +statistics(...): dict
+  +notifications(token): list
+  +diagnose(token): dict
+}
+class LifecycleJob {
+  +run(): dict
+  +backup(token): dict
+  +auto_backup(): Path?
+}
+Application *-- AuthService
+Application *-- CatalogService
+Application *-- BookingService
+Application *-- ReportService
+Application *-- LifecycleJob
+BookingService --> TransitionPolicy
+BookingService --> InventoryService
+BookingService --> PricingService
+BookingService --> CommandExecutor
+CommandExecutor --> Database
+CommandExecutor --> AuthService
+CommandExecutor --> AuditService
+AuthService --> AuthorizationPolicy
+CatalogService --> AuthorizationPolicy
+ReportService --> AuthorizationPolicy
+LifecycleJob --> BookingService
+CatalogService --> Database
+ReportService --> Database
+AuthService --> Database
+note bottom of Database
+上下文管理器承担UnitOfWork职责。
+本版不额外包装只转发SQL的Repository接口。
+end note
+@enduml

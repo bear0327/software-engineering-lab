@@ -1,0 +1,18 @@
+{
+  "loaded_from": "C:\\Users\\11690\\AppData\\Local\\Temp\\stay-wheel-b_kmnlxs\\stay\\__init__.py",
+  "result": {
+    "ok": true,
+    "order_id": "HB91464348580F452CA1",
+    "status": "CONFIRMED",
+    "price_cents": 59800,
+    "idempotency": true,
+    "consistency": {
+      "ok": true,
+      "integrity": "ok",
+      "foreign_keys": [],
+      "stock_errors": [],
+      "price_errors": []
+    },
+    "backup_checked": true
+  }
+}

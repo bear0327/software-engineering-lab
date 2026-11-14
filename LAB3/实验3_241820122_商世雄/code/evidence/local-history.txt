@@ -1,0 +1,5 @@
+$ git -c core.quotepath=false log --graph --date=iso-strict --pretty=format:%h %ad %s
+
+* 8f4be23 2026-11-14T19:25:07+08:00 build(lab3): add reproducible packaging, implementation UML and operating evidence
+* 75e874c 2026-11-14T19:19:40+08:00 fix(lab3): close backup handles and strengthen authorization, retries and audit tests
+* c109eb3 2026-11-14T19:04:09+08:00 feat(lab3): implement hotel desktop application and isolated business tests

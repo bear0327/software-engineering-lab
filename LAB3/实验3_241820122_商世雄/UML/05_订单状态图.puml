@@ -1,0 +1,40 @@
+@startuml
+!pragma layout smetana
+title LAB3 订单状态图：与TransitionPolicy一致
+skinparam defaultFontName Microsoft YaHei
+skinparam backgroundColor white
+skinparam shadowing false
+state "待确认 PENDING" as P
+state "已确认 CONFIRMED" as C
+state "已入住 CHECKED_IN" as I
+state "已退房 CHECKED_OUT" as O
+state "已取消 CANCELLED" as X
+state "已拒绝 REJECTED" as R
+state "已超时 EXPIRED" as E
+state "未入住 NO_SHOW" as N
+[*] --> P : 创建 / 逐夜预留
+P --> P : 顾客修改成功 / 净变化、重置30分钟
+P --> C : 本酒店确认 [now < expires_at]
+P --> R : 本酒店拒绝并填写原因
+P --> X : 顾客取消 / 管理员异常取消
+P --> E : 任务或写接口 [now >= expires_at]
+C --> C : 只改联系人 / 不重置计时
+C --> I : 本酒店核验 [酒店当地计划入住日]
+C --> X : 顾客 [入住日当地18:00前]\n或管理员异常处理
+C --> N : [入住日次日当地00:00仍未入住]
+I --> O : 本酒店退房 [当地日期 >= 计划离店日]
+O --> [*]
+X --> [*]
+R --> [*]
+E --> [*]
+N --> [*]
+note right of E
+到期转态及库存释放先提交，再向调用方报错。
+确认与入住不再扣房；终态不能恢复。
+end note
+note bottom of N
+仅归还今天及未来的预留。
+过去住宿夜转CONSUMED，不重新出售。
+正常退房同样保留历史占用。
+end note
+@enduml

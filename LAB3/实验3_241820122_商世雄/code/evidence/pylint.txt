@@ -1,0 +1,8 @@
+$ C:\Users\11690\AppData\Local\Programs\Python\Python312\python.exe -m pylint src/stay --output-format=text
+
+
+--------------------------------------------------------------------
+Your code has been rated at 10.00/10 (previous run: 10.00/10, +0.00)
+
+
+Exit code: 0

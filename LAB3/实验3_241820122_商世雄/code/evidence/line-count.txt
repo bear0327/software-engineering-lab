@@ -1,0 +1,10 @@
+$ C:\Users\11690\AppData\Local\Programs\Python\Python312\python.exe scripts/line_count.py
+
+{
+  "physical": 3172,
+  "code_without_docstrings": 2850,
+  "comment_only": 9,
+  "logical_statements": 1560
+}
+
+Exit code: 0

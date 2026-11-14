@@ -1,0 +1,107 @@
+$ C:\Users\11690\AppData\Local\Programs\Python\Python312\python.exe -m PyInstaller --noconfirm --clean --onedir --windowed --name StayHotel --paths src --collect-all tzdata run.py
+
+223 INFO: PyInstaller: 6.22.3, contrib hooks: 2026.10
+223 INFO: Python: 3.12.10
+302 INFO: Platform: Windows-11-10.0.26200-SP0
+302 INFO: Python environment: C:\Users\11690\AppData\Local\Programs\Python\Python312
+303 INFO: wrote C:\Users\11690\Desktop\IN-USE\软件工程\LAB3\实验3_241820122_商世雄\code\StayHotel.spec
+308 INFO: Removing temporary files and cleaning cache in C:\Users\11690\AppData\Local\pyinstaller
+6294 INFO: Module search paths (PYTHONPATH):
+['C:\\Users\\11690\\Desktop\\IN-USE\\软件工程\\LAB3\\实验3_241820122_商世雄\\code',
+ 'C:\\Users\\11690\\AppData\\Local\\Programs\\Python\\Python312\\python312.zip',
+ 'C:\\Users\\11690\\AppData\\Local\\Programs\\Python\\Python312\\DLLs',
+ 'C:\\Users\\11690\\AppData\\Local\\Programs\\Python\\Python312\\Lib',
+ 'C:\\Users\\11690\\AppData\\Local\\Programs\\Python\\Python312',
+ 'C:\\Users\\11690\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages',
+ 'C:\\Users\\11690\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\win32',
+ 'C:\\Users\\11690\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\win32\\lib',
+ 'C:\\Users\\11690\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\Pythonwin',
+ 'C:\\Users\\11690\\Desktop\\IN-USE\\软件工程\\LAB3\\实验3_241820122_商世雄\\code',
+ 'C:\\Users\\11690\\Desktop\\IN-USE\\软件工程\\LAB3\\实验3_241820122_商世雄\\code\\src']
+6951 INFO: Appending 'datas' from .spec
+7014 INFO: checking Analysis
+7014 INFO: Building Analysis because Analysis-00.toc is non existent
+7014 INFO: Looking for Python shared library...
+7015 INFO: Using Python shared library: C:\Users\11690\AppData\Local\Programs\Python\Python312\python312.dll
+7015 INFO: Running Analysis Analysis-00.toc
+7015 INFO: Target bytecode optimization level: 0
+7015 INFO: Initializing module dependency graph...
+7016 INFO: Initializing module graph hook caches...
+7035 INFO: Analyzing modules for base_library.zip ...
+8577 INFO: Processing standard module hook 'hook-heapq.py' from 'C:\\Users\\11690\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\PyInstaller\\hooks'
+8682 INFO: Processing standard module hook 'hook-encodings.py' from 'C:\\Users\\11690\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\PyInstaller\\hooks'
+10454 INFO: Processing standard module hook 'hook-math.py' from 'C:\\Users\\11690\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\PyInstaller\\hooks'
+10741 INFO: Processing standard module hook 'hook-pickle.py' from 'C:\\Users\\11690\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\PyInstaller\\hooks'
+12343 INFO: Caching module dependency graph...
+12399 INFO: Analyzing C:\Users\11690\Desktop\IN-USE\软件工程\LAB3\实验3_241820122_商世雄\code\run.py
+12447 INFO: Processing standard module hook 'hook-sqlite3.py' from 'C:\\Users\\11690\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\PyInstaller\\hooks'
+13024 INFO: Processing standard module hook 'hook-platform.py' from 'C:\\Users\\11690\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\PyInstaller\\hooks'
+13033 INFO: Processing standard module hook 'hook-zoneinfo.py' from 'C:\\Users\\11690\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+13059 INFO: Processing standard module hook 'hook-sysconfig.py' from 'C:\\Users\\11690\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\PyInstaller\\hooks'
+13200 INFO: Processing pre-find-module-path hook 'hook-tkinter.py' from 'C:\\Users\\11690\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\PyInstaller\\hooks\\pre_find_module_path'
+13202 INFO: TclTkInfo: initializing cached Tcl/Tk info...
+13616 INFO: Processing standard module hook 'hook-_tkinter.py' from 'C:\\Users\\11690\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\PyInstaller\\hooks'
+13702 INFO: Analyzing hidden import 'tzdata'
+13705 INFO: Analyzing hidden import 'tzdata.zoneinfo'
+13706 INFO: Analyzing hidden import 'tzdata.zoneinfo.Africa'
+13707 INFO: Analyzing hidden import 'tzdata.zoneinfo.America'
+13708 INFO: Analyzing hidden import 'tzdata.zoneinfo.America.Argentina'
+13710 INFO: Analyzing hidden import 'tzdata.zoneinfo.America.Indiana'
+13710 INFO: Analyzing hidden import 'tzdata.zoneinfo.America.Kentucky'
+13710 INFO: Analyzing hidden import 'tzdata.zoneinfo.America.North_Dakota'
+13712 INFO: Analyzing hidden import 'tzdata.zoneinfo.Antarctica'
+13713 INFO: Analyzing hidden import 'tzdata.zoneinfo.Arctic'
+13714 INFO: Analyzing hidden import 'tzdata.zoneinfo.Asia'
+13714 INFO: Analyzing hidden import 'tzdata.zoneinfo.Atlantic'
+13714 INFO: Analyzing hidden import 'tzdata.zoneinfo.Australia'
+13715 INFO: Analyzing hidden import 'tzdata.zoneinfo.Brazil'
+13716 INFO: Analyzing hidden import 'tzdata.zoneinfo.Canada'
+13716 INFO: Analyzing hidden import 'tzdata.zoneinfo.Chile'
+13717 INFO: Analyzing hidden import 'tzdata.zoneinfo.Etc'
+13718 INFO: Analyzing hidden import 'tzdata.zoneinfo.Europe'
+13719 INFO: Analyzing hidden import 'tzdata.zoneinfo.Indian'
+13719 INFO: Analyzing hidden import 'tzdata.zoneinfo.Mexico'
+13720 INFO: Analyzing hidden import 'tzdata.zoneinfo.Pacific'
+13722 INFO: Analyzing hidden import 'tzdata.zoneinfo.US'
+13722 INFO: Processing module hooks (post-graph stage)...
+13723 INFO: Processing standard module hook 'hook-tzdata.py' from 'C:\\Users\\11690\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+14739 INFO: Processing standard module hook 'hook-_ctypes.py' from 'C:\\Users\\11690\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\PyInstaller\\hooks'
+15510 INFO: Processing standard module hook 'hook-_tkinter.py' from 'C:\\Users\\11690\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\PyInstaller\\hooks'
+15535 INFO: Performing binary vs. data reclassification (1562 entries)
+15831 INFO: Looking for ctypes DLLs
+15846 INFO: Analyzing run-time hooks ...
+15847 INFO: Including run-time hook 'pyi_rth_inspect.py' from 'C:\\Users\\11690\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks'
+15850 INFO: Including run-time hook 'pyi_rth__tkinter.py' from 'C:\\Users\\11690\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks'
+15891 INFO: Creating base_library.zip...
+15912 INFO: Looking for dynamic libraries
+16315 INFO: Extra DLL search directories (AddDllDirectory): []
+16315 INFO: Extra DLL search directories (PATH): []
+17063 INFO: Warnings written to C:\Users\11690\Desktop\IN-USE\软件工程\LAB3\实验3_241820122_商世雄\code\build\StayHotel\warn-StayHotel.txt
+17086 INFO: Graph cross-reference written to C:\Users\11690\Desktop\IN-USE\软件工程\LAB3\实验3_241820122_商世雄\code\build\StayHotel\xref-StayHotel.html
+17163 INFO: checking PYZ
+17163 INFO: Building PYZ because PYZ-00.toc is non existent
+17163 INFO: Building PYZ (ZlibArchive) C:\Users\11690\Desktop\IN-USE\软件工程\LAB3\实验3_241820122_商世雄\code\build\StayHotel\PYZ-00.pyz
+17434 INFO: Building PYZ (ZlibArchive) C:\Users\11690\Desktop\IN-USE\软件工程\LAB3\实验3_241820122_商世雄\code\build\StayHotel\PYZ-00.pyz completed successfully.
+17442 INFO: checking PKG
+17442 INFO: Building PKG because PKG-00.toc is non existent
+17442 INFO: Building PKG (CArchive) StayHotel.pkg
+17463 INFO: Building PKG (CArchive) StayHotel.pkg completed successfully.
+17464 INFO: Bootloader C:\Users\11690\AppData\Local\Programs\Python\Python312\Lib\site-packages\PyInstaller\bootloader\Windows-64bit-intel\runw.exe
+17464 INFO: checking EXE
+17464 INFO: Building EXE because EXE-00.toc is non existent
+17464 INFO: Building EXE from EXE-00.toc
+17465 INFO: Copying bootloader EXE to C:\Users\11690\Desktop\IN-USE\软件工程\LAB3\实验3_241820122_商世雄\code\build\StayHotel\StayHotel.exe
+17500 INFO: Copying icon to EXE
+17519 INFO: Copying 0 resources to EXE
+17519 INFO: Embedding manifest in EXE
+17540 INFO: Appending PKG archive to EXE
+17550 INFO: Fixing EXE headers
+17775 INFO: Building EXE from EXE-00.toc completed successfully.
+17822 INFO: checking COLLECT
+17823 INFO: Building COLLECT because COLLECT-00.toc is non existent
+17823 INFO: Removing dir C:\Users\11690\Desktop\IN-USE\软件工程\LAB3\实验3_241820122_商世雄\code\dist\StayHotel
+22390 INFO: Building COLLECT COLLECT-00.toc
+28432 INFO: Building COLLECT COLLECT-00.toc completed successfully.
+28481 INFO: Build complete! The results are available in: C:\Users\11690\Desktop\IN-USE\软件工程\LAB3\实验3_241820122_商世雄\code\dist
+
+Exit code: 0

@@ -1,0 +1,33 @@
+@startuml
+!pragma layout smetana
+title LAB3 部署图：Windows本地桌面程序
+skinparam defaultFontName Microsoft YaHei
+skinparam backgroundColor white
+skinparam shadowing false
+node "Windows 10/11 x64" {
+  node "泊岸酒店预订系统进程" {
+    artifact "StayHotel.exe 或 python run.py" as app
+    component "Tk主线程 / 角色页面" as ui
+    component "业务服务 / SQLite驱动" as service
+    component "5秒维护线程" as job
+    app --> ui
+    ui --> service
+    job --> service
+  }
+  folder "%LOCALAPPDATA%/StayHotel" {
+    database "stay.sqlite3 / WAL / SHM" as db
+    artifact "application.log" as log
+    folder "backups/*.sqlite3 + 校验清单" as backup
+  }
+  folder "新文件恢复目标" as restore
+  service --> db : 独立连接\nWAL + 外键 + BEGIN IMMEDIATE
+  app --> log : 错误日志
+  job --> backup : 在线备份，每24小时
+  backup --> restore : 关闭程序后CLI恢复\n完整性与业务一致性检查
+}
+note bottom of app
+源码启动需Python 3.11+、Tk与tzdata。
+便携目录包含Python/Tk/tzdata，不需另装运行环境。
+不部署HTTP服务器、PostgreSQL和移动端。
+end note
+@enduml

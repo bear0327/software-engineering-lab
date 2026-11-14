@@ -1,0 +1,50 @@
+{
+  "renderer": "plantuml-1.2025.10.jar",
+  "images": [
+    {
+      "file": "01_组件图.png",
+      "width": 1280,
+      "height": 768
+    },
+    {
+      "file": "02_领域类图.png",
+      "width": 1679,
+      "height": 858
+    },
+    {
+      "file": "03_应用服务类图.png",
+      "width": 1640,
+      "height": 1010
+    },
+    {
+      "file": "04_用例图.png",
+      "width": 439,
+      "height": 811
+    },
+    {
+      "file": "05_订单状态图.png",
+      "width": 1372,
+      "height": 607
+    },
+    {
+      "file": "06_预订活动图.png",
+      "width": 410,
+      "height": 1209
+    },
+    {
+      "file": "07_创建预订时序图.png",
+      "width": 1241,
+      "height": 1012
+    },
+    {
+      "file": "08_修改预订时序图.png",
+      "width": 977,
+      "height": 1120
+    },
+    {
+      "file": "09_部署图.png",
+      "width": 971,
+      "height": 658
+    }
+  ]
+}

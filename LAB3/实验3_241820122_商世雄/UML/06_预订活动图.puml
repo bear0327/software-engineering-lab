@@ -1,0 +1,36 @@
+@startuml
+title LAB3 活动图：创建预订与安全重试
+skinparam defaultFontName Microsoft YaHei
+skinparam backgroundColor white
+skinparam shadowing false
+start
+:填写条件、查询逐夜报价;
+:填写联系人并接受总价;
+:BEGIN IMMEDIATE，解析会话;
+if (原请求键已有结果？) then (是)
+  if (内容哈希一致？) then (是)
+    :返回原结果，不再次占房;
+  else (否)
+    :REQUEST_KEY_CONFLICT;
+  endif
+  stop
+endif
+:SAVEPOINT business;
+:校验顾客、酒店、日期、容量及全程库存;
+if (业务校验及报价一致？) then (否)
+  :回滚至SAVEPOINT;
+  :保存业务错误结果与失败审计;
+  :提交后返回具体错误;
+  stop
+endif
+:按房型和日期排序应用库存净变化;
+:写订单、逐夜成交价与成功审计;
+if (写入发生基础设施错误？) then (是)
+  :整体回滚，不保存请求结果;
+  :提示使用原请求键重试;
+else (否)
+  :保存请求结果，提交事务;
+  :显示订单号、总价、确认截止时间;
+endif
+stop
+@enduml

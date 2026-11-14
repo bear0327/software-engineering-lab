@@ -1,0 +1,5 @@
+$ C:\Users\11690\AppData\Local\Programs\Python\Python312\python.exe -m ruff format --check .
+
+36 files already formatted
+
+Exit code: 0

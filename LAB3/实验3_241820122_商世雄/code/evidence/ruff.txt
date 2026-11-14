@@ -1,0 +1,5 @@
+$ C:\Users\11690\AppData\Local\Programs\Python\Python312\python.exe -m ruff check .
+
+All checks passed!
+
+Exit code: 0

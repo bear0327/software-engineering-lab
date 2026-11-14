@@ -1,0 +1,56 @@
+[
+  {
+    "file": "01_登录.png",
+    "width": 1440,
+    "height": 870,
+    "method": "PIL.ImageGrab of real Tk window"
+  },
+  {
+    "file": "02_查房报价.png",
+    "width": 1440,
+    "height": 870,
+    "method": "PIL.ImageGrab of real Tk window"
+  },
+  {
+    "file": "03_顾客订单.png",
+    "width": 1440,
+    "height": 870,
+    "method": "PIL.ImageGrab of real Tk window"
+  },
+  {
+    "file": "04_酒店订单.png",
+    "width": 1440,
+    "height": 870,
+    "method": "PIL.ImageGrab of real Tk window"
+  },
+  {
+    "file": "05_逐日库存.png",
+    "width": 1440,
+    "height": 870,
+    "method": "PIL.ImageGrab of real Tk window"
+  },
+  {
+    "file": "06_统计3单9间夜.png",
+    "width": 1440,
+    "height": 870,
+    "method": "PIL.ImageGrab of real Tk window"
+  },
+  {
+    "file": "07_酒店审核.png",
+    "width": 1440,
+    "height": 870,
+    "method": "PIL.ImageGrab of real Tk window"
+  },
+  {
+    "file": "08_工作人员.png",
+    "width": 1440,
+    "height": 870,
+    "method": "PIL.ImageGrab of real Tk window"
+  },
+  {
+    "file": "09_数据一致性.png",
+    "width": 1440,
+    "height": 870,
+    "method": "PIL.ImageGrab of real Tk window"
+  }
+]
